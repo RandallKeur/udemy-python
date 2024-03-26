@@ -1,0 +1,8 @@
+## Local env
+.venv
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
