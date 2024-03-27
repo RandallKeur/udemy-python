@@ -1,4 +1,4 @@
-""" Day 2 of Coding Challenges for Treasure Island"""
+""" Day 3 of Coding Challenges for Treasure Island"""
 
 
 def island():
