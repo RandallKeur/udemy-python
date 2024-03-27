@@ -7,7 +7,7 @@ from unittest import mock
 from src.day_two import calculate_tip
 
 
-class MyTestCase(unittest.TestCase):
+class DayTwoTest(unittest.TestCase):
     """ Test for Day 2 of Coding"""
     def test_tip_calculator(self):
         """ Test for tip_calculator"""

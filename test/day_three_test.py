@@ -7,7 +7,7 @@ from unittest import mock
 from src.day_three import treasure_island, TREASURE_IMAGE
 
 
-class MyTestCase(unittest.TestCase):
+class DayThreeTest(unittest.TestCase):
     """ Test cases for DAy 3 of Coding"""
     def test_treasure_image(self):
         """ Test the Treasure Island image"""
