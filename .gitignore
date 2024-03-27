@@ -1,6 +1,7 @@
 ## Local env
 .venv/
 src/__pycache__/
+test/__pycache__/
 
 ### IntelliJ IDEA ###
 .idea/
