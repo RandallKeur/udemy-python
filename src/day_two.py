@@ -1,4 +1,8 @@
+"""Day 2 of Coding Challenges for Tip calculator"""
+
+
 def tip_calculator():
+    """ Calculate tip for given bill , people, and percentage"""
     print("Welcome to the tip calculator!")
     total_bill = float(input("What was the total bill?: $"))
     people = int(input("How many people to split the bill?: "))

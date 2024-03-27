@@ -1,4 +1,8 @@
+""" Day 3 of Coding Challenges for Treasure Island"""
+
+
 def island():
+    """ Island portion of the game"""
     decision = input("You arrived at the island unharmed. There are 3 buildings. One is \"red\","
                      " one is \"green\" and one is \"blue\". Which one do you want to enter?\n")
     decision_valid = False
@@ -18,6 +22,7 @@ def island():
 
 
 def crossroad_left():
+    """ Crossroad left portion of the game"""
     decision = input("You arrived at a lake. There is an island in the middle of the lake. Do "
                      "you want to \"swim\" or \"wait\" for a boat?\n")
     decision_valid = False
@@ -34,10 +39,12 @@ def crossroad_left():
 
 
 def crossroad_right():
+    """ Crossroad right portion of the game"""
     island()
 
 
 def treasure_island():
+    """ Treasure Island portion of the game"""
     print('''
     *******************************************************************************
               |                   |                  |                     |
@@ -62,7 +69,8 @@ def treasure_island():
     ''')
     print("Welcome to Treasure Island.")
     print("Your mission is to find the treasure.")
-    direction = input("You're at a crossroad. Where do you want to go? Type \"left\" or \"right\"\n")
+    direction = input("You're at a crossroad. Where do you want to go? Type \"left\" "
+                      "or \"right\"\n")
     decision_valid = False
     while not decision_valid:
         match direction:
