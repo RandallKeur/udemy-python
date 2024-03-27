@@ -1,12 +1,12 @@
-# This is a sample Python script.
-import day_one, day_two, day_three, day_four
-
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+""" This main method runs the 100 days of coding challenges with interactive feedback"""
+from src import day_four
+from src import day_one
+from src import day_three
+from src import day_two
 
 
 def continue_running():
+    """ Helper method to continue running the application based on feedback"""
     response = input("\nWould you like to see another day's challenge?\n")
     decision_valid = False
     while not decision_valid:
@@ -17,12 +17,12 @@ def continue_running():
                 print("Goodbye, thanks for playing!")
                 return True
             case _:
-                response = input("Invalid response, please reply with \"yes\" or \"no\"\n")
+                response = input("Invalid RESPONSE, please reply with \"yes\" or \"no\"\n")
+    return None
 
 
-# Potential future idea --> Create enum for day challenge with brief description
-# Use this in the switchboard and the welcome comment in each function
 def switchboard(day):
+    """ Helper switchboard for routing feedback to each day's challenge"""
     decision_valid = False
     while not decision_valid:
         decision_valid = True
@@ -41,8 +41,8 @@ def switchboard(day):
 
 
 if __name__ == '__main__':
-    stop = False
-    while not stop:
+    STOP = False
+    while not STOP:
         day_of_coding_challenge = input("Which day of coding challenge do you want to see?\n")
         switchboard(day_of_coding_challenge)
-        stop = continue_running()
+        STOP = continue_running()

@@ -1,7 +1,12 @@
+""" Day 4 of Coding Challenges for Rock, Paper, Scissors game"""
+
 import random
 
 
-class Options:
+class Choices:
+    # Disable too-few-public-methods error
+    # pylint: disable=R0903
+    """ Class to store constants for Rock, Paper, or Scissors"""
     rock = '''
     ROCK
         _______
@@ -31,54 +36,58 @@ class Options:
     '''
 
 
+COMPUTER_WIN = "Computer Wins"
+YOU_WIN = "You Win!"
+
+
 def map_text_to_art(text: str) -> str:
+    """ Map text to ASCII art for Rock, Paper, or Scissors"""
     match text:
         case "rock":
-            return Options.rock
+            return Choices.rock
         case "paper":
-            return Options.paper
+            return Choices.paper
         case "scissors":
-            return Options.scissors
+            return Choices.scissors
         case _:
             return "Invalid"
 
 
-computer_win = "Computer Wins"
-you_win = "You Win!"
-
-
 def determine_winner(choice, computer):
+    """ Determine winner between user and computer"""
     print("Computer chose: " + computer)
     if choice == computer:
         print("Draw")
-    if choice == Options.rock:
-        if computer == Options.scissors:
-            print(you_win)
-        if computer == Options.paper:
-            print(computer_win)
-    if choice == Options.scissors:
-        if computer == Options.rock:
-            print(computer_win)
-        if computer == Options.paper:
-            print(you_win)
-    if choice == Options.paper:
-        if computer == Options.rock:
-            print(you_win)
-        if computer == Options.scissors:
-            print(computer_win)
+    if choice == Choices.rock:
+        if computer == Choices.scissors:
+            print(YOU_WIN)
+        if computer == Choices.paper:
+            print(COMPUTER_WIN)
+    if choice == Choices.scissors:
+        if computer == Choices.rock:
+            print(COMPUTER_WIN)
+        if computer == Choices.paper:
+            print(YOU_WIN)
+    if choice == Choices.paper:
+        if computer == Choices.rock:
+            print(YOU_WIN)
+        if computer == Choices.scissors:
+            print(COMPUTER_WIN)
 
 
 def rock_paper_scissors():
+    """ Play Rock, Paper, Scissors"""
     response = input("Welcome to Rock, Paper, Scissors... Which do you choose?\n")
     decision_valid = False
-    computer_choice = random.choice([Options.rock, Options.paper, Options.scissors])
+    computer_choice = random.choice([Choices.rock, Choices.paper, Choices.scissors])
     while not decision_valid:
         choice = map_text_to_art(response.lower())
         decision_valid = True
         match choice:
-            case Options.rock | Options.paper | Options.scissors:
+            case Choices.rock | Choices.paper | Choices.scissors:
                 print("You chose: " + choice)
                 determine_winner(choice, computer_choice)
             case _:
                 decision_valid = False
-                response = (input("Invalid response, please reply with \"rock\", \"paper\" or \"scissors\"\n")).lower()
+                response = (input("Invalid RESPONSE, please reply with \"rock\", "
+                                  "\"paper\" or \"scissors\"\n")).lower()
