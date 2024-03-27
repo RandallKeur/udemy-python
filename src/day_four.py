@@ -34,6 +34,9 @@ class Choices:
           (____)
     ---.__(___)
     '''
+    invalid = '''
+    INVALID
+    '''
 
 
 COMPUTER_WIN = "Computer Wins"
@@ -50,7 +53,7 @@ def map_text_to_art(text: str) -> str:
         case "scissors":
             return Choices.scissors
         case _:
-            return "Invalid"
+            return Choices.invalid
 
 
 def determine_winner(choice, computer):

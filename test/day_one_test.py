@@ -10,17 +10,21 @@ class DayOneTest(TestCase):
 
     def test_band_name_generator(self):
         """ Test the band_name_generator"""
-        city = 'city'
-        pet = 'pet'
-        expected = f'{RESPONSE} {city} {pet}'
-        out = StringIO()
-        with mock.patch('sys.stdin', StringIO("city\npet")):
-            # given
-            sys.stdout = out
+        city = iter(['city', 'town', 'Raleigh'])
+        pet = iter(['pet', 'barley', 'Remi'])
+        for i_city in city:
+            # setup
+            i_pet = next(pet)
+            expected = f'{RESPONSE} {i_city} {i_pet}'
+            out = StringIO()
 
-            # when
-            band_name_generator()
-            actual = out.getvalue().strip()
+            with mock.patch('sys.stdin', new=StringIO(f"{i_city}\n{i_pet}")):
+                # given
+                sys.stdout = out
 
-            # then
-            self.assertTrue(expected in actual)
+                # when
+                band_name_generator()
+                actual = out.getvalue().strip()
+
+                # then
+                self.assertTrue(expected in actual)

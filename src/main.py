@@ -30,7 +30,7 @@ def switchboard(day):
             case "1":
                 day_one.band_name_generator()
             case "2":
-                day_two.tip_calculator()
+                day_two.calculate_tip()
             case "3":
                 day_three.treasure_island()
             case "4":
