@@ -1,8 +1,9 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
-from src import day_four
-from src import day_one
-from src import day_three
-from src import day_two
+import day_five
+import day_four
+import day_one
+import day_three
+import day_two
 
 
 def continue_running():
@@ -35,6 +36,8 @@ def switchboard(day):
                 day_three.treasure_island()
             case "4":
                 day_four.rock_paper_scissors()
+            case "5":
+                day_five.password_generator()
             case _:
                 decision_valid = False
                 day = input("Invalid input, please try again\n")
