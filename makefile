@@ -1,3 +1,6 @@
+run-app:
+	python main.py
+
 run-tests:
 	pytest
 
