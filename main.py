@@ -1,9 +1,9 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
-import day_five
-import day_four
-import day_one
-import day_three
-import day_two
+from src import day_five
+from src import day_four
+from src import day_one
+from src import day_three
+from src import day_two
 
 
 def continue_running():
