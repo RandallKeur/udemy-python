@@ -476,3 +476,17 @@ while not at_goal():
 [hurdle-3]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%203&url=worlds%2Ftutorial_en%2Fhurdle3.json
 [hurdle-4]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%204&url=worlds%2Ftutorial_en%2Fhurdle4.json
 [maze]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Maze&url=worlds%2Ftutorial_en%2Fmaze1.json
+[newspaper-0]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Newspaper%200&url=worlds%2Ftutorial_en%2Fnewspaper0.json
+[newspaper-1]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Newspaper%201&url=worlds%2Ftutorial_en%2Fnewspaper-ada.json
+[rain-0]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Rain%200&url=worlds%2Ftutorial_en%2Frain0.json
+[rain-1]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Rain%201&url=worlds%2Ftutorial_en%2Frain1.json
+[rain-2]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Rain%202&url=worlds%2Ftutorial_en%2Frain2.json
+[storm-1]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Storm%201&url=worlds%2Ftutorial_en%2Fstorm1.json
+[storm-2]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Storm%202&url=worlds%2Ftutorial_en%2Fstorm2.json
+[storm-3]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Storm%203&url=worlds%2Ftutorial_en%2Fstorm3.json
+[storm-4]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Storm%204&url=worlds%2Ftutorial_en%2Fstorm4.json
+[tokens-1]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Tokens%201&url=worlds%2Ftutorial_en%2Ftokens1.json
+[tokens-2]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Tokens%202&url=worlds%2Ftutorial_en%2Ftokens2.json
+[tokens-3]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Tokens%203&url=worlds%2Ftutorial_en%2Ftokens3.json
+[tokens-4]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Tokens%204&url=worlds%2Ftutorial_en%2Ftokens4.json
+[tokens-5]: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Tokens%205&url=worlds%2Ftutorial_en%2Ftokens5.json
