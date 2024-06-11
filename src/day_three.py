@@ -1,27 +1,7 @@
 """ Day 3 of Coding Challenges for Treasure Island"""
+from src.ascii_art.art import TREASURE, ALLIGATOR, FIRE, CARNIVOROUS_PLANTS, BOAT, ISLAND
 
-TREASURE_IMAGE = '''
-    *******************************************************************************
-              |                   |                  |                     |
-     _________|________________.=""_;=.______________|_____________________|_______
-    |                   |  ,-"_,=""     `"=.|                  |
-    |___________________|__"=._o`"-._        `"=.______________|___________________
-              |                `"=._o`"=._      _`"=._                     |
-     _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
-    |                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
-    |___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
-              |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
-     _________|___________| ;`-.o`"=._; ." ` '`."` . "-._ /_______________|_______
-    |                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
-    |___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
-    ____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
-    /______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
-    ____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
-    /______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
-    ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
-    /______/______/______/______/______/______/______/______/______/______/_____ /
-    *******************************************************************************
-    '''
+GAME_OVER = "Game Over!"
 
 
 def island():
@@ -33,13 +13,19 @@ def island():
         match decision:
             case "red":
                 decision_valid = True
-                print("This building is full of fire, you burn alive. Game Over!")
+                print("This building is full of fire, you burn alive."
+                      f"{FIRE}"
+                      f"{GAME_OVER}")
             case "green":
                 decision_valid = True
-                print("This building is full of plants... too bad they're carnivorous. Game Over!")
+                print("This building is full of plants... too bad they're carnivorous."
+                      f"{CARNIVOROUS_PLANTS}"
+                      f"{GAME_OVER}")
             case "blue":
                 decision_valid = True
-                print("This building is full of treasure... You Win!")
+                print("This building is full of treasure... "
+                      f"{TREASURE}"
+                      "You Win!")
             case _:
                 decision = input("Invalid choice, Please type \"red\", \"green\", or \"blue\"\n")
 
@@ -53,9 +39,12 @@ def crossroad_left():
         match decision:
             case "swim":
                 decision_valid = True
-                print("This lake is full alligators, you were eaten alive. Game Over!")
+                print("This lake is full alligators, you were eaten alive."
+                      f"{ALLIGATOR}"
+                      f"{GAME_OVER}")
             case "wait":
                 decision_valid = True
+                print(f"{BOAT}")
                 island()
             case _:
                 decision = input("Invalid choice, Please type \"swim\" or \"wait\"\n")
@@ -68,7 +57,7 @@ def crossroad_right():
 
 def treasure_island():
     """ Treasure Island portion of the game"""
-    print(TREASURE_IMAGE)
+    print(ISLAND)
     print("Welcome to Treasure Island.")
     print("Your mission is to find the treasure.")
     direction = input("You're at a crossroad. Where do you want to go? Type \"left\" "

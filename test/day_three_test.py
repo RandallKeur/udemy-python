@@ -4,7 +4,7 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.day_three import treasure_island, TREASURE_IMAGE
+from src.day_three import treasure_island, TREASURE
 
 
 class DayThreeTest(unittest.TestCase):
@@ -16,7 +16,7 @@ class DayThreeTest(unittest.TestCase):
 
         with mock.patch('sys.stdin', new=StringIO("left\nswim")):
             # given
-            expected = TREASURE_IMAGE.strip()
+            expected = TREASURE.strip()
             sys.stdout = out
 
             # when
