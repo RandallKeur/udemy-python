@@ -4,7 +4,7 @@ from src import day_four
 from src import day_one
 from src import day_three
 from src import day_two
-from src.day_seven import day_seven
+from src import day_seven
 
 
 def continue_running():
@@ -43,7 +43,7 @@ def switchboard(day):
                 print("Check out day_six.md file for more information")
             case "7":
                 d7 = day_seven.DaySeven()
-                day_seven.hangman(d7)
+                day_seven.play_hangman(d7)
             case _:
                 decision_valid = False
                 day = input("Invalid input, please try again\n")
