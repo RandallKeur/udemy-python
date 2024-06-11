@@ -28,7 +28,7 @@ ___
 | 5   | Password Generator         |
 | 6   | [Reeborg's World][reeborg] |
 | 7   | Hangman                    |
-
+| 8   | Caesar Cipher              |
 
 
 [link-to-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
