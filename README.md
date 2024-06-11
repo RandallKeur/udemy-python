@@ -19,14 +19,17 @@ ___
 
 ## 📆 Daily Challenge
 
-| Day | Game                      |
-|-----|---------------------------|
-| 1   | Band Name Generator       |
-| 2   | Tip Calculator            |
-| 3   | Treasure Island Adventure |
-| 4   | Rock, Paper, Scissors     |
+| Day | Game                       |
+|-----|----------------------------|
+| 1   | Band Name Generator        |
+| 2   | Tip Calculator             |
+| 3   | Treasure Island Adventure  |
+| 4   | Rock, Paper, Scissors      |
+| 5   | Password Generator         |
+| 6   | [Reeborg's World][reeborg] |
+| 7   | Hangman                    |
 
 
 
 [link-to-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
-
+[reeborg]: https://reeborg.ca/index_en.html
