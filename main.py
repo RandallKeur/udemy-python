@@ -42,8 +42,7 @@ def switchboard(day):
             case "6":
                 print("Check out day_six.md file for more information")
             case "7":
-                d7 = day_seven.DaySeven()
-                day_seven.play_hangman(d7)
+                day_seven.play_hangman()
             case _:
                 decision_valid = False
                 day = input("Invalid input, please try again\n")

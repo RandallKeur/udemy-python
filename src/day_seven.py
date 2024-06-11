@@ -1,26 +1,23 @@
+"""Day 7 of Coding Challenges for Hangman"""
 import random
 
-from ascii_art.art import hangman_stages, hangman_logo
+from src.ascii_art.art import CONGRATS, HANGMAN_LOGO, HANGMAN_STAGES
 
 
-class DaySeven:
-    def __init__(self):
-        self.dictionary = load_dictionary()
-        print(hangman_logo)
-
-
-def load_dictionary():
-    file = open('src/shared_files/hangman_words.txt', 'r')
-    dictionary = file.read().splitlines()
-    file.close()
+def init_dictionary():
+    """Initialize the dictionary of words to choose from"""
+    with open('src/shared_files/hangman_words.txt', 'r', encoding='utf-8') as file:
+        dictionary = file.read().splitlines()
     return dictionary
 
 
 def find_instances(word, letter):
+    """Find all instances of a letter in a word"""
     return [i for i, character in enumerate(word) if character == letter]
 
 
 def collect_guess(guessed_letters: list[str]):
+    """Collect guess from input"""
     guessed_letter = input("Guess a letter: \n")
     while guessed_letter in guessed_letters:
         print(f"\nYou already guessed {guessed_letter}, try again\n")
@@ -29,34 +26,40 @@ def collect_guess(guessed_letters: list[str]):
 
 
 def decide_win_or_lose(hangman_word: str, current_word: str):
+    """Decide if they won or lost"""
     if hangman_word == current_word:
-        print("Congratulations! You won hangman\n")
+        print(CONGRATS)
+        print("You won hangman\n")
     else:
         print(f"You are out of guesses, better luck next time\n"
               f"The word was {hangman_word}")
 
 
-def replace_instances(indices: list[int], current_word: str, guessed_letter: str):
+def replace_instances(indices: list[int], word: str, letter: str):
+    """Puts letter in each index in indices"""
     for index in indices:
-        current_word = current_word[:index] + guessed_letter + current_word[index + 1:]
-    return current_word
+        word = word[:index] + letter + word[index + 1:]
+    return word
 
 
-def play_hangman(self):
-    hangman_word = random.choice(self.dictionary)
+def play_hangman():
+    """Hangman game"""
+    print(HANGMAN_LOGO)
+    dictionary = init_dictionary()
+    hangman_word = random.choice(dictionary)
     current_word = "".join('_' for i in range(len(hangman_word)))
-    guessed_letters = []
-    guess_limit = len(hangman_stages) - 1
-    while hangman_word != current_word and guess_limit != 0:
-        guessed_letter = collect_guess(guessed_letters)
-        guessed_letters.append(guessed_letter)
+    letters_guessed = []
+    remaining_guesses = len(HANGMAN_STAGES) - 1
+    while hangman_word != current_word and remaining_guesses != 0:
+        guessed_letter = collect_guess(letters_guessed)
+        letters_guessed.append(guessed_letter)
         indices = find_instances(hangman_word, guessed_letter)
         if len(indices) != 0:
             print("Correct!\n")
             current_word = replace_instances(indices, current_word, guessed_letter)
         else:
             print("Incorrect guess. Try again.\n")
-            guess_limit -= 1
-        print(hangman_stages[guess_limit])
+            remaining_guesses -= 1
+        print(HANGMAN_STAGES[remaining_guesses])
         print(current_word)
     decide_win_or_lose(hangman_word, current_word)
