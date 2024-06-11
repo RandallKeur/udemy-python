@@ -2,41 +2,17 @@
 
 import random
 
+from src.ascii_art.art import ROCK, PAPER, SCISSORS
+
 
 class Choices:
     # Disable too-few-public-methods error
     # pylint: disable=R0903
     """ Class to store constants for Rock, Paper, or Scissors"""
-    rock = '''
-    ROCK
-        _______
-    ---'   ____)
-          (_____)
-          (_____)
-          (____)
-    ---.__(___)
-    '''
-    paper = '''
-    PAPER
-        _______
-    ---'   ____)______
-              ________)
-              _________)
-             _________)
-    ---.____________)
-    '''
-    scissors = '''
-    SCISSORS
-        _______
-    ---'   ____)______
-              ________)
-           ____________)
-          (____)
-    ---.__(___)
-    '''
-    invalid = '''
-    INVALID
-    '''
+    rock = ROCK
+    paper = PAPER
+    scissors = SCISSORS
+    invalid = 'INVALID'
 
 
 COMPUTER_WIN = "Computer Wins"
