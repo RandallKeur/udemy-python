@@ -4,6 +4,7 @@ from src import day_four
 from src import day_one
 from src import day_three
 from src import day_two
+from src import day_seven
 
 
 def continue_running():
@@ -38,6 +39,10 @@ def switchboard(day):
                 day_four.rock_paper_scissors()
             case "5":
                 day_five.password_generator()
+            case "6":
+                print("Check out day_six.md file for more information")
+            case "7":
+                day_seven.play_hangman()
             case _:
                 decision_valid = False
                 day = input("Invalid input, please try again\n")
