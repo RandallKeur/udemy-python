@@ -1,10 +1,6 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
-from src import day_five
-from src import day_four
-from src import day_one
-from src import day_three
-from src import day_two
-from src import day_seven
+from src.ascii_art.art import GOODBYE
+from src import day_one, day_two, day_three, day_four, day_five, day_seven, day_eight
 
 
 def continue_running():
@@ -16,7 +12,8 @@ def continue_running():
             case "yes":
                 return False
             case "no":
-                print("Goodbye, thanks for playing!")
+                print(f"{GOODBYE}\n"
+                      "Thanks for playing!")
                 return True
             case _:
                 response = input("Invalid RESPONSE, please reply with \"yes\" or \"no\"\n")
@@ -43,6 +40,8 @@ def switchboard(day):
                 print("Check out day_six.md file for more information")
             case "7":
                 day_seven.play_hangman()
+            case "8":
+                day_eight.caesar_cipher()
             case _:
                 decision_valid = False
                 day = input("Invalid input, please try again\n")
