@@ -28,6 +28,24 @@ class DayThreeTest(unittest.TestCase):
             # then
             self.assertTrue(logo in actual, expected in actual)
 
+    def test_caesar_cipher_spaces_symbols_shift_90(self):
+        """Test the Caesar Cipher image"""
+        # setup
+        out = StringIO()
+
+        with mock.patch('sys.stdin', new=StringIO("encode\nTesting_12345-!@#$% :)\n90\nno\nno")):
+            # given
+            logo = CAESAR_CIPHER.strip()
+            expected = 'FQefUZS_12345-!@#$% :)'
+            sys.stdout = out
+
+            # when
+            caesar_cipher()
+            actual = out.getvalue().strip()
+
+            # then
+            self.assertTrue(logo in actual, expected in actual)
+
 
 if __name__ == '__main__':
     unittest.main()
