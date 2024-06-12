@@ -8,7 +8,7 @@ from src.ascii_art.art import CAESAR_CIPHER
 from src.day_eight import caesar_cipher
 
 
-class DayThreeTest(unittest.TestCase):
+class DayEightTest(unittest.TestCase):
     """ Test cases for Day 8 of Coding"""
     def test_caesar_cipher_swim_shift_3(self):
         """Test the Caesar Cipher image"""

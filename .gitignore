@@ -6,6 +6,7 @@ __pycache__/
 .venv/
 src/__pycache__/
 test/__pycache__/
+.env
 
 ### IntelliJ IDEA ###
 .idea/

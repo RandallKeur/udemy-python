@@ -29,6 +29,7 @@ ___
 | 6   | [Reeborg's World][reeborg] |
 | 7   | Hangman                    |
 | 8   | Caesar Cipher              |
+| 9   | Silent Auction             |
 
 
 [link-to-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
