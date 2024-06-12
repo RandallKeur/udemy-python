@@ -8,6 +8,7 @@ def shift(word: str, value: int):
     shifted_word = ''.join(chr(ord(char) + value) for char in word)
     print(shifted_word)
 
+
 def caesar_cipher():
     """Caesar cipher"""
     print(CAESAR_CIPHER)
@@ -23,4 +24,4 @@ def caesar_cipher():
         else:
             print("Invalid\n")
 
-        running = input("Do you want to continue?\n")
+        running = input("Do you want to continue?\n") == 'yes'

@@ -9,7 +9,7 @@ from src.day_three import treasure_island
 
 
 class DayThreeTest(unittest.TestCase):
-    """ Test cases for DAy 3 of Coding"""
+    """ Test cases for Day 3 of Coding"""
 
     def test_left_swim(self):
         """Test the Alligator image"""

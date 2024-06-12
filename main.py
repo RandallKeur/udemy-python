@@ -1,5 +1,5 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
-
+from src.ascii_art.art import GOODBYE
 from src import day_one, day_two, day_three, day_four, day_five, day_seven, day_eight
 
 
@@ -12,7 +12,8 @@ def continue_running():
             case "yes":
                 return False
             case "no":
-                print("Goodbye, thanks for playing!")
+                print(f"{GOODBYE}\n"
+                      "Thanks for playing!")
                 return True
             case _:
                 response = input("Invalid RESPONSE, please reply with \"yes\" or \"no\"\n")
