@@ -4,7 +4,7 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.ascii_art.art import CAESAR_CIPHER
+from src.constants.ascii_art import CAESAR_CIPHER
 from src.day_eight import caesar_cipher
 
 

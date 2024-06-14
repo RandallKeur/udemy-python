@@ -1,7 +1,7 @@
 """Day 8 of Coding Challenges for Caesar Cipher"""
 import string
 
-from src.ascii_art.art import CAESAR_CIPHER
+from src.constants.ascii_art import CAESAR_CIPHER
 
 
 def shift(plaintext: str, value: int):

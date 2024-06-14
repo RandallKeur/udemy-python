@@ -1,5 +1,5 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
-from src.ascii_art.art import GOODBYE
+from src.constants.ascii_art import GOODBYE
 from src import day_one, day_two, day_three, day_four, day_five, day_seven, day_eight, day_nine
 
 

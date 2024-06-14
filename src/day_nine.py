@@ -1,7 +1,7 @@
 """ Day 9 of Coding Challenges for Silent Auction"""
 import os
 
-from src.ascii_art.art import AUCTION, GAVEL
+from src.constants.ascii_art import AUCTION, GAVEL
 
 
 def collect_bid(bids):

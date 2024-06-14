@@ -1,7 +1,7 @@
 """Day 10 of Coding Challenges for Calculator"""
 
 
-from src.ascii_art.art import CALCULATOR
+from src.constants.ascii_art import CALCULATOR
 
 
 def collect_input():

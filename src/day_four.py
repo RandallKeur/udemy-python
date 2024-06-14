@@ -2,7 +2,7 @@
 
 import random
 
-from src.ascii_art.art import ROCK, PAPER, SCISSORS
+from src.constants.ascii_art import ROCK, PAPER, SCISSORS
 
 
 class Choices:
