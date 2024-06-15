@@ -1,0 +1,6 @@
+CALCULATOR_OPERATIONS = '''
++
+-
+*
+/
+'''
