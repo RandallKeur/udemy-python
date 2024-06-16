@@ -36,6 +36,7 @@ def calculator():
     print(f"{CALCULATOR}")
     continue_with_result = False
     running = True
+    result = 0
     while running:
         if not continue_with_result:
             number_1 = float(input("What\'s the first number?: "))
@@ -43,8 +44,8 @@ def calculator():
             number_1 = result
 
         result = get_operation(number_1)
-        response = input(f"Type \'y\' to continue with {result}, or \'n\' to start a new calculation, "
-                         f"or \'STOP\' to end the program: ")
+        response = input(f"Type \'y\' to continue with {result}, or \'n\' to start a "
+                         f"new calculation, or \'STOP\' to end the program: ")
         match response:
             case 'y':
                 continue_with_result = True

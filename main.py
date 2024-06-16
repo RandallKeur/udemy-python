@@ -1,7 +1,7 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
 from src.constants.ascii_art import GOODBYE
-from src import day_one, day_two, day_three, day_four, day_five, day_seven, day_eight, day_nine, day_ten
-
+from src import day_one, day_two, day_three, day_four, day_five, day_seven, day_eight, day_nine
+from src import day_ten
 
 def continue_running():
     """ Helper method to continue running the application based on feedback"""
