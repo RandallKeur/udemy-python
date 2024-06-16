@@ -8,3 +8,6 @@ lint:
 	pylint $$(git ls-files '*.py')
 
 pipeline: lint tests
+
+git-prune:
+	git fetch -p
