@@ -1,7 +1,7 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
-from src.ascii_art.art import GOODBYE
+from src.constants.ascii_art import GOODBYE
 from src import day_one, day_two, day_three, day_four, day_five, day_seven, day_eight, day_nine
-
+from src import day_ten
 
 def continue_running():
     """ Helper method to continue running the application based on feedback"""
@@ -44,6 +44,8 @@ def switchboard(day):
                 day_eight.caesar_cipher()
             case "9":
                 day_nine.silent_auction()
+            case "10":
+                day_ten.calculator()
             case _:
                 decision_valid = False
                 day = input("Invalid input, please try again\n")

@@ -1,7 +1,7 @@
 """Day 7 of Coding Challenges for Hangman"""
 import random
 
-from src.ascii_art.art import CONGRATS, HANGMAN_LOGO, HANGMAN_STAGES
+from src.constants.ascii_art import CONGRATS, HANGMAN_LOGO, HANGMAN_STAGES
 
 
 def init_dictionary():

@@ -6,7 +6,7 @@ from io import StringIO
 from unittest import mock
 
 from src.day_nine import silent_auction
-from src.ascii_art.art import AUCTION, GAVEL
+from src.constants.ascii_art import AUCTION, GAVEL
 
 
 class DayNineTest(unittest.TestCase):

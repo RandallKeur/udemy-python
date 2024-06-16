@@ -4,7 +4,7 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.ascii_art.art import ISLAND, ALLIGATOR, BOAT, FIRE, CARNIVOROUS_PLANTS, TREASURE
+from src.constants.ascii_art import ISLAND, ALLIGATOR, BOAT, FIRE, CARNIVOROUS_PLANTS, TREASURE
 from src.day_three import treasure_island
 
 

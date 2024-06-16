@@ -1,5 +1,5 @@
 """ Day 3 of Coding Challenges for Treasure Island"""
-from src.ascii_art.art import TREASURE, ALLIGATOR, FIRE, CARNIVOROUS_PLANTS, BOAT, ISLAND
+from src.constants.ascii_art import TREASURE, ALLIGATOR, FIRE, CARNIVOROUS_PLANTS, BOAT, ISLAND
 
 GAME_OVER = "Game Over!"
 
