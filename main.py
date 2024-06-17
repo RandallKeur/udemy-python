@@ -57,8 +57,8 @@ def switchboard(day):
 
 
 if __name__ == '__main__':
-    stop = False
-    while not stop:
+    STOP = False
+    while not STOP:
         day_of_coding_challenge = input('Which day of coding challenge do you want to see?\n')
         switchboard(day_of_coding_challenge)
-        stop = continue_running()
+        STOP = continue_running()
