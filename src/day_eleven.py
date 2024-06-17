@@ -54,6 +54,7 @@ def dealer_hit_or_stand(dealer_hand: list[str]) -> list[str]:
 
 
 def player_hit_or_stand(player_hand: list[str]) -> list[str]:
+    """Enter path to ask the player hit or stand"""
     bust = False
     hit = True
     while not bust and hit:
@@ -81,4 +82,5 @@ def blackjack():
             print(f'\nDealer shows {dealer_hand[1]} and now has {dealer_hand}')
             dealer_hand = dealer_hit_or_stand(dealer_hand)
         determine_winner(player_hand, dealer_hand)
-        deal_cards = input('\nDo you want to deal another hand? Type \'deal\' or \'STOP\': ') == 'deal'
+        deal_cards = input('\nDo you want to deal another hand? Type \'deal\' or '
+                           '\'STOP\': ') == 'deal'
