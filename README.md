@@ -34,5 +34,10 @@ ___
 | 11  | Blackjack                  |
 | 12  | Number Guessing            |
 
+## 🛠 Tools used in this project
+
+- ### 📘 [Markdown][markdown-doc]
+- ### [ASCII art generator](https://patorjk.com/software/taag/#p=display&f=Big&t=)
+
 [link-to-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
 [reeborg]: https://reeborg.ca/index_en.html
