@@ -5,7 +5,7 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.day_twelve import number_guessing
+from src.day_12 import number_guessing
 from src.constants.ascii_art import NUMBER_GUESS
 
 

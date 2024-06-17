@@ -6,7 +6,7 @@ from io import StringIO
 from unittest import mock
 
 from src.constants.values import STAND
-from src.day_eleven import blackjack
+from src.day_11 import blackjack
 from src.constants.ascii_art import BLACKJACK
 
 

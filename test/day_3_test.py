@@ -5,7 +5,7 @@ from io import StringIO
 from unittest import mock
 
 from src.constants.ascii_art import ISLAND, ALLIGATOR, BOAT, FIRE, CARNIVOROUS_PLANTS, TREASURE
-from src.day_three import treasure_island
+from src.day_3 import treasure_island
 
 
 class DayThreeTest(unittest.TestCase):

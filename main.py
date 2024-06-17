@@ -1,7 +1,7 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
 from src.constants.ascii_art import GOODBYE
-from src import (day_one, day_two, day_three, day_four, day_five, day_seven, day_eight, day_nine,
-                 day_ten, day_eleven, day_twelve)
+from src import (day_1, day_2, day_3, day_4, day_5, day_7, day_8, day_9,
+                 day_10, day_11, day_12)
 
 
 def continue_running():
@@ -28,29 +28,29 @@ def switchboard(day):
         decision_valid = True
         match day:
             case '1':
-                day_one.band_name_generator()
+                day_1.band_name_generator()
             case '2':
-                day_two.calculate_tip()
+                day_2.calculate_tip()
             case '3':
-                day_three.treasure_island()
+                day_3.treasure_island()
             case '4':
-                day_four.rock_paper_scissors()
+                day_4.rock_paper_scissors()
             case '5':
-                day_five.password_generator()
+                day_5.password_generator()
             case '6':
-                print('Check out day_six.md file for more information')
+                print('Check out day_6.md file for more information')
             case '7':
-                day_seven.play_hangman()
+                day_7.play_hangman()
             case '8':
-                day_eight.caesar_cipher()
+                day_8.caesar_cipher()
             case '9':
-                day_nine.silent_auction()
+                day_9.silent_auction()
             case '10':
-                day_ten.calculator()
+                day_10.calculator()
             case '11':
-                day_eleven.blackjack()
+                day_11.blackjack()
             case '12':
-                day_twelve.number_guessing()
+                day_12.number_guessing()
             case _:
                 decision_valid = False
                 day = input('Invalid input, please try again\n')

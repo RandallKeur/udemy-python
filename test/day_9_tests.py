@@ -5,7 +5,7 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.day_nine import silent_auction
+from src.day_9 import silent_auction
 from src.constants.ascii_art import AUCTION, GAVEL
 
 

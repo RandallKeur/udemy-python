@@ -5,7 +5,7 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.day_ten import calculator
+from src.day_10 import calculator
 from src.constants.values import CALCULATOR_OPERATIONS
 from src.constants.ascii_art import CALCULATOR
 

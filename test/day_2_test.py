@@ -4,7 +4,7 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.day_two import calculate_tip
+from src.day_2 import calculate_tip
 
 
 class DayTwoTest(unittest.TestCase):

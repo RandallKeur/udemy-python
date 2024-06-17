@@ -2,7 +2,7 @@
 import sys
 from io import StringIO
 from unittest import TestCase, mock
-from src.day_one import RESPONSE, band_name_generator
+from src.day_1 import RESPONSE, band_name_generator
 
 
 class DayOneTest(TestCase):
