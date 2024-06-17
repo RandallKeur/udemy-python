@@ -6,7 +6,7 @@ from io import StringIO
 from unittest import mock
 
 from src.constants.values import STAND
-from src.day_eleven import blackjack
+from src.day_11 import blackjack
 from src.constants.ascii_art import BLACKJACK
 
 
@@ -19,7 +19,7 @@ class DayElevenTest(unittest.TestCase):
         out = StringIO()
         os.environ['TERM'] = 'xterm-256color'
 
-        with mock.patch('sys.stdin', new=StringIO(f"{STAND}\nSTOP")):
+        with mock.patch('sys.stdin', new=StringIO(f'{STAND}\nSTOP')):
             # given
             blackjack_art = BLACKJACK.strip()
             sys.stdout = out

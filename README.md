@@ -17,21 +17,27 @@ ___
 3. Type in number of day for which game to play.
 
 
-## 📆 Daily Challenge
+## 📆 Daily Challenge 
 
-| Day | Game                       |
-|-----|----------------------------|
-| 1   | Band Name Generator        |
-| 2   | Tip Calculator             |
-| 3   | Treasure Island Adventure  |
-| 4   | Rock, Paper, Scissors      |
-| 5   | Password Generator         |
-| 6   | [Reeborg's World][reeborg] |
-| 7   | Hangman                    |
-| 8   | Caesar Cipher              |
-| 9   | Silent Auction             |
-| 10  | Calculator                 |
+| Day | Game                          |
+|-----|-------------------------------|
+| 1   | 🎸 Band Name Generator        |
+| 2   | 🪙 Tip Calculator             |
+| 3   | 🏝️ Treasure Island Adventure |
+| 4   | ✂️ Rock, Paper, Scissors      |
+| 5   | 🔒 Password Generator         |
+| 6   | 🤖 [Reeborg's World][reeborg] |
+| 7   | ☠️ Hangman                    |
+| 8   | 🔀 Caesar Cipher              |
+| 9   | 💰 Silent Auction             |
+| 10  | 🧮 Calculator                 |
+| 11  | 🃏 Blackjack                  |
+| 12  | ? Number Guessing             |
 
+## 🛠 Tools used in this project 
+
+- ### 📘 [Markdown](https://www.markdownguide.org/getting-started/)
+- ### 🖼️  [ASCII art generator](https://patorjk.com/software/taag/#p=display&f=Big&t=)
 
 [link-to-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
 [reeborg]: https://reeborg.ca/index_en.html

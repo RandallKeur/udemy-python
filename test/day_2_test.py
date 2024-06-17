@@ -4,7 +4,7 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.day_two import calculate_tip
+from src.day_2 import calculate_tip
 
 
 class DayTwoTest(unittest.TestCase):
@@ -16,7 +16,7 @@ class DayTwoTest(unittest.TestCase):
         tip_percent = 20
         expected = '120'
         out = StringIO()
-        with mock.patch('sys.stdin', StringIO(f"{total_bill}\n{people}\n{tip_percent}")):
+        with mock.patch('sys.stdin', StringIO(f'{total_bill}\n{people}\n{tip_percent}')):
             # given
             sys.stdout = out
 

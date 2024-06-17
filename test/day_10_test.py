@@ -5,7 +5,7 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.day_ten import calculator
+from src.day_10 import calculator
 from src.constants.values import CALCULATOR_OPERATIONS
 from src.constants.ascii_art import CALCULATOR
 
@@ -19,7 +19,7 @@ class DayTenTest(unittest.TestCase):
         out = StringIO()
         os.environ['TERM'] = 'xterm-256color'
 
-        with mock.patch('sys.stdin', new=StringIO("100\n*\n5\nSTOP")):
+        with mock.patch('sys.stdin', new=StringIO('100\n*\n5\nSTOP')):
             # given
             calculator_art = CALCULATOR.strip()
             operations = CALCULATOR_OPERATIONS.strip()
@@ -40,7 +40,7 @@ class DayTenTest(unittest.TestCase):
         out = StringIO()
         os.environ['TERM'] = 'xterm-256color'
 
-        with mock.patch('sys.stdin', new=StringIO("100\n/\n5\nSTOP")):
+        with mock.patch('sys.stdin', new=StringIO('100\n/\n5\nSTOP')):
             # given
             calculator_art = CALCULATOR.strip()
             operations = CALCULATOR_OPERATIONS.strip()
@@ -61,7 +61,7 @@ class DayTenTest(unittest.TestCase):
         out = StringIO()
         os.environ['TERM'] = 'xterm-256color'
 
-        with mock.patch('sys.stdin', new=StringIO("100\n-\n5\nSTOP")):
+        with mock.patch('sys.stdin', new=StringIO('100\n-\n5\nSTOP')):
             # given
             calculator_art = CALCULATOR.strip()
             operations = CALCULATOR_OPERATIONS.strip()
@@ -82,7 +82,7 @@ class DayTenTest(unittest.TestCase):
         out = StringIO()
         os.environ['TERM'] = 'xterm-256color'
 
-        with mock.patch('sys.stdin', new=StringIO("100\n+\n5\nSTOP")):
+        with mock.patch('sys.stdin', new=StringIO('100\n+\n5\nSTOP')):
             # given
             calculator_art = CALCULATOR.strip()
             operations = CALCULATOR_OPERATIONS.strip()

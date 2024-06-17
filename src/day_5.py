@@ -27,10 +27,10 @@ def randomize_string(letters: str, symbols: str, numbers: str):
 
 def password_generator():
     """Password generator"""
-    print("Welcome to the PyPassword Generator!")
-    number_of_letters = input("How many letters would you like in your password?\n")
-    number_of_symbols = input("How many symbols would you like?\n")
-    number_of_numbers = input("How many numbers would you like?\n")
+    print('Welcome to the PyPassword Generator!')
+    number_of_letters = input('How many letters would you like in your password?\n')
+    number_of_symbols = input('How many symbols would you like?\n')
+    number_of_numbers = input('How many numbers would you like?\n')
     letters = generate_random_letters(int(number_of_letters))
     symbols = generate_random_symbols(int(number_of_symbols))
     numbers = generate_random_numbers(int(number_of_numbers))

@@ -5,7 +5,7 @@ from io import StringIO
 from unittest import mock
 
 from src.constants.ascii_art import CAESAR_CIPHER
-from src.day_eight import caesar_cipher
+from src.day_8 import caesar_cipher
 
 
 class DayEightTest(unittest.TestCase):
@@ -33,7 +33,7 @@ class DayEightTest(unittest.TestCase):
         # setup
         out = StringIO()
 
-        with mock.patch('sys.stdin', new=StringIO("encode\nTesting_12345-!@#$% :)\n90\nno\nno")):
+        with mock.patch('sys.stdin', new=StringIO('encode\nTesting_12345-!@#$% :)\n90\nno\nno')):
             # given
             logo = CAESAR_CIPHER.strip()
             expected = 'FQefUZS_12345-!@#$% :)'

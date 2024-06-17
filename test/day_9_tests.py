@@ -5,7 +5,7 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.day_nine import silent_auction
+from src.day_9 import silent_auction
 from src.constants.ascii_art import AUCTION, GAVEL
 
 
@@ -38,7 +38,7 @@ class DayNineTest(unittest.TestCase):
         out = StringIO()
         os.environ['TERM'] = 'xterm-256color'
 
-        with mock.patch('sys.stdin', new=StringIO("jack\n100\nyes\njill\n120\nno")):
+        with mock.patch('sys.stdin', new=StringIO('jack\n100\nyes\njill\n120\nno')):
             # given
             auction = AUCTION.strip()
             gavel = GAVEL.strip()
