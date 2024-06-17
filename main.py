@@ -1,7 +1,7 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
 from src.constants.ascii_art import GOODBYE
 from src import (day_1, day_2, day_3, day_4, day_5, day_7, day_8, day_9,
-                 day_10, day_11, day_12)
+                 day_10, day_11, day_12, day_14)
 
 
 def continue_running():
@@ -51,6 +51,10 @@ def switchboard(day):
                 day_11.blackjack()
             case '12':
                 day_12.number_guessing()
+            case '13':
+                print('Day 13 was learning debugging, please see the course for any info')
+            case '14':
+                day_14.higher_lower()
             case _:
                 decision_valid = False
                 day = input('Invalid input, please try again\n')
