@@ -23,6 +23,14 @@ def collect_guess(celebrity_1: dict[str, str | int], celebrity_2: dict[str, str 
     return input('Who has more followers? Type \'A\' or \'B\': ')
 
 
+def check_answer(guess, celebrity_1, celebrity_2):
+    """Check answer for which celebrity has more followers"""
+    if celebrity_1['follower_count'] > celebrity_2['follower_count']:
+        return guess == 'A'
+
+    return guess == 'B'
+
+
 def higher_lower():
     """Higher or Lower"""
     print(HIGHER_LOWER)
@@ -35,16 +43,11 @@ def higher_lower():
     correct = True
     while correct:
         guess = collect_guess(celebrity_1, celebrity_2)
-        if celebrity_1['follower_count'] > celebrity_2['follower_count']:
-            answer = 'A'
-            celebrity_2 = get_next_celebrity(celebrities)
-        else:
-            answer = 'B'
-            celebrity_1 = get_next_celebrity(celebrities)
-
-        if guess == answer:
+        correct = check_answer(guess, celebrity_1, celebrity_2)
+        if correct:
             correct_guesses += 1
             print(f'Correct answer, that is {correct_guesses} correct guesses in a row')
+            celebrity_1 = celebrity_2
+            celebrity_2 = get_next_celebrity(celebrities)
         else:
             print(f'Incorrect answer! You made {correct_guesses} correct guesses in a row')
-            correct = False
