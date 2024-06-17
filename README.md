@@ -39,6 +39,8 @@ ___
 
 - ### 📘 [Markdown](https://www.markdownguide.org/getting-started/)
 - ### 🖼️  [ASCII art generator](https://patorjk.com/software/taag/#p=display&f=Big&t=)
+- ### 📝 [Pylint](https://pylint.readthedocs.io/en/stable/)
+- ### 🧪 [Pytest](https://docs.pytest.org/en/stable/contents.html)
 
 [link-to-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
 [reeborg]: https://reeborg.ca/index_en.html
