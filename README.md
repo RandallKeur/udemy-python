@@ -36,7 +36,7 @@ ___
 
 ## 🛠 Tools used in this project 
 
-- ### 📘 [Markdown][markdown-doc]
+- ### 📘 [Markdown](https://www.markdownguide.org/getting-started/)
 - ### 🖼️  [ASCII art generator](https://patorjk.com/software/taag/#p=display&f=Big&t=)
 
 [link-to-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
