@@ -33,6 +33,7 @@ ___
 | 10  | 🧮 Calculator                 |
 | 11  | 🃏 Blackjack                  |
 | 12  | ? Number Guessing             |
+| 14  | 👑 Higher Lower               |
 
 ## 🛠 Tools used in this project 
 
