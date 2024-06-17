@@ -12,6 +12,6 @@ BLACKJACK_CARDS = {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 
 
 HIT = 'hit'
 
-HOLD = 'hold'
+STAND = 'stand'
 
 BLACKJACK_21 = 21
