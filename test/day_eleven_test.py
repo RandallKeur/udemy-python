@@ -10,10 +10,10 @@ from src.day_eleven import blackjack
 from src.constants.ascii_art import BLACKJACK
 
 
-class DayTenTest(unittest.TestCase):
+class DayElevenTest(unittest.TestCase):
     """Test for Day 11 of Coding"""
 
-    def test_calculator_multiplication(self):
+    def test_blackjack_art(self):
         """Test the Blackjack image"""
         # setup
         out = StringIO()
