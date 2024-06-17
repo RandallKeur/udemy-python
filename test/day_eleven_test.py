@@ -19,7 +19,7 @@ class DayElevenTest(unittest.TestCase):
         out = StringIO()
         os.environ['TERM'] = 'xterm-256color'
 
-        with mock.patch('sys.stdin', new=StringIO(f"{STAND}\nSTOP")):
+        with mock.patch('sys.stdin', new=StringIO(f'{STAND}\nSTOP')):
             # given
             blackjack_art = BLACKJACK.strip()
             sys.stdout = out

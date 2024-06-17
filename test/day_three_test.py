@@ -16,7 +16,7 @@ class DayThreeTest(unittest.TestCase):
         # setup
         out = StringIO()
 
-        with mock.patch('sys.stdin', new=StringIO("left\nswim")):
+        with mock.patch('sys.stdin', new=StringIO('left\nswim')):
             # given
             island = ISLAND.strip()
             alligator = ALLIGATOR.strip()
@@ -34,7 +34,7 @@ class DayThreeTest(unittest.TestCase):
         # setup
         out = StringIO()
 
-        with mock.patch('sys.stdin', new=StringIO("left\nwait\nblue")):
+        with mock.patch('sys.stdin', new=StringIO('left\nwait\nblue')):
             # given
             island = ISLAND.strip()
             boat = BOAT.strip()
@@ -52,7 +52,7 @@ class DayThreeTest(unittest.TestCase):
         # setup
         out = StringIO()
 
-        with mock.patch('sys.stdin', new=StringIO("right\nred")):
+        with mock.patch('sys.stdin', new=StringIO('right\nred')):
             # given
             island = ISLAND.strip()
             fire = FIRE.strip()
@@ -70,7 +70,7 @@ class DayThreeTest(unittest.TestCase):
         # setup
         out = StringIO()
 
-        with mock.patch('sys.stdin', new=StringIO("right\ngreen")):
+        with mock.patch('sys.stdin', new=StringIO('right\ngreen')):
             # given
             island = ISLAND.strip()
             plants = CARNIVOROUS_PLANTS.strip()
@@ -88,7 +88,7 @@ class DayThreeTest(unittest.TestCase):
         # setup
         out = StringIO()
 
-        with mock.patch('sys.stdin', new=StringIO("right\nblue")):
+        with mock.patch('sys.stdin', new=StringIO('right\nblue')):
             # given
             island = ISLAND.strip()
             treasure = TREASURE.strip()

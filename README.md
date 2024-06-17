@@ -17,7 +17,7 @@ ___
 3. Type in number of day for which game to play.
 
 
-## 📆 Daily Challenge
+## 📆 Daily Challenge 
 
 | Day | Game                       |
 |-----|----------------------------|
@@ -31,7 +31,8 @@ ___
 | 8   | Caesar Cipher              |
 | 9   | Silent Auction             |
 | 10  | Calculator                 |
-
+| 11  | Blackjack                  |
+| 12  | Number Guessing            |
 
 [link-to-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
 [reeborg]: https://reeborg.ca/index_en.html

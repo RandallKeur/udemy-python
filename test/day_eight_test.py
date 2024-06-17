@@ -33,7 +33,7 @@ class DayEightTest(unittest.TestCase):
         # setup
         out = StringIO()
 
-        with mock.patch('sys.stdin', new=StringIO("encode\nTesting_12345-!@#$% :)\n90\nno\nno")):
+        with mock.patch('sys.stdin', new=StringIO('encode\nTesting_12345-!@#$% :)\n90\nno\nno')):
             # given
             logo = CAESAR_CIPHER.strip()
             expected = 'FQefUZS_12345-!@#$% :)'

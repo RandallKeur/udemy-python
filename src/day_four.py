@@ -15,18 +15,18 @@ class Choices:
     invalid = 'INVALID'
 
 
-COMPUTER_WIN = "Computer Wins"
-YOU_WIN = "You Win!"
+COMPUTER_WIN = 'Computer Wins'
+YOU_WIN = 'You Win!'
 
 
 def map_text_to_art(text: str) -> str:
     """ Map text to ASCII art for Rock, Paper, or Scissors"""
     match text:
-        case "rock":
+        case 'rock':
             return Choices.rock
-        case "paper":
+        case 'paper':
             return Choices.paper
-        case "scissors":
+        case 'scissors':
             return Choices.scissors
         case _:
             return Choices.invalid
@@ -34,9 +34,9 @@ def map_text_to_art(text: str) -> str:
 
 def determine_winner(choice, computer):
     """ Determine winner between user and computer"""
-    print("Computer chose: " + computer)
+    print('Computer chose: ' + computer)
     if choice == computer:
-        print("Draw")
+        print('Draw')
     if choice == Choices.rock:
         if computer == Choices.scissors:
             print(YOU_WIN)
@@ -56,7 +56,7 @@ def determine_winner(choice, computer):
 
 def rock_paper_scissors():
     """ Play Rock, Paper, Scissors"""
-    response = input("Welcome to Rock, Paper, Scissors... Which do you choose?\n")
+    response = input('Welcome to Rock, Paper, Scissors... Which do you choose?\n')
     decision_valid = False
     computer_choice = random.choice([Choices.rock, Choices.paper, Choices.scissors])
     while not decision_valid:
@@ -64,9 +64,9 @@ def rock_paper_scissors():
         decision_valid = True
         match choice:
             case Choices.rock | Choices.paper | Choices.scissors:
-                print("You chose: " + choice)
+                print('You chose: ' + choice)
                 determine_winner(choice, computer_choice)
             case _:
                 decision_valid = False
-                response = (input("Invalid RESPONSE, please reply with \"rock\", "
-                                  "\"paper\" or \"scissors\"\n")).lower()
+                response = (input('Invalid RESPONSE, please reply with \'rock\', '
+                                  '\'paper\' or \'scissors\'\n')).lower()

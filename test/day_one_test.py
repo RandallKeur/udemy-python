@@ -18,7 +18,7 @@ class DayOneTest(TestCase):
             expected = f'{RESPONSE} {i_city} {i_pet}'
             out = StringIO()
 
-            with mock.patch('sys.stdin', new=StringIO(f"{i_city}\n{i_pet}")):
+            with mock.patch('sys.stdin', new=StringIO(f'{i_city}\n{i_pet}')):
                 # given
                 sys.stdout = out
 
