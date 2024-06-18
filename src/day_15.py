@@ -29,7 +29,7 @@ def collect_money() -> float:
     return calculate_money(money)
 
 
-def get_ingredients(request: str):
+def get_ingredients(request: str) -> dict[str, int]:
     """Get the ingredients from the Coffee Maker"""
     return MENU[request]['ingredients'].items()
 
@@ -48,6 +48,8 @@ def has_enough_resources(request: str, resources: dict[str, int]) -> bool:
 def on_menu(request) -> bool:
     """Check whether the requested item is on the menu"""
     item = MENU.get(request)
+    if item is None:
+        print(f'Sorry, {request} is not in the menu.')
     return item is not None
 
 

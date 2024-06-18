@@ -35,6 +35,27 @@ class Day15Test(unittest.TestCase):
             self.assertTrue(change in actual)
             self.assertTrue(drink in actual)
 
+    def test_coffe_maker_espresso_not_enough_money(self):
+        """Test the Coffee Maker espresso with not enough money"""
+        # setup
+        out = StringIO()
+        os.environ['TERM'] = 'xterm-256color'
+        drink = 'espresso'
+
+        with mock.patch('sys.stdin', new=StringIO(f'{drink}\n0\n8\n6\n4\noff')):
+            # given
+            art = COFFEE.strip()
+            response = 'Sorry, that\'s not enough money. Money refunded.'
+            sys.stdout = out
+
+            # when
+            coffee_maker()
+            actual = out.getvalue().strip()
+
+            # then
+            self.assertTrue(art in actual)
+            self.assertTrue(response in actual)
+
     def test_coffe_maker_latte_with_no_change(self):
         """Test the Coffee Maker latte with no change"""
         # setup
@@ -100,3 +121,24 @@ class Day15Test(unittest.TestCase):
             for key, value in resources:
                 self.assertTrue(key in actual)
                 self.assertTrue(str(value) in actual)
+
+    def test_coffe_maker_item_not_on_menu(self):
+        """Test the Coffee Maker with an item that is not on the meu"""
+        # setup
+        out = StringIO()
+        os.environ['TERM'] = 'xterm-256color'
+        drink = 'ice coffee'
+
+        with mock.patch('sys.stdin', new=StringIO(f'{drink}\noff')):
+            # given
+            art = COFFEE.strip()
+            response = f'Sorry, {drink} is not in the menu'
+            sys.stdout = out
+
+            # when
+            coffee_maker()
+            actual = out.getvalue().strip()
+
+            # then
+            self.assertTrue(art in actual)
+            self.assertTrue(response in actual)
