@@ -318,6 +318,7 @@ CELEBRITIES = [
     }
 ]
 
+# COFFEE MAKER
 MENU = {
     "espresso": {
         "ingredients": {
