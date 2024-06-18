@@ -13,7 +13,7 @@ from src.constants.ascii_art import COFFEE
 class Day15Test(unittest.TestCase):
     """Test for Day 15 of Coding"""
 
-    def test_coffe_maker_espresso_with_change(self):
+    def test_coffee_maker_espresso_with_change(self):
         """Test the Coffee Maker espresso with change"""
         # setup
         out = StringIO()
@@ -35,7 +35,7 @@ class Day15Test(unittest.TestCase):
             self.assertTrue(change in actual)
             self.assertTrue(drink in actual)
 
-    def test_coffe_maker_espresso_not_enough_money(self):
+    def test_coffee_maker_espresso_not_enough_money(self):
         """Test the Coffee Maker espresso with not enough money"""
         # setup
         out = StringIO()
@@ -56,7 +56,7 @@ class Day15Test(unittest.TestCase):
             self.assertTrue(art in actual)
             self.assertTrue(response in actual)
 
-    def test_coffe_maker_latte_with_no_change(self):
+    def test_coffee_maker_latte_with_no_change(self):
         """Test the Coffee Maker latte with no change"""
         # setup
         out = StringIO()
@@ -78,7 +78,7 @@ class Day15Test(unittest.TestCase):
             self.assertTrue(change in actual)
             self.assertTrue(drink in actual)
 
-    def test_coffe_maker_cappuccino_with_change(self):
+    def test_coffee_maker_cappuccino_with_change(self):
         """Test the Coffee Maker cappuccino with change"""
         # setup
         out = StringIO()
@@ -100,7 +100,7 @@ class Day15Test(unittest.TestCase):
             self.assertTrue(change in actual)
             self.assertTrue(drink in actual)
 
-    def test_coffe_maker_report(self):
+    def test_coffee_maker_report(self):
         """Test the Coffee Maker report with no transactions"""
         # setup
         out = StringIO()
@@ -122,7 +122,7 @@ class Day15Test(unittest.TestCase):
                 self.assertTrue(key in actual)
                 self.assertTrue(str(value) in actual)
 
-    def test_coffe_maker_item_not_on_menu(self):
+    def test_coffee_maker_item_not_on_menu(self):
         """Test the Coffee Maker with an item that is not on the meu"""
         # setup
         out = StringIO()
