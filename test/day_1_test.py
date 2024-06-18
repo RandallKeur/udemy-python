@@ -5,11 +5,11 @@ from unittest import TestCase, mock
 from src.day_1 import RESPONSE, band_name_generator
 
 
-class DayOneTest(TestCase):
+class Day1Test(TestCase):
     """ Test for Day 1 of Coding"""
 
     def test_band_name_generator(self):
-        """ Test the band_name_generator"""
+        """ Test the Band Name Generator"""
         city = iter(['city', 'town', 'Raleigh'])
         pet = iter(['pet', 'barley', 'Remi'])
         for i_city in city:

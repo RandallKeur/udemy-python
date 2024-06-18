@@ -8,10 +8,10 @@ from src.constants.ascii_art import CAESAR_CIPHER
 from src.day_8 import caesar_cipher
 
 
-class DayEightTest(unittest.TestCase):
+class Day8Test(unittest.TestCase):
     """ Test cases for Day 8 of Coding"""
     def test_caesar_cipher_swim_shift_3(self):
-        """Test the Caesar Cipher image"""
+        """Test the Caesar Cipher with string and shift 3"""
         # setup
         out = StringIO()
 
@@ -26,10 +26,11 @@ class DayEightTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(logo in actual, expected in actual)
+            self.assertTrue(logo in actual)
+            self.assertTrue(expected in actual)
 
     def test_caesar_cipher_spaces_symbols_shift_90(self):
-        """Test the Caesar Cipher image"""
+        """Test the Caesar Cipher with string with spaces, symbols, numbers and a shift of 90"""
         # setup
         out = StringIO()
 
@@ -44,7 +45,8 @@ class DayEightTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(logo in actual, expected in actual)
+            self.assertTrue(logo in actual)
+            self.assertTrue(expected in actual)
 
 
 if __name__ == '__main__':

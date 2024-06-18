@@ -10,11 +10,11 @@ from src.day_11 import blackjack
 from src.constants.ascii_art import BLACKJACK
 
 
-class DayElevenTest(unittest.TestCase):
+class Day11Test(unittest.TestCase):
     """Test for Day 11 of Coding"""
 
-    def test_blackjack_art(self):
-        """Test the Blackjack image"""
+    def test_blackjack_stand(self):
+        """Test the Blackjack stand"""
         # setup
         out = StringIO()
         os.environ['TERM'] = 'xterm-256color'
@@ -22,6 +22,8 @@ class DayElevenTest(unittest.TestCase):
         with mock.patch('sys.stdin', new=StringIO(f'{STAND}\nSTOP')):
             # given
             blackjack_art = BLACKJACK.strip()
+            dealer = 'Dealer shows'
+
             sys.stdout = out
 
             # when
@@ -30,3 +32,4 @@ class DayElevenTest(unittest.TestCase):
 
             # then
             self.assertTrue(blackjack_art in actual)
+            self.assertTrue(dealer in actual)

@@ -7,10 +7,10 @@ from unittest import mock
 from src.day_4 import map_text_to_art, Choices
 
 
-class DayFourTest(unittest.TestCase):
+class Day4Test(unittest.TestCase):
     """ Test for Day 1 of Coding"""
     def test_mappings(self):
-        """ Test for mappings"""
+        """ Test for mappings of rock, paper, scissors"""
         # setup
         selection = iter(['rock', 'paper', 'scissors', 'null'])
         expected = iter([Choices.rock, Choices.paper, Choices.scissors, Choices.invalid])
