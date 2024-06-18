@@ -10,7 +10,7 @@ from src.constants.values import CALCULATOR_OPERATIONS
 from src.constants.ascii_art import CALCULATOR
 
 
-class DayTenTest(unittest.TestCase):
+class Day10Test(unittest.TestCase):
     """Test for Day 10 of Coding"""
 
     def test_calculator_multiplication(self):
@@ -52,7 +52,8 @@ class DayTenTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(calculator_art in actual, operations in actual)
+            self.assertTrue(calculator_art in actual)
+            self.assertTrue(operations in actual)
             self.assertTrue(expected in actual)
 
     def test_calculator_subtraction(self):
@@ -73,7 +74,8 @@ class DayTenTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(calculator_art in actual, operations in actual)
+            self.assertTrue(calculator_art in actual)
+            self.assertTrue(operations in actual)
             self.assertTrue(expected in actual)
 
     def test_calculator_addition(self):
@@ -94,5 +96,6 @@ class DayTenTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(calculator_art in actual, operations in actual)
+            self.assertTrue(calculator_art in actual)
+            self.assertTrue(operations in actual)
             self.assertTrue(expected in actual)
