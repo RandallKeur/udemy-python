@@ -179,7 +179,7 @@ CELEBRITIES = [
         'country': 'United States'
     },
     {
-        'name': "Victoria's Secret",
+        'name': 'Victoria\'s Secret',
         'follower_count': 69,
         'description': 'Lingerie brand',
         'country': 'United States'
@@ -320,41 +320,48 @@ CELEBRITIES = [
 
 # COFFEE MAKER
 MENU = {
-    "espresso": {
-        "ingredients": {
-            "water": 50,
-            "coffee": 18,
+    'espresso': {
+        'ingredients': {
+            'water': 50,
+            'coffee': 18,
         },
-        "cost": 1.5,
+        'cost': 1.5,
     },
-    "latte": {
-        "ingredients": {
-            "water": 200,
-            "milk": 150,
-            "coffee": 24,
+    'latte': {
+        'ingredients': {
+            'water': 200,
+            'milk': 150,
+            'coffee': 24,
         },
-        "cost": 2.5,
+        'cost': 2.5,
     },
-    "cappuccino": {
-        "ingredients": {
-            "water": 250,
-            "milk": 100,
-            "coffee": 24,
+    'cappuccino': {
+        'ingredients': {
+            'water': 250,
+            'milk': 100,
+            'coffee': 24,
         },
-        "cost": 3.0,
+        'cost': 3.0,
     }
 }
 
 RESOURCES = {
-    "water": 500,
-    "milk": 350,
-    "coffee": 132,
-    "money": 0
+    'water': 500,
+    'milk': 350,
+    'coffee': 132,
+    'money': 0
+}
+
+UNITS_OF_MEASURE = {
+    'water': 'ml',
+    'milk': 'ml',
+    'coffee': 'ml',
+    'money': '$'
 }
 
 COINS = {
-    "quarters": 0.25,
-    "dimes": 0.10,
-    "nickels": 0.05,
-    "pennies": 0.01
+    'quarters': 0.25,
+    'dimes': 0.10,
+    'nickels': 0.05,
+    'pennies': 0.01
 }

@@ -1,12 +1,13 @@
 """ Day 15 of Coding Challenges for coffee machine"""
 from src.constants.ascii_art import COFFEE
-from src.constants.values import MENU, RESOURCES, COINS
+from src.constants.values import MENU, RESOURCES, COINS, UNITS_OF_MEASURE
 
 
 def print_report(resources: dict[str, int]):
     """Print report for the Coffee Maker resources"""
     for key, value in resources.items():
-        print(f'{key}: {value}')
+        uom = UNITS_OF_MEASURE[key]
+        print(f'{key}: {value} ({uom})')
 
 
 def calculate_money(money: dict[str, int]) -> float:
