@@ -41,7 +41,7 @@ class Day12Test(unittest.TestCase):
                                                   f'\n1')):
             # given
             art = NUMBER_GUESS.strip()
-            response = f'You have already guessed {duplicate}.'
+            duplicate_error = f'You have already guessed {duplicate}.'
             sys.stdout = out
 
             # when
@@ -50,7 +50,7 @@ class Day12Test(unittest.TestCase):
 
             # then
             self.assertTrue(art in actual)
-            self.assertTrue(response in actual)
+            self.assertTrue(duplicate_error in actual)
 
     def test_number_guessing_with_invalid_difficulty(self):
         """Test the Number Guessing game with invalid difficulty selection"""
@@ -62,7 +62,7 @@ class Day12Test(unittest.TestCase):
         with mock.patch('sys.stdin', new=StringIO(f'{difficulty}\neasy\n50\n25\n12\n6\n3\n2\n1')):
             # given
             art = NUMBER_GUESS.strip()
-            response = f'{difficulty} is not a difficulty option.'
+            difficulty_error = f'{difficulty} is not a difficulty option.'
             sys.stdout = out
 
             # when
@@ -71,4 +71,4 @@ class Day12Test(unittest.TestCase):
 
             # then
             self.assertTrue(art in actual)
-            self.assertTrue(response in actual)
+            self.assertTrue(difficulty_error in actual)

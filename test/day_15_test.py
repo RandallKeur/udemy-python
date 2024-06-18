@@ -45,7 +45,7 @@ class Day15Test(unittest.TestCase):
         with mock.patch('sys.stdin', new=StringIO(f'{drink}\n0\n8\n6\n4\noff')):
             # given
             art = COFFEE.strip()
-            response = 'Sorry, that\'s not enough money. Money refunded.'
+            money_error = 'Sorry, that\'s not enough money. Money refunded.'
             sys.stdout = out
 
             # when
@@ -54,7 +54,7 @@ class Day15Test(unittest.TestCase):
 
             # then
             self.assertTrue(art in actual)
-            self.assertTrue(response in actual)
+            self.assertTrue(money_error in actual)
 
     def test_coffee_maker_latte_with_no_change(self):
         """Test the Coffee Maker latte with no change"""
@@ -132,7 +132,7 @@ class Day15Test(unittest.TestCase):
         with mock.patch('sys.stdin', new=StringIO(f'{drink}\noff')):
             # given
             art = COFFEE.strip()
-            response = f'Sorry, {drink} is not in the menu'
+            menu_error = f'Sorry, {drink} is not in the menu'
             sys.stdout = out
 
             # when
@@ -141,4 +141,4 @@ class Day15Test(unittest.TestCase):
 
             # then
             self.assertTrue(art in actual)
-            self.assertTrue(response in actual)
+            self.assertTrue(menu_error in actual)
