@@ -9,7 +9,7 @@ from src.day_12 import number_guessing
 from src.constants.ascii_art import NUMBER_GUESS
 
 
-class DayTwelveTest(unittest.TestCase):
+class Day12Test(unittest.TestCase):
     """Test for Day 12 of Coding"""
 
     def test_number_guessing_art(self):

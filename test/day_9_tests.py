@@ -9,10 +9,10 @@ from src.day_9 import silent_auction
 from src.constants.ascii_art import AUCTION, GAVEL
 
 
-class DayNineTest(unittest.TestCase):
+class Day9Test(unittest.TestCase):
     """Tests for Day 9 of the Coding Challenges"""
     def test_silent_auction_tie(self):
-        """Test the Caesar Cipher image"""
+        """Test the Silent Auction with a tie"""
         # setup
         out = StringIO()
         os.environ['TERM'] = 'xterm-256color'
@@ -33,7 +33,7 @@ class DayNineTest(unittest.TestCase):
             self.assertTrue(expected in actual)
 
     def test_silent_auction_winner(self):
-        """Test the Caesar Cipher image"""
+        """Test the Silent Auction with a winner"""
         # setup
         out = StringIO()
         os.environ['TERM'] = 'xterm-256color'

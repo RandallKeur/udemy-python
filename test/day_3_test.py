@@ -8,7 +8,7 @@ from src.constants.ascii_art import ISLAND, ALLIGATOR, BOAT, FIRE, CARNIVOROUS_P
 from src.day_3 import treasure_island
 
 
-class DayThreeTest(unittest.TestCase):
+class Day3Test(unittest.TestCase):
     """ Test cases for Day 3 of Coding"""
 
     def test_left_swim(self):
@@ -88,7 +88,7 @@ class DayThreeTest(unittest.TestCase):
             self.assertTrue(plants in actual)
 
     def test_right_blue(self):
-        """Test the Plant image"""
+        """Test the Treasure image"""
         # setup
         out = StringIO()
 

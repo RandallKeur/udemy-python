@@ -10,7 +10,7 @@ from src.constants.values import CALCULATOR_OPERATIONS
 from src.constants.ascii_art import CALCULATOR
 
 
-class DayTenTest(unittest.TestCase):
+class Day10Test(unittest.TestCase):
     """Test for Day 10 of Coding"""
 
     def test_calculator_multiplication(self):
