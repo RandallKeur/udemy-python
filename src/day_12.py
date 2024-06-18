@@ -17,20 +17,25 @@ def print_remaining_guesses(remaining_guesses):
 
 def collect_guesses(difficulty: str, number: int) -> int:
     """Collect the guesses of numbers"""
-    guesses = GUESSES[difficulty]
-    guess = 0
-    while guesses > 0 and guess != number:
-        guess = int(input('Make a guess: '))
-        if guess > number:
+    number_of_guesses_remaining = GUESSES[difficulty]
+    new_guess = 0
+    previously_guessed = {}
+    while number_of_guesses_remaining > 0 and new_guess != number:
+        new_guess = int(input('Make a guess: '))
+        if previously_guessed.get(new_guess) is not None:
+            print(f'You have already guessed {new_guess}.')
+        elif new_guess > number:
             print('Too high')
-            guesses -= 1
-            print_remaining_guesses(guesses)
-        elif guess < number:
+            number_of_guesses_remaining -= 1
+            print_remaining_guesses(number_of_guesses_remaining)
+        elif new_guess < number:
             print('Too low')
-            guesses -= 1
-            print_remaining_guesses(guesses)
+            number_of_guesses_remaining -= 1
+            print_remaining_guesses(number_of_guesses_remaining)
 
-    return guess
+        previously_guessed[new_guess] = True
+
+    return new_guess
 
 
 def print_result(guess: int, number: int):
@@ -45,8 +50,16 @@ def print_result(guess: int, number: int):
 def number_guessing():
     """Number guessing game"""
     print(NUMBER_GUESS)
-    difficulty = input(f'I\'m thinking of a number between {MIN} and {MAX}. '
-                       f'Choose a difficulty \'easy\', \'medium\', \'hard\': ')
+    difficulty = ''
+    difficulty_exist = False
+    while not difficulty_exist:
+        difficulty = input(f'I\'m thinking of a number between {MIN} and {MAX}. '
+                           f'Choose a difficulty \'easy\', \'medium\', \'hard\': ')
+        if GUESSES.get(difficulty) is None:
+            print(f'{difficulty} is not a difficulty option.')
+        else:
+            difficulty_exist = True
+
     number = choose_random_number()
     guess = collect_guesses(difficulty, number)
     print_result(guess, number)
