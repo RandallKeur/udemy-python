@@ -27,7 +27,8 @@ class DayThreeTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(island in actual, alligator in actual)
+            self.assertTrue(island in actual)
+            self.assertTrue(alligator in actual)
 
     def test_left_wait(self):
         """Test the Boat image"""
@@ -45,7 +46,8 @@ class DayThreeTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(island in actual, boat in actual)
+            self.assertTrue(island in actual)
+            self.assertTrue(boat in actual)
 
     def test_right_red(self):
         """Test the Fire image"""
@@ -63,7 +65,8 @@ class DayThreeTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(island in actual, fire in actual)
+            self.assertTrue(island in actual)
+            self.assertTrue(fire in actual)
 
     def test_right_green(self):
         """Test the Plant image"""
@@ -81,7 +84,8 @@ class DayThreeTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(island in actual, plants in actual)
+            self.assertTrue(island in actual)
+            self.assertTrue(plants in actual)
 
     def test_right_blue(self):
         """Test the Plant image"""
@@ -99,7 +103,8 @@ class DayThreeTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(island in actual, treasure in actual)
+            self.assertTrue(island in actual)
+            self.assertTrue(treasure in actual)
 
 
 if __name__ == '__main__':

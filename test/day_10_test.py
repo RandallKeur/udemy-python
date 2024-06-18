@@ -52,7 +52,8 @@ class DayTenTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(calculator_art in actual, operations in actual)
+            self.assertTrue(calculator_art in actual)
+            self.assertTrue(operations in actual)
             self.assertTrue(expected in actual)
 
     def test_calculator_subtraction(self):
@@ -73,7 +74,8 @@ class DayTenTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(calculator_art in actual, operations in actual)
+            self.assertTrue(calculator_art in actual)
+            self.assertTrue(operations in actual)
             self.assertTrue(expected in actual)
 
     def test_calculator_addition(self):
@@ -94,5 +96,6 @@ class DayTenTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(calculator_art in actual, operations in actual)
+            self.assertTrue(calculator_art in actual)
+            self.assertTrue(operations in actual)
             self.assertTrue(expected in actual)

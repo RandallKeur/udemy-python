@@ -50,7 +50,8 @@ class DayNineTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(auction in actual, gavel in actual)
+            self.assertTrue(auction in actual)
+            self.assertTrue(gavel in actual)
             self.assertTrue(expected in actual)
 
 

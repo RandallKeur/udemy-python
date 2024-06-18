@@ -26,7 +26,8 @@ class DayEightTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(logo in actual, expected in actual)
+            self.assertTrue(logo in actual)
+            self.assertTrue(expected in actual)
 
     def test_caesar_cipher_spaces_symbols_shift_90(self):
         """Test the Caesar Cipher image"""
@@ -44,7 +45,8 @@ class DayEightTest(unittest.TestCase):
             actual = out.getvalue().strip()
 
             # then
-            self.assertTrue(logo in actual, expected in actual)
+            self.assertTrue(logo in actual)
+            self.assertTrue(expected in actual)
 
 
 if __name__ == '__main__':
