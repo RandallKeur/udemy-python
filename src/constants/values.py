@@ -365,3 +365,29 @@ COINS = {
     'nickels': 0.05,
     'pennies': 0.01
 }
+
+PIZZA_DICTIONARY = {
+    'ADJECTIVE_1': '',
+    'ADJECTIVE_2': '',
+    'ADJECTIVE_3': '',
+    'ADJECTIVE_4': '',
+    'NATIONALITY_1': '',
+    'PERSON_1': '',
+    'NOUN_1': '',
+    'NOUN_2': '',
+    'NOUN_3': '',
+    'PLURAL_NOUN': '',
+    'FOOD_1': '',
+    'FOOD_2': '',
+    'SHAPES_1': '',
+    'NUMBER_1': '',
+    'NUMBER_2': ''
+}
+
+# MAD LIB
+PIZZA_STORY = ('Pizza was invented by a ADJECTIVE_1 NATIONALITY_1 chef named PERSON_1. To make a '
+               'pizza, you need to take a lump of NOUN_1, and make a thin, round ADJECTIVE_2 ' 
+               'NOUN_2. Then you cover it with ADJECTIVE_3 sauce, ADJECTIVE_4 cheese, and fresh '
+               'chopped PLURAL_NOUN. Next you have to bake it in a very hot NOUN_3. When it is '
+               'done, cut it into NUMBER_1 SHAPES_1. Some kids like FOOD_1 pizza the best, but '
+               'my favorite is FOOD_2 pizza. If I could, I would eat pizza NUMBER_2 times a day!')

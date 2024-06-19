@@ -1,12 +1,12 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
 from src.constants.ascii_art import GOODBYE
 from src import (day_1, day_2, day_3, day_4, day_5, day_7, day_8, day_9,
-                 day_10, day_11, day_12, day_14, day_15)
+                 day_10, day_11, day_12, day_14, day_15, mad_lib)
 
 
 def continue_running():
     """ Helper method to continue running the application based on feedback"""
-    response = input('\nWould you like to see another day\'s challenge?\n')
+    response = input('\nWould you like to see another day\'s challenge?: ')
     decision_valid = False
     while not decision_valid:
         match response.lower():
@@ -57,6 +57,8 @@ def switchboard(day):
                 day_14.higher_lower()
             case '15':
                 day_15.coffee_maker()
+            case 'mad-lib':
+                mad_lib.pizza_mad_lib()
             case _:
                 decision_valid = False
                 day = input('Invalid input, please try again\n')
@@ -65,6 +67,6 @@ def switchboard(day):
 if __name__ == '__main__':
     STOP = False
     while not STOP:
-        day_of_coding_challenge = input('Which day of coding challenge do you want to see?\n')
+        day_of_coding_challenge = input('Which day of coding challenge do you want to see?: ')
         switchboard(day_of_coding_challenge)
         STOP = continue_running()
