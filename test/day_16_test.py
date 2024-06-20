@@ -1,4 +1,4 @@
-"""Test for Day 15 of Coding Challenges"""
+"""Test for Day 16 of Coding Challenges"""
 import sys
 import unittest
 from io import StringIO
@@ -12,7 +12,6 @@ from src.day_16 import coffee_machine
 
 class Day16Test(unittest.TestCase):
     """Test for Day 16 of Coding"""
-
     def setUp(self):
         # pylint: disable=R0801
         self.menu = Menu()

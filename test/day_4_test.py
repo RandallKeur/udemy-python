@@ -8,7 +8,7 @@ from src.day_4 import map_text_to_art, Choices
 
 
 class Day4Test(unittest.TestCase):
-    """ Test for Day 1 of Coding"""
+    """ Test for Day 4 of Coding"""
     def setUp(self):
         self.out = StringIO()
         sys.stdout = self.out
