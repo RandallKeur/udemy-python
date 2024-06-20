@@ -23,7 +23,7 @@ class Day1Test(TestCase):
         self.inputs['pets'] = ['pet', 'barley', 'Remi']
         for city in self.inputs['cities']:
             for pet in self.inputs['pets']:
-                self.expected = f'{RESPONSE} {city} {pet}'
+                expected = f'{RESPONSE} {city} {pet}'
 
                 with mock.patch('sys.stdin', new=StringIO(f'{city}\n{pet}')):
 
@@ -32,7 +32,7 @@ class Day1Test(TestCase):
                     actual = self.out.getvalue().strip()
 
                     # then
-                    self.assertTrue(self.expected in actual)
+                    self.assertTrue(expected in actual)
 
 
 if __name__ == '__main__':

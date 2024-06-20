@@ -14,6 +14,7 @@ class Day16Test(unittest.TestCase):
     """Test for Day 16 of Coding"""
 
     def setUp(self):
+        # pylint: disable=R0801
         self.menu = Menu()
         self.coffee_maker = CoffeeMaker()
         self.money_machine = MoneyMachine()

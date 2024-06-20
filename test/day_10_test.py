@@ -20,7 +20,7 @@ class Day10Test(unittest.TestCase):
     def test_calculator_multiplication(self):
         """Test the Calculator multiplication"""
         # given
-        self.expected = '500'
+        expected = '500'
         with mock.patch('sys.stdin', new=StringIO('100\n*\n5\nSTOP')):
 
             # when
@@ -30,12 +30,12 @@ class Day10Test(unittest.TestCase):
             # then
             self.assertTrue(self.art in actual)
             self.assertTrue(self.operations in actual)
-            self.assertTrue(self.expected in actual)
+            self.assertTrue(expected in actual)
 
     def test_calculator_division(self):
         """Test the Calculator division"""
         # given
-        self.expected = '20'
+        expected = '20'
         with mock.patch('sys.stdin', new=StringIO('100\n/\n5\nSTOP')):
 
             # when
@@ -45,12 +45,12 @@ class Day10Test(unittest.TestCase):
             # then
             self.assertTrue(self.art in actual)
             self.assertTrue(self.operations in actual)
-            self.assertTrue(self.expected in actual)
+            self.assertTrue(expected in actual)
 
     def test_calculator_subtraction(self):
         """Test the Calculator subtraction"""
         # given
-        self.expected = '95'
+        expected = '95'
         with mock.patch('sys.stdin', new=StringIO('100\n-\n5\nSTOP')):
 
             # when
@@ -60,12 +60,12 @@ class Day10Test(unittest.TestCase):
             # then
             self.assertTrue(self.art in actual)
             self.assertTrue(self.operations in actual)
-            self.assertTrue(self.expected in actual)
+            self.assertTrue(expected in actual)
 
     def test_calculator_addition(self):
         """Test the Calculator addition"""
         # given
-        self.expected = '105'
+        expected = '105'
         with mock.patch('sys.stdin', new=StringIO('100\n+\n5\nSTOP')):
 
             # when
@@ -75,7 +75,7 @@ class Day10Test(unittest.TestCase):
             # then
             self.assertTrue(self.art in actual)
             self.assertTrue(self.operations in actual)
-            self.assertTrue(self.expected in actual)
+            self.assertTrue(expected in actual)
 
 
 if __name__ == '__main__':

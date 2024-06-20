@@ -17,9 +17,10 @@ class Day11Test(unittest.TestCase):
         self.art = BLACKJACK.strip()
 
     def test_blackjack_stand(self):
+        # pylint: disable=R0801
         """Test the Blackjack stand"""
         # given
-        self.expected = 'Dealer shows'
+        expected = 'Dealer shows'
         with mock.patch('sys.stdin', new=StringIO(f'{STAND}\nSTOP')):
 
             # when
@@ -28,7 +29,7 @@ class Day11Test(unittest.TestCase):
 
             # then
             self.assertTrue(self.art in actual)
-            self.assertTrue(self.expected in actual)
+            self.assertTrue(expected in actual)
 
 
 if __name__ == '__main__':

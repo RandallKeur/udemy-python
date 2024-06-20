@@ -7,7 +7,7 @@ run-tests:
 lint:
 	pylint $$(git ls-files '*.py')
 
-pipeline: lint tests
+pipeline: lint run-tests
 
 git-prune:
 	git fetch -p

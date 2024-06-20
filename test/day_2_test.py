@@ -23,7 +23,7 @@ class Day2Test(unittest.TestCase):
         self.inputs['bill'] = 1000
         self.inputs['people'] = 10
         self.inputs['tip'] = 20
-        self.expected = '120'
+        expected = '120'
         with mock.patch('sys.stdin', StringIO(f'{self.inputs['bill']}\n'
                                               f'{self.inputs['people']}\n{self.inputs['tip']}')):
 
@@ -32,7 +32,7 @@ class Day2Test(unittest.TestCase):
             actual = self.out.getvalue().strip()
 
             # then
-            self.assertTrue(self.expected in actual)
+            self.assertTrue(expected in actual)
 
 
 if __name__ == '__main__':

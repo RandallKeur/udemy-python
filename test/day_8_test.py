@@ -29,7 +29,8 @@ class Day8Test(unittest.TestCase):
         self.inputs['shift'] = '3'
         self.expected = 'vzlp'
         with mock.patch('sys.stdin', new=StringIO(f'{self.inputs['encode_decode']}\n'
-                                                  f'{self.inputs['word']}\n{self.inputs['shift']}\nno\nno')):
+                                                  f'{self.inputs['word']}\n{self.inputs['shift']}'
+                                                  f'\nno\nno')):
 
             # when
             caesar_cipher()
@@ -47,7 +48,8 @@ class Day8Test(unittest.TestCase):
         self.inputs['shift'] = '90'
         self.expected = 'FQefUZS_12345-!@#$% :)'
         with mock.patch('sys.stdin', new=StringIO(f'{self.inputs['encode_decode']}\n'
-                                                  f'{self.inputs['word']}\n{self.inputs['shift']}\nno\nno')):
+                                                  f'{self.inputs['word']}\n{self.inputs['shift']}'
+                                                  f'\nno\nno')):
 
             # when
             caesar_cipher()
