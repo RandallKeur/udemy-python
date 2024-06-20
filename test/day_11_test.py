@@ -13,22 +13,22 @@ from src.constants.ascii_art import BLACKJACK
 class Day11Test(unittest.TestCase):
     """Test for Day 11 of Coding"""
 
+    def setUp(self):
+        self.out = StringIO()
+        
     def test_blackjack_stand(self):
         """Test the Blackjack stand"""
-        # setup
-        out = StringIO()
-        os.environ['TERM'] = 'xterm-256color'
 
         with mock.patch('sys.stdin', new=StringIO(f'{STAND}\nSTOP')):
             # given
             blackjack_art = BLACKJACK.strip()
             dealer = 'Dealer shows'
 
-            sys.stdout = out
+            sys.stdout = self.out
 
             # when
             blackjack()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
             self.assertTrue(blackjack_art in actual)

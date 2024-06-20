@@ -1,7 +1,7 @@
 run-app:
 	python3 main.py
 
-tests:
+run-tests:
 	pytest
 
 lint:

@@ -10,6 +10,7 @@ coffee_maker = CoffeeMaker()
 money_machine = MoneyMachine()
 menu = Menu()
 
+
 def continue_running():
     """ Helper method to continue running the application based on feedback"""
     response = input('\nWould you like to see another day\'s challenge?\n')

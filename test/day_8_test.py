@@ -10,20 +10,22 @@ from src.day_8 import caesar_cipher
 
 class Day8Test(unittest.TestCase):
     """ Test cases for Day 8 of Coding"""
+
+    def setUp(self):
+        self.out = StringIO()
+        
     def test_caesar_cipher_swim_shift_3(self):
         """Test the Caesar Cipher with string and shift 3"""
-        # setup
-        out = StringIO()
 
         with mock.patch('sys.stdin', new=StringIO("encode\nswim\n3\nno\nno")):
             # given
             logo = CAESAR_CIPHER.strip()
             expected = 'vzlp'
-            sys.stdout = out
+            sys.stdout = self.out
 
             # when
             caesar_cipher()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
             self.assertTrue(logo in actual)
@@ -31,18 +33,16 @@ class Day8Test(unittest.TestCase):
 
     def test_caesar_cipher_spaces_symbols_shift_90(self):
         """Test the Caesar Cipher with string with spaces, symbols, numbers and a shift of 90"""
-        # setup
-        out = StringIO()
 
         with mock.patch('sys.stdin', new=StringIO('encode\nTesting_12345-!@#$% :)\n90\nno\nno')):
             # given
             logo = CAESAR_CIPHER.strip()
             expected = 'FQefUZS_12345-!@#$% :)'
-            sys.stdout = out
+            sys.stdout = self.out
 
             # when
             caesar_cipher()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
             self.assertTrue(logo in actual)

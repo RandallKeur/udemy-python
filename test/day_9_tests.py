@@ -11,22 +11,23 @@ from src.constants.ascii_art import AUCTION, GAVEL
 
 class Day9Test(unittest.TestCase):
     """Tests for Day 9 of the Coding Challenges"""
+    
+    def setUp(self):
+        self.out = StringIO()
+        
     def test_silent_auction_tie(self):
         """Test the Silent Auction with a tie"""
-        # setup
-        out = StringIO()
-        os.environ['TERM'] = 'xterm-256color'
 
         with mock.patch('sys.stdin', new=StringIO("jack\n100\nyes\njill\n100\nno")):
             # given
             auction = AUCTION.strip()
             gavel = GAVEL.strip()
             expected = 'tie'
-            sys.stdout = out
+            sys.stdout = self.out
 
             # when
             silent_auction()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
             self.assertTrue(auction in actual, gavel in actual)
@@ -34,20 +35,17 @@ class Day9Test(unittest.TestCase):
 
     def test_silent_auction_winner(self):
         """Test the Silent Auction with a winner"""
-        # setup
-        out = StringIO()
-        os.environ['TERM'] = 'xterm-256color'
 
         with mock.patch('sys.stdin', new=StringIO('jack\n100\nyes\njill\n120\nno')):
             # given
             auction = AUCTION.strip()
             gavel = GAVEL.strip()
             expected = 'winner'
-            sys.stdout = out
+            sys.stdout = self.out
 
             # when
             silent_auction()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
             self.assertTrue(auction in actual)

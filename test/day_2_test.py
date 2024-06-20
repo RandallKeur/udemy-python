@@ -9,20 +9,23 @@ from src.day_2 import calculate_tip
 
 class Day2Test(unittest.TestCase):
     """ Test for Day 2 of Coding"""
+
+    def setUp(self):
+        self.out = StringIO()
+
     def test_tip_calculator(self):
         """ Test for Tip Calculator"""
         total_bill = 1000
         people = 10
         tip_percent = 20
         expected = '120'
-        out = StringIO()
         with mock.patch('sys.stdin', StringIO(f'{total_bill}\n{people}\n{tip_percent}')):
             # given
-            sys.stdout = out
+            sys.stdout = self.out
 
             # when
             calculate_tip()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
             self.assertTrue(expected in actual)
