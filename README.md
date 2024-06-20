@@ -4,7 +4,7 @@ ___
 
 ### Description:
 
-This repo covers the [Udemy course][link-to-course] for 100 days of Python. 
+This repo covers the [Udemy course][udemy-course] for 100 days of Python. 
 There are new challenges every day on the course and this repo covers my 
 implementations of those challenges.
 
@@ -13,7 +13,7 @@ ___
 ## 🕹 How to Play?
 
 1. Clone this repo locally
-2. Run with IDE of choice (PyCharm, IntelliJ, etc.)
+2. Run with IDE of choice ([PyCharm][pycharm], IntelliJ, etc.)
 3. Type in number of day for which game to play.
 
 
@@ -35,13 +35,23 @@ ___
 | 12  | ? Number Guessing             |
 | 14  | 👑 Higher Lower               |
 | 15  | ☕️ Coffee Maker               |
+| 16  | ☕️ Coffee Maker OOP           |
 
 ## 🛠 Tools used in this project 
 
-- ### 📘 [Markdown](https://www.markdownguide.org/getting-started/)
-- ### 🖼️  [ASCII art generator](https://patorjk.com/software/taag/#p=display&f=Big&t=)
-- ### 📝 [Pylint](https://pylint.readthedocs.io/en/stable/)
-- ### 🧪 [Pytest](https://docs.pytest.org/en/stable/contents.html)
+- ### 📘 [Markdown][markdown]
+- ### 🖼️  [ASCII art generator][ascii-art]
+- ### 📝 [Pylint][pylint]
+- ### 🧪 [Pytest][pytest]
+- ### 🐢 [Turtle graphics][turtle-graphics]
+- ### 📦 [Python packages][py-pi]
 
-[link-to-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
+[udemy-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
+[pycharm]: https://www.jetbrains.com/guide/python/tutorials/getting-started-pycharm/installation-and-setup/
 [reeborg]: https://reeborg.ca/index_en.html
+[markdown]: https://www.markdownguide.org/getting-started/
+[ascii-art]: https://patorjk.com/software/taag/#p=display&f=Big&t=
+[pylint]: https://pylint.readthedocs.io/en/stable/
+[pytest]: https://docs.pytest.org/en/stable/contents.html
+[turtle-graphics]: https://docs.python.org/3/library/turtle.html
+[py-pi]: https://pypi.org/
