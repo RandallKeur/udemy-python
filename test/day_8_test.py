@@ -10,43 +10,52 @@ from src.day_8 import caesar_cipher
 
 class Day8Test(unittest.TestCase):
     """ Test cases for Day 8 of Coding"""
-
     def setUp(self):
         self.out = StringIO()
-        
+        sys.stdout = self.out
+        self.art = CAESAR_CIPHER.strip()
+        self.inputs = {
+            'encode_decode': '',
+            'word': '',
+            'shift': ''
+        }
+        self.expected = ''
+
     def test_caesar_cipher_swim_shift_3(self):
         """Test the Caesar Cipher with string and shift 3"""
-
-        with mock.patch('sys.stdin', new=StringIO("encode\nswim\n3\nno\nno")):
-            # given
-            logo = CAESAR_CIPHER.strip()
-            expected = 'vzlp'
-            sys.stdout = self.out
+        # given
+        self.inputs['encode_decode'] = 'encode'
+        self.inputs['word'] = 'swim'
+        self.inputs['shift'] = '3'
+        self.expected = 'vzlp'
+        with mock.patch('sys.stdin', new=StringIO(f'{self.inputs['encode_decode']}\n'
+                                                  f'{self.inputs['word']}\n{self.inputs['shift']}\nno\nno')):
 
             # when
             caesar_cipher()
             actual = self.out.getvalue().strip()
 
             # then
-            self.assertTrue(logo in actual)
-            self.assertTrue(expected in actual)
+            self.assertTrue(self.art in actual)
+            self.assertTrue(self.expected in actual)
 
     def test_caesar_cipher_spaces_symbols_shift_90(self):
         """Test the Caesar Cipher with string with spaces, symbols, numbers and a shift of 90"""
-
-        with mock.patch('sys.stdin', new=StringIO('encode\nTesting_12345-!@#$% :)\n90\nno\nno')):
-            # given
-            logo = CAESAR_CIPHER.strip()
-            expected = 'FQefUZS_12345-!@#$% :)'
-            sys.stdout = self.out
+        # given
+        self.inputs['encode_decode'] = 'encode'
+        self.inputs['word'] = 'Testing_12345-!@#$% :)'
+        self.inputs['shift'] = '90'
+        self.expected = 'FQefUZS_12345-!@#$% :)'
+        with mock.patch('sys.stdin', new=StringIO(f'{self.inputs['encode_decode']}\n'
+                                                  f'{self.inputs['word']}\n{self.inputs['shift']}\nno\nno')):
 
             # when
             caesar_cipher()
             actual = self.out.getvalue().strip()
 
             # then
-            self.assertTrue(logo in actual)
-            self.assertTrue(expected in actual)
+            self.assertTrue(self.art in actual)
+            self.assertTrue(self.expected in actual)
 
 
 if __name__ == '__main__':
