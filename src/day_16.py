@@ -1,27 +1,31 @@
 """ Day 16 of Coding Challenges for coffee machine using OOP"""
-from src.day_16.menu import Menu
-from src.day_16.coffee_maker import CoffeeMaker
-from src.day_16.money_machine import MoneyMachine
+from src.classes.menu import Menu
+from src.classes.coffee_maker import CoffeeMaker
+from src.classes.money_machine import MoneyMachine
+
+coffee_maker = CoffeeMaker()
+money_machine = MoneyMachine()
+menu = Menu()
+IS_ON = True
 
 
-def make_coffee():
-    """Make a coffee for a customer"""
-    print('Here is our menu:')
-    coffee_maker = CoffeeMaker()
-    money_machine = MoneyMachine()
-    menu = Menu()
-    for item in menu.get_items():
-        print(item)
-    response = input('What would you like?: ')
-    match response:
-        case 'report':
+def make_drink(choice: str):
+    """Make a drink for a customer"""
+    drink = menu.find_drink(choice)
+    if drink is not None:
+        if coffee_maker.is_resource_sufficient(drink) and money_machine.make_payment(drink.cost):
+            coffee_maker.make_coffee(drink)
+
+
+def coffee_machine():
+    """Coffee machine for a customer to make a selection"""
+    while IS_ON:
+        options = menu.get_items()
+        choice = input(f'What would you like?: ({options}): ')
+        if choice == 'report':
             coffee_maker.report()
             money_machine.report()
-        case 'off':
+        elif choice == 'off':
             return
-        case _:
-            drink = menu.find_drink(response)
-    coffee_maker.is_resource_sufficient(drink)
-    cost = money_machine.process_coins()
-    money_machine.make_payment(cost)
-    coffee_maker.make_coffee(drink)
+        else:
+            make_drink(choice)

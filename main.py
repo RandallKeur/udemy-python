@@ -58,7 +58,7 @@ def switchboard(day):
             case '15':
                 day_15.coffee_maker()
             case '16':
-                day_16.make_coffee()
+                day_16.coffee_machine()
             case _:
                 decision_valid = False
                 day = input('Invalid input, please try again\n')
