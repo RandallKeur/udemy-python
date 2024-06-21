@@ -1,5 +1,4 @@
 """Test for Day 12 of Coding Challenges"""
-import os
 import sys
 import unittest
 from io import StringIO
@@ -11,64 +10,67 @@ from src.constants.ascii_art import NUMBER_GUESS
 
 class Day12Test(unittest.TestCase):
     """Test for Day 12 of Coding"""
+    def setUp(self):
+        self.out = StringIO()
+        sys.stdout = self.out
+        self.art = NUMBER_GUESS.strip()
+        self.inputs = {
+            'number': 0,
+            'error': '',
+            'difficulty': ''
+        }
+        self.error = ''
 
     def test_number_guessing_art(self):
         """Test the Number Guessing image"""
-        # setup
-        out = StringIO()
-        os.environ['TERM'] = 'xterm-256color'
-
-        with mock.patch('sys.stdin', new=StringIO('easy\n50\n25\n12\n6\n3\n2\n1')):
-            # given
-            art = NUMBER_GUESS.strip()
-            sys.stdout = out
+        # given
+        self.inputs['difficulty'] = 'easy'
+        with mock.patch('sys.stdin', new=StringIO(f'{self.inputs['difficulty']}\n50\n25\n12\n6'
+                                                  f'\n3\n2\n1')):
 
             # when
             number_guessing()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
-            self.assertTrue(art in actual)
+            self.assertTrue(self.art in actual)
 
     def test_number_guessing_previously_guessed_number(self):
         """Test the Number Guessing game with a previously guessed number"""
-        # setup
-        out = StringIO()
-        os.environ['TERM'] = 'xterm-256color'
-        duplicate = 50
-
-        with mock.patch('sys.stdin', new=StringIO(f'easy\n{duplicate}\n{duplicate}\n25\n12\n6\n3\n2'
-                                                  f'\n1')):
-            # given
-            art = NUMBER_GUESS.strip()
-            duplicate_error = f'You have already guessed {duplicate}.'
-            sys.stdout = out
+        # given
+        self.inputs['difficulty'] = 'easy'
+        self.inputs['number'] = 50
+        self.error = f'You have already guessed {self.inputs['number']}.'
+        with mock.patch('sys.stdin', new=StringIO(f'{self.inputs['difficulty']}\n'
+                                                  f'{self.inputs['number']}\n'
+                                                  f'{self.inputs['number']}'
+                                                  f'\n25\n12\n6\n3\n2\n1')):
 
             # when
             number_guessing()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
-            self.assertTrue(art in actual)
-            self.assertTrue(duplicate_error in actual)
+            self.assertTrue(self.art in actual)
+            self.assertTrue(self.error in actual)
 
     def test_number_guessing_with_invalid_difficulty(self):
         """Test the Number Guessing game with invalid difficulty selection"""
-        # setup
-        out = StringIO()
-        os.environ['TERM'] = 'xterm-256color'
-        difficulty = 'impossible'
-
-        with mock.patch('sys.stdin', new=StringIO(f'{difficulty}\neasy\n50\n25\n12\n6\n3\n2\n1')):
-            # given
-            art = NUMBER_GUESS.strip()
-            difficulty_error = f'{difficulty} is not a difficulty option.'
-            sys.stdout = out
+        # given
+        wrong_difficulty = 'impossible'
+        self.inputs['difficulty'] = 'easy'
+        self.error = f'{wrong_difficulty} is not a difficulty option.'
+        with mock.patch('sys.stdin', new=StringIO(f'{wrong_difficulty}\n{self.inputs['difficulty']}'
+                                                  f'\n50\n25\n12\n6\n3\n2\n1')):
 
             # when
             number_guessing()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
-            self.assertTrue(art in actual)
-            self.assertTrue(difficulty_error in actual)
+            self.assertTrue(self.art in actual)
+            self.assertTrue(self.error in actual)
+
+
+if __name__ == '__main__':
+    unittest.main()

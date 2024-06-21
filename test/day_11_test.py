@@ -1,5 +1,4 @@
 """Test for Day 11 of Coding Challenges"""
-import os
 import sys
 import unittest
 from io import StringIO
@@ -12,24 +11,26 @@ from src.constants.ascii_art import BLACKJACK
 
 class Day11Test(unittest.TestCase):
     """Test for Day 11 of Coding"""
+    def setUp(self):
+        self.out = StringIO()
+        sys.stdout = self.out
+        self.art = BLACKJACK.strip()
 
     def test_blackjack_stand(self):
+        # pylint: disable=R0801
         """Test the Blackjack stand"""
-        # setup
-        out = StringIO()
-        os.environ['TERM'] = 'xterm-256color'
-
+        # given
+        expected = 'Dealer shows'
         with mock.patch('sys.stdin', new=StringIO(f'{STAND}\nSTOP')):
-            # given
-            blackjack_art = BLACKJACK.strip()
-            dealer = 'Dealer shows'
-
-            sys.stdout = out
 
             # when
             blackjack()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
-            self.assertTrue(blackjack_art in actual)
-            self.assertTrue(dealer in actual)
+            self.assertTrue(self.art in actual)
+            self.assertTrue(expected in actual)
+
+
+if __name__ == '__main__':
+    unittest.main()

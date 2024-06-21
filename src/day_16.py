@@ -3,7 +3,6 @@ from src.classes.menu import Menu
 from src.classes.coffee_maker import CoffeeMaker
 from src.classes.money_machine import MoneyMachine
 
-
 IS_ON = True
 
 

@@ -14,6 +14,7 @@ menu = Menu()
 question_bank = QuestionBank(QUESTION_BANK)
 
 
+
 def continue_running():
     """ Helper method to continue running the application based on feedback"""
     response = input('\nWould you like to see another day\'s challenge?\n')
