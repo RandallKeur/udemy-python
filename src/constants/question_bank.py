@@ -1,3 +1,4 @@
+"""The question bank for the quiz generator"""
 QUESTION_BANK = [
     {'question': 'The capital of France is Paris.', 'answer': 'True'},
     {'question': 'The Earth is flat.', 'answer': 'False'},
@@ -76,7 +77,8 @@ QUESTION_BANK = [
     {'question': 'The sun rises in the west.', 'answer': 'False'},
     {'question': 'A year on Mars is longer than a year on Earth.', 'answer': 'True'},
     {'question': 'The smallest bone in the human body is in the ear.', 'answer': 'True'},
-    {'question': 'The Eiffel Tower was a gift from the United States to France.', 'answer': 'False'},
+    {'question': 'The Eiffel Tower was a gift from the United States to France.', 'answer':
+        'False'},
     {'question': 'Butterflies taste with their feet.', 'answer': 'True'},
     {'question': 'The largest planet in the solar system is Saturn.', 'answer': 'False'},
     {'question': 'An adult human has 4 liters of blood.', 'answer': 'False'},

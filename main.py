@@ -1,4 +1,5 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
+from src.constants.question_bank import QUESTION_BANK
 from src.classes.quiz_generator import QuestionBank
 from src.classes.coffee_maker import CoffeeMaker
 from src.classes.menu import Menu
@@ -10,7 +11,8 @@ from src import (day_1, day_2, day_3, day_4, day_5, day_7, day_8, day_9,
 coffee_maker = CoffeeMaker()
 money_machine = MoneyMachine()
 menu = Menu()
-question_bank = QuestionBank()
+question_bank = QuestionBank(QUESTION_BANK)
+
 
 def continue_running():
     """ Helper method to continue running the application based on feedback"""

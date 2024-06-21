@@ -1,9 +1,10 @@
 """Quiz that is generated for giving a quiz to the user"""
-from src.constants.question_bank import QUESTION_BANK
 import random
 
 
 class Question:
+    # Disable too-few-public-methods error
+    # pylint: disable=R0903
     """Models each question"""
     def __init__(self, question, answer):
         self.question = question
@@ -11,10 +12,12 @@ class Question:
 
 
 class QuestionBank:
+    # Disable too-few-public-methods error
+    # pylint: disable=R0903
     """Models the question banks"""
-    def __init__(self):
+    def __init__(self, question_bank):
         self.questions = []
-        for question in QUESTION_BANK:
+        for question in question_bank:
             new_question = Question(question['question'], question['answer'])
             self.questions.append(new_question)
 
@@ -23,7 +26,7 @@ class QuestionBank:
         max_questions = len(self.questions)
         number_of_questions = max_questions + 1
         while max_questions < number_of_questions:
-            number_of_questions = int(input('How many questions do you want on this quiz?: '))
+
             if number_of_questions > max_questions:
                 print('Not enough questions in the question bank. Please try again.')
         return random.sample(self.questions, number_of_questions)
@@ -31,13 +34,25 @@ class QuestionBank:
 
 class Quiz:
     """Models the quiz"""
-    def __init__(self, questions):
-        self.questions = questions
+    def __init__(self, question_bank: QuestionBank):
+        self.question_bank = question_bank
+        self.questions = []
         self.score = 0
         self.question_number = 0
+        self.number_of_questions = 0
+
+    def select_n_questions(self, number_of_questions: int):
+        """Selects n questions from the question bank"""
+        self.number_of_questions = number_of_questions
+        max_questions = len(self.question_bank.questions)
+        while self.number_of_questions > max_questions:
+            print('Not enough questions in the question bank. Please try again.')
+            self.number_of_questions = int(input('How many questions do you want on this quiz?: '))
+        self.questions = random.sample(self.question_bank.questions, self.number_of_questions)
 
     def still_has_questions(self):
-        return self.question_number < len(self.questions)
+        """Checks if the quiz has questions remaining"""
+        return self.question_number < self.number_of_questions
 
     def next_question(self):
         """Gets the next question on the quiz"""
@@ -56,4 +71,3 @@ class Quiz:
         print(f'The correct answer was: {correct_answer}.')
         print(f'Your current score is: {self.score}/{self.question_number}')
         print('\n')
-
