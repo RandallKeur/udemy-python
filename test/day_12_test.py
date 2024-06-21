@@ -25,8 +25,8 @@ class Day12Test(unittest.TestCase):
         """Test the Number Guessing image"""
         # given
         self.inputs['difficulty'] = 'easy'
-        with mock.patch('sys.stdin', new=StringIO(f'{self.inputs['difficulty']}\n50\n25\n12\n6'
-                                                  f'\n3\n2\n1')):
+        with mock.patch('sys.stdin', new=StringIO(f'{self.inputs['difficulty']}\n'
+                                                  f'50\n25\n12\n6\n3\n2\n1')):
 
             # when
             number_guessing()
@@ -43,8 +43,8 @@ class Day12Test(unittest.TestCase):
         self.error = f'You have already guessed {self.inputs['number']}.'
         with mock.patch('sys.stdin', new=StringIO(f'{self.inputs['difficulty']}\n'
                                                   f'{self.inputs['number']}\n'
-                                                  f'{self.inputs['number']}'
-                                                  f'\n25\n12\n6\n3\n2\n1')):
+                                                  f'{self.inputs['number']}\n'
+                                                  f'25\n12\n6\n3\n2\n1')):
 
             # when
             number_guessing()
@@ -60,8 +60,9 @@ class Day12Test(unittest.TestCase):
         wrong_difficulty = 'impossible'
         self.inputs['difficulty'] = 'easy'
         self.error = f'{wrong_difficulty} is not a difficulty option.'
-        with mock.patch('sys.stdin', new=StringIO(f'{wrong_difficulty}\n{self.inputs['difficulty']}'
-                                                  f'\n50\n25\n12\n6\n3\n2\n1')):
+        with mock.patch('sys.stdin', new=StringIO(f'{wrong_difficulty}\n'
+                                                  f'{self.inputs['difficulty']}\n'
+                                                  f'50\n25\n12\n6\n3\n2\n1')):
 
             # when
             number_guessing()

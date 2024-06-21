@@ -25,7 +25,8 @@ class Day15Test(unittest.TestCase):
         # given
         self.drink = 'espresso'
         self.change = '$2.14'
-        with mock.patch('sys.stdin', new=StringIO(f'{self.drink}\n10\n8\n6\n4\noff')):
+        with mock.patch('sys.stdin', new=StringIO(f'{self.drink}\n'
+                                                  f'10\n8\n6\n4\noff')):
 
             # when
             coffee_maker()
@@ -41,7 +42,8 @@ class Day15Test(unittest.TestCase):
         # given
         self.drink = 'espresso'
         self.error = 'Sorry, that\'s not enough money. Money refunded.'
-        with mock.patch('sys.stdin', new=StringIO(f'{self.drink}\n0\n8\n6\n4\noff')):
+        with mock.patch('sys.stdin', new=StringIO(f'{self.drink}\n'
+                                                  f'0\n8\n6\n4\noff')):
 
             # when
             coffee_maker()
@@ -56,7 +58,8 @@ class Day15Test(unittest.TestCase):
         # given
         self.drink = 'latte'
         self.change = '$0.00'
-        with mock.patch('sys.stdin', new=StringIO(f'{self.drink}\n10\n0\n0\n0\noff')):
+        with mock.patch('sys.stdin', new=StringIO(f'{self.drink}\n'
+                                                  f'10\n0\n0\n0\noff')):
 
             # when
             coffee_maker()
@@ -72,7 +75,8 @@ class Day15Test(unittest.TestCase):
         # given
         self.drink = 'cappuccino'
         self.change = '$0.64'
-        with mock.patch('sys.stdin', new=StringIO(f'{self.drink}\n10\n8\n6\n4\noff')):
+        with mock.patch('sys.stdin', new=StringIO(f'{self.drink}\n'
+                                                  f'10\n8\n6\n4\noff')):
 
             # when
             coffee_maker()
