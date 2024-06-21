@@ -1,5 +1,4 @@
 """Test for Day 14 of Coding Challenges"""
-import os
 import sys
 import unittest
 from io import StringIO
@@ -11,22 +10,24 @@ from src.constants.ascii_art import HIGHER_LOWER
 
 class Day14Test(unittest.TestCase):
     """Test for Day 14 of Coding"""
+    def setUp(self):
+        self.out = StringIO()
+        sys.stdout = self.out
+        self.art = HIGHER_LOWER.strip()
 
     def test_higher_lower_art(self):
         """Test the Higher or Lower image"""
-        # setup
-        out = StringIO()
-        os.environ['TERM'] = 'xterm-256color'
-
+        # given
         with mock.patch('sys.stdin', new=StringIO('A\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\n'
                                                   'A\nA\nA\nA\nA\nA')):
-            # given
-            art = HIGHER_LOWER.strip()
-            sys.stdout = out
 
             # when
             higher_lower()
-            actual = out.getvalue().strip()
+            actual = self.out.getvalue().strip()
 
             # then
-            self.assertTrue(art in actual)
+            self.assertTrue(self.art in actual)
+
+
+if __name__ == '__main__':
+    unittest.main()
