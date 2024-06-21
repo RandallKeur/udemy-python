@@ -36,6 +36,7 @@ ___
 | 14  | 👑 Higher Lower               |
 | 15  | ☕️ Coffee Maker               |
 | 16  | ☕️ Coffee Maker OOP           |
+| 17  | 🎓 Quiz Generator             |
 
 ## 🛠 Tools used in this project 
 
@@ -45,6 +46,7 @@ ___
 - ### 🧪 [Pytest][pytest]
 - ### 🐢 [Turtle graphics][turtle-graphics]
 - ### 📦 [Python packages][py-pi]
+- ### ? [Trivia Database][trivia-db]
 
 [udemy-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
 [pycharm]: https://www.jetbrains.com/guide/python/tutorials/getting-started-pycharm/installation-and-setup/
@@ -55,3 +57,4 @@ ___
 [pytest]: https://docs.pytest.org/en/stable/contents.html
 [turtle-graphics]: https://docs.python.org/3/library/turtle.html
 [py-pi]: https://pypi.org/
+[trivia-db]: https://opentdb.com/
