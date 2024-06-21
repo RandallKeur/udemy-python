@@ -25,7 +25,8 @@ class Day2Test(unittest.TestCase):
         self.inputs['tip'] = 20
         expected = '120'
         with mock.patch('sys.stdin', StringIO(f'{self.inputs['bill']}\n'
-                                              f'{self.inputs['people']}\n{self.inputs['tip']}')):
+                                              f'{self.inputs['people']}\n'
+                                              f'{self.inputs['tip']}')):
 
             # when
             calculate_tip()

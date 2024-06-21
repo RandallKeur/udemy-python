@@ -6,13 +6,12 @@ from src.classes.menu import Menu
 from src.classes.money_machine import MoneyMachine
 from src.constants.ascii_art import GOODBYE
 from src import (day_1, day_2, day_3, day_4, day_5, day_7, day_8, day_9,
-                 day_10, day_11, day_12, day_14, day_15, day_16, day_17)
+                 day_10, day_11, day_12, day_13, day_14, day_15, day_16, day_17)
 
 coffee_maker = CoffeeMaker()
 money_machine = MoneyMachine()
 menu = Menu()
 question_bank = QuestionBank(QUESTION_BANK)
-
 
 
 def continue_running():
@@ -63,7 +62,7 @@ def switchboard(day):
             case '12':
                 day_12.number_guessing()
             case '13':
-                print('Day 13 was learning debugging, please see the course for any info')
+                day_13.run()
             case '14':
                 day_14.higher_lower()
             case '15':

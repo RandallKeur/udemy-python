@@ -33,6 +33,7 @@ ___
 | 10  | 🧮 Calculator                 |
 | 11  | 🃏 Blackjack                  |
 | 12  | ? Number Guessing             |
+| 13  | 🐞 Debugging                  |
 | 14  | 👑 Higher Lower               |
 | 15  | ☕️ Coffee Maker               |
 | 16  | ☕️ Coffee Maker OOP           |

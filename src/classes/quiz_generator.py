@@ -21,16 +21,6 @@ class QuestionBank:
             new_question = Question(question['question'], question['answer'])
             self.questions.append(new_question)
 
-    def select_n_questions(self):
-        """Selects n questions from the question bank"""
-        max_questions = len(self.questions)
-        number_of_questions = max_questions + 1
-        while max_questions < number_of_questions:
-
-            if number_of_questions > max_questions:
-                print('Not enough questions in the question bank. Please try again.')
-        return random.sample(self.questions, number_of_questions)
-
 
 class Quiz:
     """Models the quiz"""
