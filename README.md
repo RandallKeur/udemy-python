@@ -45,9 +45,9 @@ ___
 - ### 🖼️  [ASCII art generator][ascii-art]
 - ### 📝 [Pylint][pylint]
 - ### 🧪 [Pytest][pytest]
-- ### 🐢 [Turtle graphics][turtle-graphics]
 - ### 📦 [Python packages][py-pi]
 - ### ? [Trivia Database][trivia-db]
+- ### 🐢 [Turtle graphics][turtle-graphics]
 
 [udemy-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
 [pycharm]: https://www.jetbrains.com/guide/python/tutorials/getting-started-pycharm/installation-and-setup/
@@ -56,6 +56,6 @@ ___
 [ascii-art]: https://patorjk.com/software/taag/#p=display&f=Big&t=
 [pylint]: https://pylint.readthedocs.io/en/stable/
 [pytest]: https://docs.pytest.org/en/stable/contents.html
-[turtle-graphics]: https://docs.python.org/3/library/turtle.html
 [py-pi]: https://pypi.org/
 [trivia-db]: https://opentdb.com/
+[turtle-graphics]: https://docs.python.org/3/library/turtle.html
