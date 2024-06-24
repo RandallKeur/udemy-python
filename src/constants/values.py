@@ -365,3 +365,5 @@ COINS = {
     'nickels': 0.05,
     'pennies': 0.01
 }
+
+DEFAULT_TURTLE_DISTANCE = 50
