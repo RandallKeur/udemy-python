@@ -1,16 +1,9 @@
 """ Day 19 of Coding Challenges for Turtle Etch-a-Sketch"""
 # pylint: disable=no-member
-import turtle
 from random import randint
 from turtle import Turtle, Screen
-import os
 
-if os.environ.get('DISPLAY', '') == '':
-    os.environ['DISPLAY'] = ':0.0'
-
-timmy = Turtle(shape="turtle")
-timmy.hideturtle()
-TURTLE_COLORS = ['red', 'orange', 'green', 'blue', 'purple', 'black']
+TURTLE_COLORS = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'black']
 TURTLE_SIZE = 40
 RACE_DIMENSIONS = {
     'x': 500,
@@ -27,36 +20,36 @@ MIN_VALUES = {
 Y_SPACING = (MAX_VALUES['y'] - MIN_VALUES['y']) / (len(TURTLE_COLORS) - 1)
 
 
-def move_forward() -> None:
+def move_forward(turtle: Turtle) -> None:
     """Move forward"""
-    timmy.forward(10)
+    turtle.forward(10)
 
 
-def move_backward() -> None:
+def move_backward(turtle: Turtle) -> None:
     """Move backward"""
-    timmy.backward(10)
+    turtle.backward(10)
 
 
-def turn_counter_clockwise() -> None:
+def turn_counter_clockwise(turtle: Turtle) -> None:
     """Turn counter-clockwise"""
-    timmy.left(15)
+    turtle.left(15)
 
 
-def turn_clockwise() -> None:
+def turn_clockwise(turtle: Turtle) -> None:
     """Turn clockwise"""
-    timmy.right(15)
+    turtle.right(15)
 
 
-def restart_sketch() -> None:
+def restart_sketch(turtle: Turtle) -> None:
     """Restart the sketch"""
-    timmy.home()
-    timmy.clear()
+    print('restart')
+    turtle.home()
+    turtle.clear()
 
 
-def sketch() -> None:
+def sketch(screen: Screen) -> None:
     """Sketching using the turtle graphics"""
-    timmy.showturtle()
-    screen = Screen()
+    turtle = Turtle(shape='turtle')
     screen.listen()
     screen.onkey(key='w', fun=move_forward)
     screen.onkey(key='s', fun=move_backward)
@@ -109,10 +102,8 @@ def determine_winner(winning_color: str, bet: str) -> None:
         print(f'You lost! The {winning_color} turtle won!')
 
 
-def race() -> None:
+def race(screen: Screen) -> None:
     """Racing turtles game"""
-    turtle.clearscreen()
-    screen = Screen()
     is_race_on = False
     screen.setup(width=RACE_DIMENSIONS['x'], height=RACE_DIMENSIONS['y'])
     racing_turtles = setup_race()
@@ -126,11 +117,13 @@ def race() -> None:
 
 def play() -> None:
     """Play either etch-a-sketch or race"""
+    screen = Screen()
+    screen.clearscreen()
     response = input('Choose a game \'sketch\' or \'race\': ')
     match response:
         case 'sketch':
-            sketch()
+            sketch(screen)
         case 'race':
-            race()
+            race(screen)
         case _:
             print('Invalid input')
