@@ -3,11 +3,12 @@
 from random import randint
 from turtle import Screen, Turtle
 
-from src.classes.Sketching_Turtle import SketchingTurtle
+from src.classes.sketching_turtle import SketchingTurtle
 from src.constants.values import TURTLE_COLORS, MIN_VALUES, Y_SPACING, MAX_VALUES, RACE_DIMENSIONS
 
 
 def move_turtle(screen: Screen, turtle: SketchingTurtle) -> None:
+    """Listen to keys and move the turtle as specified by the user"""
     screen.listen()
     screen.onkey(key='w', fun=turtle.move_forward)
     screen.onkey(key='s', fun=turtle.move_backward)
@@ -82,7 +83,8 @@ def race(screen: Screen) -> None:
 def play() -> None:
     """Play either etch-a-sketch or race"""
     screen = Screen()
-    response = screen.textinput(title='Make your choice', prompt='Choose a game \'sketch\' or \'race\': ')
+    response = screen.textinput(title='Make your choice', prompt='Choose a game '
+                                                                 '\'sketch\' or \'race\': ')
     match response:
         case 'sketch':
             sketch(screen)

@@ -369,17 +369,22 @@ COINS = {
 DEFAULT_TURTLE_DISTANCE = 50
 
 TURTLE_COLORS = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'black']
+
 TURTLE_SIZE = 40
+
 RACE_DIMENSIONS = {
     'x': 500,
     'y': 400
 }
+
 MAX_VALUES = {
     'x': RACE_DIMENSIONS['x'] / 2 - TURTLE_SIZE / 2,
     'y': RACE_DIMENSIONS['y'] / 2 - 50
 }
+
 MIN_VALUES = {
     'x': - MAX_VALUES['x'],
     'y': - MAX_VALUES['y']
 }
+
 Y_SPACING = (MAX_VALUES['y'] - MIN_VALUES['y']) / (len(TURTLE_COLORS) - 1)
