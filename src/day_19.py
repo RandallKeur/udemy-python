@@ -1,62 +1,26 @@
 """ Day 19 of Coding Challenges for Turtle Etch-a-Sketch"""
 # pylint: disable=no-member
 from random import randint
-from turtle import Turtle, Screen
+from turtle import Screen, Turtle
 
-TURTLE_COLORS = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'black']
-TURTLE_SIZE = 40
-RACE_DIMENSIONS = {
-    'x': 500,
-    'y': 400
-}
-MAX_VALUES = {
-    'x': RACE_DIMENSIONS['x'] / 2 - TURTLE_SIZE / 2,
-    'y': RACE_DIMENSIONS['y'] / 2 - 50
-}
-MIN_VALUES = {
-    'x': - MAX_VALUES['x'],
-    'y': - MAX_VALUES['y']
-}
-Y_SPACING = (MAX_VALUES['y'] - MIN_VALUES['y']) / (len(TURTLE_COLORS) - 1)
+from src.classes.Sketching_Turtle import SketchingTurtle
+from src.constants.values import TURTLE_COLORS, MIN_VALUES, Y_SPACING, MAX_VALUES, RACE_DIMENSIONS
 
 
-def move_forward(turtle: Turtle) -> None:
-    """Move forward"""
-    turtle.forward(10)
-
-
-def move_backward(turtle: Turtle) -> None:
-    """Move backward"""
-    turtle.backward(10)
-
-
-def turn_counter_clockwise(turtle: Turtle) -> None:
-    """Turn counter-clockwise"""
-    turtle.left(15)
-
-
-def turn_clockwise(turtle: Turtle) -> None:
-    """Turn clockwise"""
-    turtle.right(15)
-
-
-def restart_sketch(turtle: Turtle) -> None:
-    """Restart the sketch"""
-    print('restart')
-    turtle.home()
-    turtle.clear()
+def move_turtle(screen: Screen, turtle: SketchingTurtle) -> None:
+    screen.listen()
+    screen.onkey(key='w', fun=turtle.move_forward)
+    screen.onkey(key='s', fun=turtle.move_backward)
+    screen.onkey(key='a', fun=turtle.turn_counter_clockwise)
+    screen.onkey(key='d', fun=turtle.turn_clockwise)
+    screen.onkey(key='c', fun=turtle.restart_sketch)
 
 
 def sketch(screen: Screen) -> None:
     """Sketching using the turtle graphics"""
-    turtle = Turtle(shape='turtle')
-    screen.listen()
-    screen.onkey(key='w', fun=move_forward)
-    screen.onkey(key='s', fun=move_backward)
-    screen.onkey(key='a', fun=turn_counter_clockwise)
-    screen.onkey(key='d', fun=turn_clockwise)
-    screen.onkey(key='c', fun=restart_sketch)
-    screen.exitonclick()
+    turtle = SketchingTurtle()
+    turtle.shape('turtle')
+    move_turtle(screen, turtle)
 
 
 def build_turtle(index: int) -> Turtle:
@@ -118,8 +82,7 @@ def race(screen: Screen) -> None:
 def play() -> None:
     """Play either etch-a-sketch or race"""
     screen = Screen()
-    screen.clearscreen()
-    response = input('Choose a game \'sketch\' or \'race\': ')
+    response = screen.textinput(title='Make your choice', prompt='Choose a game \'sketch\' or \'race\': ')
     match response:
         case 'sketch':
             sketch(screen)
@@ -127,3 +90,4 @@ def play() -> None:
             race(screen)
         case _:
             print('Invalid input')
+    screen.exitonclick()
