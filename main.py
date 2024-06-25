@@ -84,6 +84,10 @@ def switchboard(day):
 
 if __name__ == '__main__':
     STOP = False
+    import os
+
+    if os.environ.get('DISPLAY', '') == '':
+        os.environ['DISPLAY'] = ':0.0'
     while not STOP:
         day_of_coding_challenge = input('Which day of coding challenge do you want to see?\n')
         switchboard(day_of_coding_challenge)
