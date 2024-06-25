@@ -38,6 +38,8 @@ ___
 | 15  | ☕️ Coffee Maker               |
 | 16  | ☕️ Coffee Maker OOP           |
 | 17  | 🎓 Quiz Generator             |
+| 18  | 🖼️ Turtle Art                |
+| 19  | 🐢  Turtle Etch-a-Sketch      |
 
 ## 🛠 Tools used in this project 
 

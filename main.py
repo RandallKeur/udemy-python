@@ -7,7 +7,7 @@ from src.classes.money_machine import MoneyMachine
 from src.constants.ascii_art import GOODBYE
 from src import (day_1, day_2, day_3, day_4, day_5, day_7, day_8, day_9,
                  day_10, day_11, day_12, day_13, day_14, day_15, day_16, day_17,
-                 day_18)
+                 day_18, day_19)
 
 coffee_maker = CoffeeMaker()
 money_machine = MoneyMachine()
@@ -75,6 +75,8 @@ def switchboard(day):
             case '18':
                 number_of_dots = int(input('How many dots do you want?: '))
                 day_18.paint_dots(number_of_dots)
+            case '19':
+                day_19.play()
             case _:
                 decision_valid = False
                 day = input('Invalid input, please try again\n')
