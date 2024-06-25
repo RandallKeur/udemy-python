@@ -3,6 +3,10 @@
 import turtle
 from random import randint
 from turtle import Turtle, Screen
+import os
+
+if os.environ.get('DISPLAY', '') == '':
+    os.environ['DISPLAY'] = ':0.0'
 
 timmy = Turtle(shape="turtle")
 timmy.hideturtle()
