@@ -11,7 +11,7 @@ from src.classes.snake import Snake
 def setup_screen() -> Screen:
     """Set up the screen for the snake game"""
     screen = Screen()
-    screen.setup(width=SNAKE_SCREEN['x'], height=SNAKE_SCREEN['y'])
+    screen.setup(width=SNAKE_SCREEN["x"], height=SNAKE_SCREEN["y"])
     screen.bgcolor("black")
     screen.title("Snake Game")
     screen.tracer(0)
@@ -29,8 +29,10 @@ def capture_keypress(screen: Screen, new_snake: Snake) -> None:
 
 def on_map(new_snake: Snake, new_scoreboard: Scoreboard) -> bool:
     """Detect if the snake is still on the map"""
-    if new_snake.head.xcor() > SNAKE_FOOD['x']['max'] or new_snake.head.xcor() < SNAKE_FOOD['x']['min'] \
-            or new_snake.head.ycor() > SNAKE_FOOD['y']['max'] or new_snake.head.ycor() < SNAKE_FOOD['y']['min']:
+    if new_snake.head.xcor() > SNAKE_FOOD["x"]["max"] \
+            or new_snake.head.xcor() < SNAKE_FOOD["x"]["min"] \
+            or new_snake.head.ycor() > SNAKE_FOOD["y"]["max"] \
+            or new_snake.head.ycor() < SNAKE_FOOD["y"]["min"]:
         new_scoreboard.game_over()
         return False
     return True
@@ -56,8 +58,8 @@ def eat_food(new_snake: Snake, new_food: Food, new_scoreboard: Scoreboard):
 def snake() -> None:
     """Play a snake game"""
     screen = setup_screen()
-    speed = screen.textinput(title='Snake Difficulty', prompt=f'How difficult do you want?'
-                                                              f'{SNAKE_SPEED.keys()}: ')
+    speed = screen.textinput(title="Snake Difficulty", prompt=f"How difficult do you want?"
+                                                              f"{SNAKE_SPEED.keys()}: ")
     new_snake = Snake()
     new_food = Food()
     new_scoreboard = Scoreboard()
