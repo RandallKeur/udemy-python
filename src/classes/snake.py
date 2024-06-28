@@ -15,11 +15,7 @@ class Snake:
     def create_snake(self):
         """Creates the snake"""
         for position in self.starting_positions:
-            new_segment = Turtle(shape="square")
-            new_segment.color("white")
-            new_segment.penup()
-            new_segment.goto(position)
-            self.segments.append(new_segment)
+            self.add_segment(position)
 
     def up(self):
         """Turn the snake up"""
@@ -48,3 +44,15 @@ class Snake:
             new_y = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(new_x, new_y)
         self.segments[0].forward(SNAKE_SPACING)
+
+    def add_segment(self, position):
+        """Add a segment to the snake"""
+        new_segment = Turtle(shape="square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto(position)
+        self.segments.append(new_segment)
+
+    def extend(self):
+        """Extend the snake"""
+        self.add_segment(self.segments[-1].position())

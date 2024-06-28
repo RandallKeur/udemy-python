@@ -393,3 +393,36 @@ RIGHT = 0
 UP = 90
 LEFT = 180
 DOWN = 270
+SNAKE_SCREEN = {
+    'x': 600,
+    'y': 600
+}
+SNAKE_FOOD = {
+    'x': {
+        'min': int(-(SNAKE_SCREEN['x'] / 2 - 30)),
+        'max': int(SNAKE_SCREEN['x'] / 2 - 30)
+    },
+    'y': {
+        'min': int(-(SNAKE_SCREEN['y'] / 2 - 30)),
+        'max': int(SNAKE_SCREEN['y'] / 2 + 30)
+    }
+}
+
+SCOREBOARD_SETTINGS = {
+    "location": (0, int(SNAKE_SCREEN['y'] / 2 - 20)),
+    "game_over": "GAME OVER",
+    "alignment": "center",
+    "font": {
+        "family": "Arial",
+        "weight": "normal",
+        "size": {
+            "small": 18,
+            "large": 24
+        },
+    }
+}
+SNAKE_SPEED = {
+    "easy": 0.15,
+    "medium": 0.10,
+    "hard": 0.05
+}

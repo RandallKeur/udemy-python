@@ -2,13 +2,14 @@
 import time
 from turtle import Screen
 
+from src.constants.values import SNAKE_SCREEN
 from src.classes.snake import Snake
 
 
 def setup_screen() -> Screen:
-    """Setup the screen for the snake game"""
+    """Set up the screen for the snake game"""
     screen = Screen()
-    screen.setup(width=600, height=600)
+    screen.setup(width=SNAKE_SCREEN['x'], height=SNAKE_SCREEN['y'])
     screen.bgcolor("black")
     screen.title("Snake Game")
     screen.tracer(0)
