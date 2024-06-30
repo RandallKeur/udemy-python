@@ -1,30 +1,11 @@
 """ Day 21 of Coding Challenges for fully implemented Snake"""
 import time
-from turtle import Screen
 
+from src.classes.snake_game import SnakeGame
 from src.classes.scoreboard import Scoreboard
 from src.classes.food import Food
-from src.constants.values import SNAKE_SPEED, SNAKE_FOOD, SNAKE_SCREEN
+from src.constants.values import SNAKE_SPEED, SNAKE_FOOD
 from src.classes.snake import Snake
-
-
-def setup_screen() -> Screen:
-    """Set up the screen for the snake game"""
-    screen = Screen()
-    screen.setup(width=SNAKE_SCREEN["x"], height=SNAKE_SCREEN["y"])
-    screen.bgcolor("black")
-    screen.title("Snake Game")
-    screen.tracer(0)
-    return screen
-
-
-def capture_keypress(screen: Screen, new_snake: Snake) -> None:
-    """Capture the key pressed and move the snake"""
-    screen.listen()
-    screen.onkey(key="Up", fun=new_snake.up)
-    screen.onkey(key="Down", fun=new_snake.down)
-    screen.onkey(key="Left", fun=new_snake.left)
-    screen.onkey(key="Right", fun=new_snake.right)
 
 
 def on_map(new_snake: Snake, new_scoreboard: Scoreboard) -> bool:
@@ -57,18 +38,17 @@ def eat_food(new_snake: Snake, new_food: Food, new_scoreboard: Scoreboard):
 
 def snake() -> None:
     """Play a snake game"""
-    screen = setup_screen()
-    speed = screen.textinput(title="Snake Difficulty", prompt=f"How difficult do you want?"
-                                                              f"{SNAKE_SPEED.keys()}: ")
-    new_snake = Snake()
-    new_food = Food()
-    new_scoreboard = Scoreboard()
-    capture_keypress(screen, new_snake)
+    snake_game = SnakeGame()
+    speed = snake_game.screen.textinput(title="Snake Difficulty",
+                                        prompt=f"How difficult do you want?"
+                                               f"{SNAKE_SPEED.keys()}: ")
+    snake_game.capture_keypress()
 
-    while on_map(new_snake, new_scoreboard) and no_collision(new_snake, new_scoreboard):
-        screen.update()
+    while on_map(snake_game.snake, snake_game.scoreboard) \
+            and no_collision(snake_game.snake, snake_game.scoreboard):
+        snake_game.screen.update()
         time.sleep(SNAKE_SPEED[speed])
-        new_snake.move()
-        eat_food(new_snake, new_food, new_scoreboard)
+        snake_game.snake.move()
+        eat_food(snake_game.snake, snake_game.food, snake_game.scoreboard)
 
-    screen.exitonclick()
+    snake_game.screen.exitonclick()

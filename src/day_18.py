@@ -1,5 +1,6 @@
 """ Day 18 of Coding Challenges for Turtle graphics"""
 # pylint: disable=no-name-in-module
+from math import floor, sqrt
 from random import randint
 from turtle import colormode, Turtle, Screen
 
@@ -18,7 +19,7 @@ def configure_turtle() -> Turtle:
     """Configure the turtle for painting"""
     turtle = Turtle()
     turtle.speed('fastest')
-    turtle.shape('turtle')
+    turtle.hideturtle()
     colormode(255)
     go_to_start(turtle)
     return turtle
@@ -43,7 +44,7 @@ def paint_random_color_dot(turtle: Turtle) -> None:
 def paint_dots(number_of_dots: int) -> None:
     """Paint a picture with the turtle screen"""
     turtle = configure_turtle()
-    dots_per_row = int(number_of_dots / 10)
+    dots_per_row = floor(sqrt(number_of_dots))
 
     for dot_count in range(1, number_of_dots + 1):
         paint_random_color_dot(turtle)
