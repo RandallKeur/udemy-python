@@ -393,23 +393,33 @@ RIGHT = 0
 UP = 90
 LEFT = 180
 DOWN = 270
+SNAKE_SCREEN_SIZE = 600
 SNAKE_SCREEN = {
-    "x": 600,
-    "y": 600
+    "x": {
+        "min": int(-SNAKE_SCREEN_SIZE / 2),
+        "max": int(SNAKE_SCREEN_SIZE / 2)
+    },
+    "y": {
+        "min": int(-SNAKE_SCREEN_SIZE / 2),
+        "max": int(SNAKE_SCREEN_SIZE / 2)
+    }
+}
+SNAKE_OFFSETS = {
+    "food": 40,
+    "scoreboard": 20
 }
 SNAKE_FOOD = {
     "x": {
-        "min": int(-(SNAKE_SCREEN["x"] / 2 - 30)),
-        "max": int(SNAKE_SCREEN["x"] / 2 - 30)
+        "min": int(SNAKE_SCREEN["x"]["min"] + SNAKE_OFFSETS["food"]),
+        "max": int(SNAKE_SCREEN["x"]["max"] - SNAKE_OFFSETS["food"])
     },
     "y": {
-        "min": int(-(SNAKE_SCREEN["y"] / 2 - 30)),
-        "max": int(SNAKE_SCREEN["y"] / 2 + 30)
+        "min": int(SNAKE_SCREEN["y"]["min"] + SNAKE_OFFSETS["food"]),
+        "max": int(SNAKE_SCREEN["x"]["max"] - SNAKE_OFFSETS["food"])
     }
 }
-
 SCOREBOARD_SETTINGS = {
-    "location": (0, int(SNAKE_SCREEN["y"] / 2 - 20)),
+    "location": (0, int(SNAKE_SCREEN["x"]["max"] - SNAKE_OFFSETS["scoreboard"])),
     "game_over": "GAME OVER",
     "alignment": "center",
     "font": {
