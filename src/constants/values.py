@@ -543,11 +543,16 @@ PONG_PADDLE_LOCATION = {
     "left": -(PONG_SCREEN_SIZE["x"] / 2 - 50),
     "right": PONG_SCREEN_SIZE["x"] / 2 - 50
 }
-PONG_SCOREBOARD_OFFSET = 50
+PONG_OFFSETS = {
+    "scoreboard": 50,
+    "ball": 15
+}
+PONG_PADDLE_MOVEMENT = 20
+PONG_BALL_MOVEMENT = 10
 SCOREBOARD_SETTINGS = {
     "locations": {
         "snake": (0, int(SNAKE_SCREEN["y"]["max"] - SNAKE_OFFSETS["scoreboard"])),
-        "pong": (0, int(PONG_SCREEN["y"]["max"] - PONG_SCOREBOARD_OFFSET))
+        "pong": (0, int(PONG_SCREEN["y"]["max"] - PONG_OFFSETS["scoreboard"]))
     },
     "game_over": "GAME OVER",
     "alignment": "center",

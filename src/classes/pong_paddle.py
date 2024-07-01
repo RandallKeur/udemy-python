@@ -1,7 +1,7 @@
 """Class to represent that paddle in the pong game"""
 from turtle import Turtle
 
-from src.constants.values import UP, DOWN
+from src.constants.values import UP, DOWN, PONG_PADDLE_MOVEMENT
 
 
 class PongPaddle(Turtle):
@@ -24,7 +24,7 @@ class PongPaddle(Turtle):
 
     def move(self):
         """Move the paddle"""
-        self.forward(10)
+        self.forward(PONG_PADDLE_MOVEMENT)
 
     def move_up(self):
         self.setheading(UP)
