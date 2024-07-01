@@ -40,6 +40,8 @@ ___
 | 17  | 🎓 Quiz Generator             |
 | 18  | 🖼️ Turtle Art                |
 | 19  | 🐢  Turtle Etch-a-Sketch      |
+| 20  | 🐍 Snake (partial)            |
+| 21  | 🐍 Snake (full game)          |
 
 ## 🛠 Tools used in this project 
 
