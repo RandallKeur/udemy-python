@@ -6,7 +6,7 @@ from io import StringIO
 from unittest import mock
 
 from src.classes.quiz_generator import QuestionBank, Quiz
-from src.constants.question_bank import QUESTION_BANK
+from src.constants.values import QUESTION_BANK
 from src.day_17 import take_quiz
 
 

@@ -18,14 +18,14 @@ def caesar_cipher():
     print(CAESAR_CIPHER)
     running = True
     while running:
-        decision = ''
-        while decision not in ('encode','decode'):
-            decision = input('Type \"encode\" or \"decode:\"\n')
-        word = input('Type your message:\n')
-        shift_value = int(input('Type your shift number:\n'))
+        decision = ""
+        while decision not in ("encode","decode"):
+            decision = input("Type \'encode\' or \'decode:\'\n")
+        word = input("Type your message:\n")
+        shift_value = int(input("Type your shift number:\n"))
         if decision == "encode":
             shift(word, shift_value)
         elif decision == "decode":
             shift(word, -shift_value)
 
-        running = input('Do you want to continue?\n') == 'yes'
+        running = input("Do you want to continue?\n") == "yes"

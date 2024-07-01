@@ -19,6 +19,6 @@ class Food(Turtle):
 
     def move_to_new_location(self):
         """Randomly move the food to a new location"""
-        random_x = randint(SNAKE_FOOD['x']['min'], SNAKE_FOOD['x']['max'])
-        random_y = randint(SNAKE_FOOD['y']['min'], SNAKE_FOOD['y']['max'])
+        random_x = randint(SNAKE_FOOD["x"]["min"], SNAKE_FOOD["x"]["max"])
+        random_y = randint(SNAKE_FOOD["y"]["min"], SNAKE_FOOD["y"]["max"])
         self.goto(random_x, random_y)

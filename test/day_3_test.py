@@ -19,7 +19,7 @@ class Day3Test(unittest.TestCase):
         """Test the Alligator image"""
         # given
         self.art.extend([ISLAND.strip(), ALLIGATOR.strip()])
-        with mock.patch('sys.stdin', new=StringIO('left\nswim')):
+        with mock.patch("sys.stdin", new=StringIO("left\nswim")):
 
             # when
             treasure_island()
@@ -33,7 +33,7 @@ class Day3Test(unittest.TestCase):
         """Test the Boat image"""
         # given
         self.art.extend([ISLAND.strip(), BOAT.strip()])
-        with mock.patch('sys.stdin', new=StringIO('left\nwait\nblue')):
+        with mock.patch("sys.stdin", new=StringIO("left\nwait\nblue")):
 
             # when
             treasure_island()
@@ -47,7 +47,7 @@ class Day3Test(unittest.TestCase):
         """Test the Fire image"""
         # given
         self.art.extend([ISLAND.strip(), FIRE.strip()])
-        with mock.patch('sys.stdin', new=StringIO('right\nred')):
+        with mock.patch("sys.stdin", new=StringIO("right\nred")):
 
             # when
             treasure_island()
@@ -61,7 +61,7 @@ class Day3Test(unittest.TestCase):
         """Test the Plant image"""
         # given
         self.art.extend([ISLAND.strip(), CARNIVOROUS_PLANTS.strip()])
-        with mock.patch('sys.stdin', new=StringIO('right\ngreen')):
+        with mock.patch("sys.stdin", new=StringIO("right\ngreen")):
 
             # when
             treasure_island()
@@ -75,7 +75,7 @@ class Day3Test(unittest.TestCase):
         """Test the Treasure image"""
         # given
         self.art.extend([ISLAND.strip(), TREASURE.strip()])
-        with mock.patch('sys.stdin', new=StringIO('right\nblue')):
+        with mock.patch("sys.stdin", new=StringIO("right\nblue")):
 
             # when
             treasure_island()
@@ -86,5 +86,5 @@ class Day3Test(unittest.TestCase):
                 self.assertTrue(art in actual)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

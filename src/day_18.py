@@ -18,7 +18,7 @@ def go_to_start(turtle: Turtle) -> None:
 def configure_turtle() -> Turtle:
     """Configure the turtle for painting"""
     turtle = Turtle()
-    turtle.speed('fastest')
+    turtle.speed("fastest")
     turtle.hideturtle()
     colormode(255)
     go_to_start(turtle)

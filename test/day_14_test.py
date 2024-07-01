@@ -18,8 +18,8 @@ class Day14Test(unittest.TestCase):
     def test_higher_lower_art(self):
         """Test the Higher or Lower image"""
         # given
-        with mock.patch('sys.stdin', new=StringIO('A\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\n'
-                                                  'A\nA\nA\nA\nA\nA')):
+        with mock.patch("sys.stdin", new=StringIO("A\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\n"
+                                                  "A\nA\nA\nA\nA\nA")):
 
             # when
             higher_lower()
@@ -29,5 +29,5 @@ class Day14Test(unittest.TestCase):
             self.assertTrue(self.art in actual)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

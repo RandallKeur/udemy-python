@@ -18,8 +18,8 @@ class Day9Test(unittest.TestCase):
     def test_silent_auction_tie(self):
         """Test the Silent Auction with a tie"""
         # given
-        expected = 'tie'
-        with mock.patch('sys.stdin', new=StringIO("jack\n100\nyes\njill\n100\nno")):
+        expected = "tie"
+        with mock.patch("sys.stdin", new=StringIO("jack\n100\nyes\njill\n100\nno")):
 
             # when
             silent_auction()
@@ -33,8 +33,8 @@ class Day9Test(unittest.TestCase):
     def test_silent_auction_winner(self):
         """Test the Silent Auction with a winner"""
         # given
-        expected = 'winner'
-        with mock.patch('sys.stdin', new=StringIO('jack\n100\nyes\njill\n120\nno')):
+        expected = "winner"
+        with mock.patch("sys.stdin", new=StringIO("jack\n100\nyes\njill\n120\nno")):
 
             # when
             silent_auction()
@@ -46,5 +46,5 @@ class Day9Test(unittest.TestCase):
             self.assertTrue(expected in actual)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -8,9 +8,6 @@ from src.constants.values import SNAKE_SPEED
 def snake() -> None:
     """Play a snake game"""
     snake_game = SnakeGame()
-    print(snake_game.on_map())
-    print(snake_game.collision())
-    print(snake_game.game_on())
     speed = snake_game.screen.textinput(title="Snake Difficulty",
                                         prompt=f"How difficult do you want?"
                                                f"{SNAKE_SPEED.keys()}: ")

@@ -20,8 +20,8 @@ class Day11Test(unittest.TestCase):
         # pylint: disable=R0801
         """Test the Blackjack stand"""
         # given
-        expected = 'Dealer shows'
-        with mock.patch('sys.stdin', new=StringIO(f'{STAND}\nSTOP')):
+        expected = "Dealer shows"
+        with mock.patch("sys.stdin", new=StringIO(f"{STAND}\nSTOP")):
 
             # when
             blackjack()
@@ -32,5 +32,5 @@ class Day11Test(unittest.TestCase):
             self.assertTrue(expected in actual)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -12,14 +12,14 @@ class Day4Test(unittest.TestCase):
     def setUp(self):
         self.out = StringIO()
         sys.stdout = self.out
-        self.selection = iter(['rock', 'paper', 'scissors', 'null'])
+        self.selection = iter(["rock", "paper", "scissors", "null"])
         self.expected = iter([Choices.rock, Choices.paper, Choices.scissors, Choices.invalid])
 
     def test_mappings(self):
         """ Test for mappings of rock, paper, scissors"""
         # given
         for var in self.selection:
-            with mock.patch('sys.stdin', new=StringIO(var)):
+            with mock.patch("sys.stdin", new=StringIO(var)):
 
                 # when
                 actual = map_text_to_art(var)
@@ -28,5 +28,5 @@ class Day4Test(unittest.TestCase):
                 self.assertEqual(actual, next(self.expected))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
