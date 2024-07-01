@@ -32,8 +32,7 @@ class PongScoreboard(Turtle):
         """Determine the winner of the game"""
         if self.score["left"] > self.score["right"]:
             return "Player 1"
-        else:
-            return "Player 2"
+        return "Player 2"
 
     def game_over(self) -> None:
         """End the game"""
