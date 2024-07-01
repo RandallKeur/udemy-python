@@ -16,12 +16,12 @@ class SnakeScoreboard(Turtle):
         self.score = 0
         self.update_scoreboard()
 
-    def increase_score(self):
+    def increase_score(self) -> None:
         """Increase the score by 1"""
         self.score += 1
         self.update_scoreboard()
 
-    def update_scoreboard(self):
+    def update_scoreboard(self) -> None:
         """Update the scoreboard"""
         self.clear()
         self.write(f"Score: {self.score}", align=SCOREBOARD_SETTINGS["alignment"],
@@ -29,7 +29,7 @@ class SnakeScoreboard(Turtle):
                          SCOREBOARD_SETTINGS["font"]["size"]["small"],
                          SCOREBOARD_SETTINGS["font"]["weight"]))
 
-    def game_over(self):
+    def game_over(self) -> None:
         """End the game"""
         self.goto(0, 0)
         self.write(SCOREBOARD_SETTINGS["game_over"], align=SCOREBOARD_SETTINGS["alignment"],

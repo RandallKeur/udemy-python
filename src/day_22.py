@@ -12,10 +12,11 @@ def pong() -> None:
                                        prompt=f"How difficult do you want? "
                                               f"{", ".join(GAME_SPEED.keys())}: ")
     pong_game.capture_keypress()
-    while True:
+    while pong_game.game_on():
         pong_game.screen.update()
         time.sleep(GAME_SPEED[speed])
         pong_game.ball.move()
         pong_game.detect_collisions()
         pong_game.detect_goal()
 
+    pong_game.screen.exitonclick()

@@ -17,6 +17,7 @@ class PongGame:
         self.left_paddle = PongPaddle(PONG_PADDLE_LOCATION["left"])
         self.right_paddle = PongPaddle(PONG_PADDLE_LOCATION["right"])
         self.ball = PongBall()
+        self.winning_score = self.set_winning_score()
 
     def setup_screen(self):
         """Set up the screen for the pong game"""
@@ -25,6 +26,12 @@ class PongGame:
         self.screen.bgcolor("black")
         self.screen.title("Pong")
         self.screen.tracer(0)
+
+    def set_winning_score(self) -> int:
+        """Set the winning score to be played to"""
+        response = self.screen.textinput(title="Snake Game",
+                                         prompt=f"What score do you want to play to?: ")
+        return int(response)
 
     def capture_keypress(self):
         """Capture the key pressed and move the paddle"""
@@ -37,7 +44,7 @@ class PongGame:
     def detect_collision_with_paddle(self):
         if self.right_paddle.ycor() - 50 <= self.ball.ycor() <= self.right_paddle.ycor() + 50 \
                 and self.ball.xcor() > PONG_PADDLE_LOCATION["right"] - PONG_OFFSETS["paddle"] \
-                or self.ball.distance(self.left_paddle) < 50 \
+                or self.left_paddle.ycor() - 50 <= self.ball.ycor() <= self.left_paddle.ycor() + 50 \
                 and self.ball.xcor() < PONG_PADDLE_LOCATION["left"] + PONG_OFFSETS["paddle"]:
             self.ball.bounce()
 
@@ -45,7 +52,7 @@ class PongGame:
         if self.ball.ycor() > PONG_SCREEN["y"]["max"] - PONG_OFFSETS["ball"] \
                 or self.ball.ycor() < PONG_SCREEN["y"]["min"] + PONG_OFFSETS["ball"]:
             self.ball.bounce()
-            
+
     def detect_collisions(self):
         self.detect_collision_with_paddle()
         self.detect_collision_with_wall()
@@ -59,9 +66,16 @@ class PongGame:
         self.scoreboard.score["right"] += 1
         self.scoreboard.update_scoreboard()
         self.ball.reset_position()
-    
+
     def detect_goal(self):
         if self.ball.xcor() > PONG_PADDLE_LOCATION["right"]:
             self.score_left()
         if self.ball.xcor() < PONG_PADDLE_LOCATION["left"]:
             self.score_right()
+
+    def game_on(self):
+        if self.scoreboard.score["left"] >= 10 \
+                or self.scoreboard.score["right"] >= 10:
+            self.scoreboard.game_over()
+            return False
+        return True

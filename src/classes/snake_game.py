@@ -18,7 +18,7 @@ class SnakeGame:
         self.food = Food()
         self.scoreboard = SnakeScoreboard()
 
-    def capture_keypress(self):
+    def capture_keypress(self) -> None:
         """Capture the key pressed and move the snake"""
         self.screen.listen()
         self.screen.onkey(key="Up", fun=self.snake.up)
@@ -26,7 +26,7 @@ class SnakeGame:
         self.screen.onkey(key="Left", fun=self.snake.left)
         self.screen.onkey(key="Right", fun=self.snake.right)
 
-    def setup_screen(self):
+    def setup_screen(self) -> None:
         """Set up the screen for the snake game"""
         self.screen = Screen()
         self.screen.setup(width=SNAKE_SCREEN_SIZE, height=SNAKE_SCREEN_SIZE)
@@ -57,7 +57,7 @@ class SnakeGame:
         self.scoreboard.game_over()
         return False
 
-    def eat_food(self):
+    def eat_food(self) -> None:
         """Eat the food when the snake is close enough"""
         if self.snake.head.distance(self.food) < 15:
             self.snake.extend()

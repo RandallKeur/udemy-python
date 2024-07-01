@@ -15,15 +15,15 @@ class PongBall(Turtle):
         self.speed("slow")
         self.setheading(45)
 
-    def move(self):
+    def move(self) -> None:
         """Move the ball"""
         self.forward(PONG_BALL_MOVEMENT)
 
-    def bounce(self):
+    def bounce(self) -> None:
         """Bounce against a wall"""
         self.setheading(self.heading() - 90)
 
-    def reset_position(self):
+    def reset_position(self) -> None:
         """Reset the position of the ball"""
         self.goto(0, 0)
         self.bounce()
