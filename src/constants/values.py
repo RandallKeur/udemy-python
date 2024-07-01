@@ -520,21 +520,54 @@ SNAKE_FOOD = {
         "max": int(SNAKE_SCREEN["x"]["max"] - SNAKE_OFFSETS["food"])
     }
 }
-SCOREBOARD_SETTINGS = {
-    "location": (0, int(SNAKE_SCREEN["x"]["max"] - SNAKE_OFFSETS["scoreboard"])),
-    "game_over": "GAME OVER",
-    "alignment": "center",
-    "font": {
-        "family": "Arial",
-        "weight": "normal",
-        "size": {
-            "small": 18,
-            "large": 24
-        },
-    }
-}
-SNAKE_SPEED = {
+GAME_SPEED = {
     "easy": 0.15,
     "medium": 0.10,
     "hard": 0.05
+}
+PONG_SCREEN_SIZE = {
+    "x": 800,
+    "y": 600
+}
+PONG_SCREEN = {
+    "x": {
+        "min": int(-PONG_SCREEN_SIZE["x"] / 2),
+        "max": int(PONG_SCREEN_SIZE["x"] / 2)
+    },
+    "y": {
+        "min": int(-PONG_SCREEN_SIZE["y"] / 2),
+        "max": int(PONG_SCREEN_SIZE["y"] / 2)
+    }
+}
+PONG_PADDLE_LOCATION = {
+    "left": PONG_SCREEN["x"]["min"] + 50,
+    "right": PONG_SCREEN["x"]["max"] - 50
+}
+PONG_OFFSETS = {
+    "scoreboard": 50,
+    "ball": 15,
+    "paddle": 20
+}
+PONG_PADDLE_MOVEMENT = 20
+PONG_BALL_MOVEMENT = 10
+SCOREBOARD_SETTINGS = {
+    "locations": {
+        "snake": (0, int(SNAKE_SCREEN["y"]["max"] - SNAKE_OFFSETS["scoreboard"])),
+        "pong": (0, int(PONG_SCREEN["y"]["max"] - PONG_OFFSETS["scoreboard"]))
+    },
+    "game_over": "GAME OVER",
+    "alignment": "center",
+    "font": {
+        "family": {
+            "arial": "Arial",
+            "courier": "Courier"
+        },
+        "weight": "normal",
+        "size": {
+            "small": 18,
+            "large": 24,
+            "x-large": 32,
+            "xx-large": 48
+        },
+    }
 }

@@ -42,6 +42,7 @@ ___
 | 19  | 🐢  Turtle Etch-a-Sketch      |
 | 20  | 🐍 Snake (partial)            |
 | 21  | 🐍 Snake (full game)          |
+| 22  | 🏓 Pong                       |
 
 ## 🛠 Tools used in this project 
 
