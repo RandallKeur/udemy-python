@@ -4,7 +4,7 @@ from turtle import Turtle
 from src.constants.values import SCOREBOARD_SETTINGS
 
 
-class Scoreboard(Turtle):
+class SnakeScoreboard(Turtle):
     """Class to represent the scoreboard in the snake game"""
 
     def __init__(self):

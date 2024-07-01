@@ -529,7 +529,8 @@ SCOREBOARD_SETTINGS = {
         "weight": "normal",
         "size": {
             "small": 18,
-            "large": 24
+            "large": 24,
+            "x-large": 32
         },
     }
 }
@@ -537,4 +538,8 @@ SNAKE_SPEED = {
     "easy": 0.15,
     "medium": 0.10,
     "hard": 0.05
+}
+PONG_SCREEN_SIZE = {
+    "x": 800,
+    "y": 600
 }

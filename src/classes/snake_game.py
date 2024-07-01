@@ -2,7 +2,7 @@
 from turtle import Screen
 
 from src.classes.food import Food
-from src.classes.scoreboard import Scoreboard
+from src.classes.snake_scoreboard import SnakeScoreboard
 from src.classes.snake import Snake
 from src.constants.values import SNAKE_SCREEN, SNAKE_SCREEN_SIZE, SNAKE_SPACING
 
@@ -16,7 +16,7 @@ class SnakeGame:
         self.snake = Snake()
         self.capture_keypress()
         self.food = Food()
-        self.scoreboard = Scoreboard()
+        self.scoreboard = SnakeScoreboard()
 
     def capture_keypress(self):
         """Capture the key pressed and move the snake"""
