@@ -40,17 +40,22 @@ class SnakeGame:
                 or self.snake.head.xcor() < SNAKE_SCREEN["x"]["min"] \
                 or self.snake.head.ycor() > SNAKE_SCREEN["y"]["max"] \
                 or self.snake.head.ycor() < SNAKE_SCREEN["y"]["min"]:
-            self.scoreboard.game_over()
             return False
         return True
 
-    def no_collision(self) -> bool:
+    def collision(self) -> bool:
         """Detect is there is no collision with the end of the snake"""
         for segment in self.snake.segments[1:len(self.snake.segments) - 1]:
             if self.snake.head.distance(segment) < SNAKE_SPACING / 2:
-                self.scoreboard.game_over()
-                return False
-        return True
+                return True
+        return False
+
+    def game_on(self) -> bool:
+        """Detect if the game has ended and display game over"""
+        if self.on_map() and not self.collision():
+            return True
+        self.scoreboard.game_over()
+        return False
 
     def eat_food(self):
         """Eat the food when the snake is close enough"""
