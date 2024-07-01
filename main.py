@@ -1,5 +1,5 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
-from src.constants.question_bank import QUESTION_BANK
+from src.constants.values import QUESTION_BANK
 from src.classes.quiz_generator import QuestionBank
 from src.classes.coffee_maker import CoffeeMaker
 from src.classes.menu import Menu

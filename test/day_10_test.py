@@ -20,8 +20,8 @@ class Day10Test(unittest.TestCase):
     def test_calculator_multiplication(self):
         """Test the Calculator multiplication"""
         # given
-        expected = '500'
-        with mock.patch('sys.stdin', new=StringIO('100\n*\n5\nSTOP')):
+        expected = "500"
+        with mock.patch("sys.stdin", new=StringIO("100\n*\n5\nSTOP")):
 
             # when
             calculator()
@@ -35,8 +35,8 @@ class Day10Test(unittest.TestCase):
     def test_calculator_division(self):
         """Test the Calculator division"""
         # given
-        expected = '20'
-        with mock.patch('sys.stdin', new=StringIO('100\n/\n5\nSTOP')):
+        expected = "20"
+        with mock.patch("sys.stdin", new=StringIO("100\n/\n5\nSTOP")):
 
             # when
             calculator()
@@ -50,8 +50,8 @@ class Day10Test(unittest.TestCase):
     def test_calculator_subtraction(self):
         """Test the Calculator subtraction"""
         # given
-        expected = '95'
-        with mock.patch('sys.stdin', new=StringIO('100\n-\n5\nSTOP')):
+        expected = "95"
+        with mock.patch("sys.stdin", new=StringIO("100\n-\n5\nSTOP")):
 
             # when
             calculator()
@@ -65,8 +65,8 @@ class Day10Test(unittest.TestCase):
     def test_calculator_addition(self):
         """Test the Calculator addition"""
         # given
-        expected = '105'
-        with mock.patch('sys.stdin', new=StringIO('100\n+\n5\nSTOP')):
+        expected = "105"
+        with mock.patch("sys.stdin", new=StringIO("100\n+\n5\nSTOP")):
 
             # when
             calculator()
@@ -78,5 +78,5 @@ class Day10Test(unittest.TestCase):
             self.assertTrue(expected in actual)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -13,20 +13,20 @@ class Day2Test(unittest.TestCase):
         self.out = StringIO()
         sys.stdout = self.out
         self.inputs = {
-            'bill': 0,
-            'people': 0,
-            'tip': 20
+            "bill": 0,
+            "people": 0,
+            "tip": 20
         }
 
     def test_tip_calculator(self):
         """ Test for Tip Calculator"""
-        self.inputs['bill'] = 1000
-        self.inputs['people'] = 10
-        self.inputs['tip'] = 20
-        expected = '120'
-        with mock.patch('sys.stdin', StringIO(f'{self.inputs['bill']}\n'
-                                              f'{self.inputs['people']}\n'
-                                              f'{self.inputs['tip']}')):
+        self.inputs["bill"] = 1000
+        self.inputs["people"] = 10
+        self.inputs["tip"] = 20
+        expected = "120"
+        with mock.patch("sys.stdin", StringIO(f"{self.inputs["bill"]}\n"
+                                              f"{self.inputs["people"]}\n"
+                                              f"{self.inputs["tip"]}")):
 
             # when
             calculate_tip()
@@ -36,5 +36,5 @@ class Day2Test(unittest.TestCase):
             self.assertTrue(expected in actual)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
