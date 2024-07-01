@@ -520,8 +520,35 @@ SNAKE_FOOD = {
         "max": int(SNAKE_SCREEN["x"]["max"] - SNAKE_OFFSETS["food"])
     }
 }
+SNAKE_SPEED = {
+    "easy": 0.15,
+    "medium": 0.10,
+    "hard": 0.05
+}
+PONG_SCREEN_SIZE = {
+    "x": 800,
+    "y": 600
+}
+PONG_SCREEN = {
+    "x": {
+        "min": int(-PONG_SCREEN_SIZE["x"] / 2),
+        "max": int(PONG_SCREEN_SIZE["x"] / 2)
+    },
+    "y": {
+        "min": int(-PONG_SCREEN_SIZE["y"] / 2),
+        "max": int(PONG_SCREEN_SIZE["y"] / 2)
+    }
+}
+PONG_PADDLE_LOCATION = {
+    "left": -(PONG_SCREEN_SIZE["x"] / 2 - 50),
+    "right": PONG_SCREEN_SIZE["x"] / 2 - 50
+}
+PONG_SCOREBOARD_OFFSET = 50
 SCOREBOARD_SETTINGS = {
-    "location": (0, int(SNAKE_SCREEN["x"]["max"] - SNAKE_OFFSETS["scoreboard"])),
+    "locations": {
+        "snake": (0, int(SNAKE_SCREEN["y"]["max"] - SNAKE_OFFSETS["scoreboard"])),
+        "pong": (0, int(PONG_SCREEN["y"]["max"] - PONG_SCOREBOARD_OFFSET))
+    },
     "game_over": "GAME OVER",
     "alignment": "center",
     "font": {
@@ -533,13 +560,4 @@ SCOREBOARD_SETTINGS = {
             "x-large": 32
         },
     }
-}
-SNAKE_SPEED = {
-    "easy": 0.15,
-    "medium": 0.10,
-    "hard": 0.05
-}
-PONG_SCREEN_SIZE = {
-    "x": 800,
-    "y": 600
 }

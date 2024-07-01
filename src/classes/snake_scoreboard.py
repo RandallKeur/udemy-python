@@ -11,7 +11,7 @@ class SnakeScoreboard(Turtle):
         super().__init__()
         self.hideturtle()
         self.penup()
-        self.goto(SCOREBOARD_SETTINGS["location"])
+        self.goto(SCOREBOARD_SETTINGS["locations"]["snake"])
         self.color("white")
         self.score = 0
         self.update_scoreboard()

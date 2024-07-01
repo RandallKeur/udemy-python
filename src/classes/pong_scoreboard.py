@@ -11,7 +11,7 @@ class PongScoreboard(Turtle):
         super().__init__()
         self.hideturtle()
         self.penup()
-        self.goto(0, 250)
+        self.goto(SCOREBOARD_SETTINGS["locations"]["pong"])
         self.color("white")
         self.score = {
             "1": 0,

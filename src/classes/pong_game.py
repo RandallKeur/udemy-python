@@ -3,7 +3,7 @@ from turtle import Screen
 
 from src.classes.pong_scoreboard import PongScoreboard
 from src.classes.pong_paddle import PongPaddle
-from src.constants.values import PONG_SCREEN_SIZE
+from src.constants.values import PONG_SCREEN_SIZE, PONG_PADDLE_LOCATION
 
 
 class PongGame:
@@ -13,8 +13,8 @@ class PongGame:
         self.screen = Screen()
         self.setup_screen()
         self.scoreboard = PongScoreboard()
-        self.right_paddle = PongPaddle(350)
-        self.left_paddle = PongPaddle(-350)
+        self.left_paddle = PongPaddle(PONG_PADDLE_LOCATION["left"])
+        self.right_paddle = PongPaddle(PONG_PADDLE_LOCATION["right"])
 
     def setup_screen(self):
         """Set up the screen for the pong game"""
