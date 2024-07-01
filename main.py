@@ -17,78 +17,78 @@ question_bank = QuestionBank(QUESTION_BANK)
 
 def continue_running():
     """ Helper method to continue running the application based on feedback"""
-    response = input('\nWould you like to see another day\'s challenge?\n')
+    response = input("\nWould you like to see another day\'s challenge?\n")
     decision_valid = False
     while not decision_valid:
         match response.lower():
-            case 'yes':
+            case "yes":
                 return False
-            case 'no':
-                print(f'{GOODBYE}\n'
-                      'Thanks for playing!')
+            case "no":
+                print(f"{GOODBYE}\n"
+                      "Thanks for playing!")
                 return True
             case _:
-                response = input('Invalid RESPONSE, please reply with \'yes\' or \'no\'\n')
+                response = input("Invalid RESPONSE, please reply with \'yes\' or \'no\'\n")
     return None
 
 
 def switchboard(day):
-    """ Helper switchboard for routing feedback to each day's challenge"""
+    """ Helper switchboard for routing feedback to each day"s challenge"""
     decision_valid = False
     while not decision_valid:
         decision_valid = True
         match day:
-            case '1':
+            case "1":
                 day_1.band_name_generator()
-            case '2':
+            case "2":
                 day_2.calculate_tip()
-            case '3':
+            case "3":
                 day_3.treasure_island()
-            case '4':
+            case "4":
                 day_4.rock_paper_scissors()
-            case '5':
+            case "5":
                 day_5.password_generator()
-            case '6':
-                print('Check out day_6.md file for more information')
-            case '7':
+            case "6":
+                print("Check out day_6.md file for more information")
+            case "7":
                 day_7.play_hangman()
-            case '8':
+            case "8":
                 day_8.caesar_cipher()
-            case '9':
+            case "9":
                 day_9.silent_auction()
-            case '10':
+            case "10":
                 day_10.calculator()
-            case '11':
+            case "11":
                 day_11.blackjack()
-            case '12':
+            case "12":
                 day_12.number_guessing()
-            case '13':
+            case "13":
                 day_13.run()
-            case '14':
+            case "14":
                 day_14.higher_lower()
-            case '15':
+            case "15":
                 day_15.coffee_maker()
-            case '16':
+            case "16":
                 day_16.coffee_machine(menu, coffee_maker, money_machine)
-            case '17':
+            case "17":
                 day_17.take_quiz(question_bank)
-            case '18':
-                number_of_dots = int(input('How many dots do you want?: '))
+            case "18":
+                number_of_dots = int(input("How many dots do you want?: "))
                 day_18.paint_dots(number_of_dots)
-            case '19':
+            case "19":
                 day_19.play()
-            case '20':
+            case "20":
                 day_20.snake()
-            case '21':
+            case "21":
                 day_21.snake()
             case _:
                 decision_valid = False
-                day = input('Invalid input, please try again\n')
+                day = input("Invalid input, please try again\n")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     STOP = False
     while not STOP:
-        day_of_coding_challenge = input('Which day of coding challenge do you want to see?\n')
+        day_of_coding_challenge = input("Which day of coding challenge do you want to see?\n")
         switchboard(day_of_coding_challenge)
         STOP = continue_running()
