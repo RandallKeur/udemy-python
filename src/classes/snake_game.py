@@ -28,7 +28,6 @@ class SnakeGame:
 
     def setup_screen(self) -> None:
         """Set up the screen for the snake game"""
-        self.screen = Screen()
         self.screen.setup(width=SNAKE_SCREEN_SIZE, height=SNAKE_SCREEN_SIZE)
         self.screen.bgcolor("black")
         self.screen.title("Snake Game")
