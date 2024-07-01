@@ -14,16 +14,16 @@ class PongScoreboard(Turtle):
         self.goto(SCOREBOARD_SETTINGS["locations"]["pong"])
         self.color("white")
         self.score = {
-            "1": 0,
-            "2": 0
+            "left": 0,
+            "right": 0
         }
         self.update_scoreboard()
 
     def update_scoreboard(self):
         """Update the scoreboard"""
         self.clear()
-        self.write(f"{self.score["1"]}     {self.score["2"]}",
+        self.write(f"{self.score["left"]}    {self.score["right"]}",
                    align=SCOREBOARD_SETTINGS["alignment"],
-                   font=(SCOREBOARD_SETTINGS["font"]["family"],
-                         SCOREBOARD_SETTINGS["font"]["size"]["x-large"],
+                   font=(SCOREBOARD_SETTINGS["font"]["family"]["courier"],
+                         SCOREBOARD_SETTINGS["font"]["size"]["xx-large"],
                          SCOREBOARD_SETTINGS["font"]["weight"]))

@@ -16,7 +16,14 @@ class PongBall(Turtle):
         self.setheading(45)
 
     def move(self):
+        """Move the ball"""
         self.forward(PONG_BALL_MOVEMENT)
 
     def bounce(self):
-        self.setheading(-self.heading())
+        """Bounce against a wall"""
+        self.setheading(self.heading() - 90)
+
+    def reset_position(self):
+        """Reset the position of the ball"""
+        self.goto(0, 0)
+        self.bounce()

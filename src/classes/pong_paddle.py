@@ -27,11 +27,11 @@ class PongPaddle(Turtle):
         self.forward(PONG_PADDLE_MOVEMENT)
 
     def move_up(self):
+        """Move the paddle up"""
         self.setheading(UP)
         self.move()
 
     def move_down(self):
+        """Move the paddle down"""
         self.setheading(DOWN)
         self.move()
-
-

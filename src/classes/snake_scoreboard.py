@@ -25,7 +25,7 @@ class SnakeScoreboard(Turtle):
         """Update the scoreboard"""
         self.clear()
         self.write(f"Score: {self.score}", align=SCOREBOARD_SETTINGS["alignment"],
-                   font=(SCOREBOARD_SETTINGS["font"]["family"],
+                   font=(SCOREBOARD_SETTINGS["font"]["family"]["arial"],
                          SCOREBOARD_SETTINGS["font"]["size"]["small"],
                          SCOREBOARD_SETTINGS["font"]["weight"]))
 
@@ -33,7 +33,7 @@ class SnakeScoreboard(Turtle):
         """End the game"""
         self.goto(0, 0)
         self.write(SCOREBOARD_SETTINGS["game_over"], align=SCOREBOARD_SETTINGS["alignment"],
-                   font=(SCOREBOARD_SETTINGS["font"]["family"],
+                   font=(SCOREBOARD_SETTINGS["font"]["family"]["arial"],
                          SCOREBOARD_SETTINGS["font"]["size"]["large"],
                          SCOREBOARD_SETTINGS["font"]["weight"])
                    )
