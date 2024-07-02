@@ -565,17 +565,19 @@ TURTLE_CROSSING_OFFSETS = {
     "player": 40,
     "scoreboard": 80
 }
-PLAYER_STARTING_POSITION = (0, -(TURTLE_CROSSING_SCREEN["y"]["min"] - TURTLE_CROSSING_OFFSETS["player"]))
+PLAYER_STARTING_Y_POSITION = TURTLE_CROSSING_SCREEN["y"]["min"] + TURTLE_CROSSING_OFFSETS["player"]
+PLAYER_STARTING_POSITION = (0, PLAYER_STARTING_Y_POSITION)
 PLAYER_MOVEMENT = 10
 PLAYER_FINISH_LINE = TURTLE_CROSSING_SCREEN["y"]["max"] - TURTLE_CROSSING_OFFSETS["player"]
 CAR_COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
-CAR_STARTING_DISTANCE = 5
+CAR_MOVE_DISTANCE = 5
 CAR_MOVE_INCREMENT = 10
 SCOREBOARD_SETTINGS = {
     "locations": {
         "snake": (0, int(SNAKE_SCREEN["y"]["max"] - SNAKE_OFFSETS["scoreboard"])),
         "pong": (0, int(PONG_SCREEN["y"]["max"] - PONG_OFFSETS["scoreboard"])),
-        "turtle_crossing": (int(TURTLE_CROSSING_SCREEN["x"]["min"] + TURTLE_CROSSING_OFFSETS["scoreboard"]),
+        "turtle_crossing": (int(TURTLE_CROSSING_SCREEN["x"]["min"] +
+                                TURTLE_CROSSING_OFFSETS["scoreboard"]),
                             PLAYER_FINISH_LINE)
     },
     "game_over": "GAME OVER",

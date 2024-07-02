@@ -30,6 +30,11 @@ class TurtleCrossingScoreboard(Turtle):
         self.goto(0, 0)
         self.write(SCOREBOARD_SETTINGS["game_over"], align=SCOREBOARD_SETTINGS["alignment"],
                    font=(SCOREBOARD_SETTINGS["font"]["family"]["arial"],
-                         SCOREBOARD_SETTINGS["font"]["size"]["large"],
+                         SCOREBOARD_SETTINGS["font"]["size"]["x-large"],
                          SCOREBOARD_SETTINGS["font"]["weight"])
                    )
+
+    def level_up(self):
+        """Update the scoreboard with the next level"""
+        self.level += 1
+        self.update_scoreboard()
