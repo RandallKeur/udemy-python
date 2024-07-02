@@ -43,14 +43,14 @@ class TurtleCrossingGame:
             return False
         return True
 
-    def level_up(self):
+    def level_up(self) -> None:
         """Updates to next level of the crossing game"""
         if self.player.is_at_finish_line():
             self.scoreboard.level_up()
             self.player.go_to_start()
             self.increase_difficulty()
 
-    def increase_difficulty(self):
+    def increase_difficulty(self) -> None:
         """Increases the difficulty of the game"""
         if self.scoreboard.level % 2 == 0:
             self.car_manager.difficulty["distance"] += 1

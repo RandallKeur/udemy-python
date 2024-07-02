@@ -14,15 +14,15 @@ class Player(Turtle):
         self.goto(PLAYER_STARTING_POSITION)
         self.setheading(UP)
 
-    def go_up(self):
+    def go_up(self) -> None:
         """Move the player upwards"""
         self.forward(PLAYER_MOVEMENT)
 
-    def go_to_start(self):
+    def go_to_start(self) -> None:
         """Move the player to the starting position"""
         self.goto(PLAYER_STARTING_POSITION)
 
-    def is_at_finish_line(self):
+    def is_at_finish_line(self) -> bool:
         """Checks if the player has reached the finish line"""
         if self.ycor() > PLAYER_FINISH_LINE:
             return True

@@ -34,7 +34,7 @@ class TurtleCrossingScoreboard(Turtle):
                          SCOREBOARD_SETTINGS["font"]["weight"])
                    )
 
-    def level_up(self):
+    def level_up(self) -> None:
         """Update the scoreboard with the next level"""
         self.level += 1
         self.update_scoreboard()

@@ -15,7 +15,7 @@ class CarManager:
             "distance": CAR_MOVE_DISTANCE
             }
 
-    def add_car(self):
+    def add_car(self) -> None:
         """Add a car to the list of cars"""
         random_chance = randint(1, self.difficulty["probability"])
         if random_chance == 1:
@@ -23,7 +23,7 @@ class CarManager:
             car.shapesize(stretch_wid=1, stretch_len=2)
             self.cars.append(car)
 
-    def move_cars_forward(self):
+    def move_cars_forward(self) -> None:
         """Move the cars forward a random amount"""
         for car in self.cars:
             car.backward(self.difficulty["distance"])

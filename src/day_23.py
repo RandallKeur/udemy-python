@@ -4,7 +4,7 @@ import time
 from src.classes.turtle_crossing.turtle_crossing_game import TurtleCrossingGame
 
 
-def turtle_crossing():
+def turtle_crossing() -> None:
     """Turtle crossing game"""
     turtle_crossing_game = TurtleCrossingGame()
     turtle_crossing_game.capture_keypress()

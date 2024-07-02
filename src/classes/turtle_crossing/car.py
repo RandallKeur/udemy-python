@@ -16,7 +16,7 @@ class Car(Turtle):
         self.color(choice(CAR_COLORS))
         self.go_to_random_location()
 
-    def go_to_random_location(self):
+    def go_to_random_location(self) -> None:
         """Method to move the car to a random starting location"""
         x_value = TURTLE_CROSSING_SCREEN["x"]["max"]
         y_value = randint(PLAYER_STARTING_Y_POSITION + TURTLE_CROSSING_OFFSETS["player"],
