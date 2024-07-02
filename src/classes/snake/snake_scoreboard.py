@@ -57,6 +57,7 @@ class SnakeScoreboard(Turtle):
 
     @staticmethod
     def get_file_high_score() -> int:
+        """Get the high score from the local file"""
         mydict = {}
         with open(f"{HIGH_SCORE_FILE}", "r", encoding="utf-8") as file:
             for line in file:
@@ -65,7 +66,7 @@ class SnakeScoreboard(Turtle):
         return mydict["high_score"]
 
     def get_high_score(self) -> int:
-        """Return the high score from the file if it exists"""
+        """Return the high score from the file or default to 0"""
         if os.path.exists(f"{HIGH_SCORE_FILE}"):
             self.get_file_high_score()
         return 0
