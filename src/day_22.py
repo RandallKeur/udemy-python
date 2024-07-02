@@ -2,7 +2,7 @@
 import time
 
 from src.constants.values import GAME_SPEED
-from src.classes.pong_game import PongGame
+from src.classes.pong.pong_game import PongGame
 
 
 def pong() -> None:

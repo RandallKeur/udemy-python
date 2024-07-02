@@ -1,9 +1,9 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
 from src.constants.values import QUESTION_BANK
 from src.classes.quiz_generator import QuestionBank
-from src.classes.coffee_maker import CoffeeMaker
-from src.classes.menu import Menu
-from src.classes.money_machine import MoneyMachine
+from src.classes.coffee_machine.coffee_maker import CoffeeMaker
+from src.classes.coffee_machine.menu import Menu
+from src.classes.coffee_machine.money_machine import MoneyMachine
 from src.constants.ascii_art import GOODBYE
 from src import (day_1, day_2, day_3, day_4, day_5, day_7, day_8, day_9,
                  day_10, day_11, day_12, day_13, day_14, day_15, day_16, day_17,
