@@ -44,6 +44,7 @@ ___
 | 21  | 🐍 Snake (full game)           |
 | 22  | 🏓 Pong                        |
 | 23  | 🐢 🚗 Turtle Crossing          |
+| 24  | ✉️ Invitation Builder          |
 
 ## 🛠 Tools used in this project 
 

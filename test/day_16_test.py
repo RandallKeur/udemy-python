@@ -4,9 +4,9 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.classes.coffee_maker import CoffeeMaker
-from src.classes.menu import Menu
-from src.classes.money_machine import MoneyMachine
+from src.classes.coffee_machine.coffee_maker import CoffeeMaker
+from src.classes.coffee_machine.menu import Menu
+from src.classes.coffee_machine.money_machine import MoneyMachine
 from src.day_16 import coffee_machine
 
 

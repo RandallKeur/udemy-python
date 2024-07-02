@@ -1,9 +1,9 @@
 """Class for the pong game"""
 from turtle import Screen
 
-from src.classes.pong_ball import PongBall
-from src.classes.pong_scoreboard import PongScoreboard
-from src.classes.pong_paddle import PongPaddle
+from src.classes.pong.pong_ball import PongBall
+from src.classes.pong.pong_scoreboard import PongScoreboard
+from src.classes.pong.pong_paddle import PongPaddle
 from src.constants.values import PONG_SCREEN_SIZE, PONG_PADDLE_LOCATION, PONG_SCREEN, PONG_OFFSETS
 
 

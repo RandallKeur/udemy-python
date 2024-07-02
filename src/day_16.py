@@ -1,7 +1,7 @@
 """ Day 16 of Coding Challenges for coffee machine using OOP"""
-from src.classes.menu import Menu
-from src.classes.coffee_maker import CoffeeMaker
-from src.classes.money_machine import MoneyMachine
+from src.classes.coffee_machine.menu import Menu
+from src.classes.coffee_machine.coffee_maker import CoffeeMaker
+from src.classes.coffee_machine.money_machine import MoneyMachine
 
 IS_ON = True
 
