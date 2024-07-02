@@ -21,7 +21,6 @@ class PongGame:
 
     def setup_screen(self):
         """Set up the screen for the pong game"""
-        self.screen = Screen()
         self.screen.setup(width=PONG_SCREEN_SIZE["x"], height=PONG_SCREEN_SIZE["y"])
         self.screen.bgcolor("black")
         self.screen.title("Pong")

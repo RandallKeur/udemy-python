@@ -19,30 +19,31 @@ ___
 
 ## 📆 Daily Challenge 
 
-| Day | Game                          |
-|-----|-------------------------------|
-| 1   | 🎸 Band Name Generator        |
-| 2   | 🪙 Tip Calculator             |
-| 3   | 🏝️ Treasure Island Adventure |
-| 4   | ✂️ Rock, Paper, Scissors      |
-| 5   | 🔒 Password Generator         |
-| 6   | 🤖 [Reeborg's World][reeborg] |
-| 7   | ☠️ Hangman                    |
-| 8   | 🔀 Caesar Cipher              |
-| 9   | 💰 Silent Auction             |
-| 10  | 🧮 Calculator                 |
-| 11  | 🃏 Blackjack                  |
-| 12  | ? Number Guessing             |
-| 13  | 🐞 Debugging                  |
-| 14  | 👑 Higher Lower               |
-| 15  | ☕️ Coffee Maker               |
-| 16  | ☕️ Coffee Maker OOP           |
-| 17  | 🎓 Quiz Generator             |
-| 18  | 🖼️ Turtle Art                |
-| 19  | 🐢  Turtle Etch-a-Sketch      |
-| 20  | 🐍 Snake (partial)            |
-| 21  | 🐍 Snake (full game)          |
-| 22  | 🏓 Pong                       |
+| Day | Game                           |
+|-----|--------------------------------|
+| 1   | 🎸 Band Name Generator         |
+| 2   | 🪙 Tip Calculator              |
+| 3   | 🏝️ Treasure Island Adventure  |
+| 4   | ✂️ Rock, Paper, Scissors       |
+| 5   | 🔒 Password Generator          |
+| 6   | 🤖 [Reeborg's World][reeborg]  |
+| 7   | ☠️ Hangman                     |
+| 8   | 🔀 Caesar Cipher               |
+| 9   | 💰 Silent Auction              |
+| 10  | 🧮 Calculator                  |
+| 11  | 🃏 Blackjack                   |
+| 12  | ? Number Guessing              |
+| 13  | 🐞 Debugging                   |
+| 14  | 👑 Higher Lower                |
+| 15  | ☕️ Coffee Maker                |
+| 16  | ☕️ Coffee Maker OOP            |
+| 17  | 🎓 Quiz Generator              |
+| 18  | 🖼️ Turtle Art                 |
+| 19  | 🐢 Turtle Race & Etch-a-Sketch |
+| 20  | 🐍 Snake (partial)             |
+| 21  | 🐍 Snake (full game)           |
+| 22  | 🏓 Pong                        |
+| 23  | 🐢 🚗 Turtle Crossing          |
 
 ## 🛠 Tools used in this project 
 
