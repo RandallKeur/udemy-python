@@ -596,3 +596,5 @@ SCOREBOARD_SETTINGS = {
         },
     }
 }
+OUTPUT_FILES_PATH = "src/output_files/"
+HIGH_SCORE_FILE = OUTPUT_FILES_PATH + "high_score.txt"

@@ -2,7 +2,7 @@
 import os
 from turtle import Turtle
 
-from src.constants.values import SCOREBOARD_SETTINGS
+from src.constants.values import SCOREBOARD_SETTINGS, HIGH_SCORE_FILE
 
 
 class SnakeScoreboard(Turtle):
@@ -50,15 +50,15 @@ class SnakeScoreboard(Turtle):
 
     def save_high_score(self) -> None:
         """Save the high score to a local text file"""
-        if os.path.exists("high_score.txt"):
-            os.remove("high_score.txt")
-        with open("high_score.txt", "w", encoding="utf-8") as file:
+        if os.path.exists(f"{HIGH_SCORE_FILE}"):
+            os.remove(f"{HIGH_SCORE_FILE}")
+        with open(f"{HIGH_SCORE_FILE}", "w", encoding="utf-8") as file:
             file.write("high_score: " + str(self.high_score) + "\n")
 
     @staticmethod
     def get_file_high_score() -> int:
         mydict = {}
-        with open("high_score.txt", "r", encoding="utf-8") as file:
+        with open(f"{HIGH_SCORE_FILE}", "r", encoding="utf-8") as file:
             for line in file:
                 key, value = line.partition(":")[::2]
                 mydict[key.strip()] = int(value)
@@ -66,6 +66,6 @@ class SnakeScoreboard(Turtle):
 
     def get_high_score(self) -> int:
         """Return the high score from the file if it exists"""
-        if os.path.exists("high_score.txt"):
+        if os.path.exists(f"{HIGH_SCORE_FILE}"):
             self.get_file_high_score()
         return 0
