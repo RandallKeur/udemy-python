@@ -1,7 +1,7 @@
 """ Day 22 of Coding Challenges for turtle crossing"""
 import time
 
-from src.classes.turtle_crossing.turtle_crossing import TurtleCrossing
+from src.classes.turtle_crossing.game import TurtleCrossing
 
 
 def turtle_crossing():
