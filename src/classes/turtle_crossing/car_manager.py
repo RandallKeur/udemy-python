@@ -2,7 +2,7 @@
 from random import randint
 
 from src.constants.values import CAR_MOVE_DISTANCE
-from src.classes.car import Car
+from src.classes.turtle_crossing.car import Car
 
 
 class CarManager:
