@@ -7,15 +7,16 @@ from src.constants.values import SNAKE_SPACING, UP, DOWN, LEFT, RIGHT
 class Snake:
     """Class to represent a snake in the snake game"""
     def __init__(self):
+        self.head = None
         self.segments = []
         self.starting_positions = [(0, 0), (-SNAKE_SPACING, 0), (-2 * SNAKE_SPACING, 0)]
         self.create_snake()
-        self.head = self.segments[0]
 
     def create_snake(self):
         """Creates the snake"""
         for position in self.starting_positions:
             self.add_segment(position)
+        self.head = self.segments[0]
 
     def up(self):
         """Turn the snake up"""
@@ -56,3 +57,10 @@ class Snake:
     def extend(self):
         """Extend the snake"""
         self.add_segment(self.segments[-1].position())
+
+    def reset(self):
+        """Reset the snake to its initial position"""
+        for seg in self.segments:
+            seg.hideturtle()
+        self.segments.clear()
+        self.create_snake()

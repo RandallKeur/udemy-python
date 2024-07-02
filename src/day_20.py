@@ -1,7 +1,7 @@
 """ Day 20 of Coding Challenges for Snake"""
 import time
 
-from src.classes.snake_game import SnakeGame
+from src.classes.snake.snake_game import SnakeGame
 
 
 def snake() -> None:

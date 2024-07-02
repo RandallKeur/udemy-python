@@ -596,3 +596,8 @@ SCOREBOARD_SETTINGS = {
         },
     }
 }
+OUTPUT_FILEPATH = "src/output_files/"
+HIGH_SCORE_FILE = OUTPUT_FILEPATH + "high_score.txt"
+INVITATION_TEMPLATE = "src/constants/letter_template.txt"
+GUESTS = "src/constants/invited_guests.txt"
+INVITATION_OUTPUT_FILEPATH = OUTPUT_FILEPATH + "letters"
