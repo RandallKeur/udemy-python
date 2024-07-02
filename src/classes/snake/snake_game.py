@@ -49,12 +49,21 @@ class SnakeGame:
                 return True
         return False
 
-    def game_on(self) -> bool:
-        """Detect if the game has ended and display game over"""
-        if self.on_map() and not self.collision():
+    def play_again(self) -> bool:
+        """Detect if the player wants to play again"""
+        response = self.screen.textinput("Snake Game", "Do you want to play again? (y/n)")
+        if response == 'y':
             return True
         self.scoreboard.game_over()
         return False
+
+    def round_over(self) -> bool:
+        """Detect if the round has ended"""
+        if self.on_map() and not self.collision():
+            return False
+        self.scoreboard.reset()
+        self.snake.reset()
+        return True
 
     def eat_food(self) -> None:
         """Eat the food when the snake is close enough"""
