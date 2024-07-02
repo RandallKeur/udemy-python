@@ -1,7 +1,7 @@
 """ Day 21 of Coding Challenges for fully implemented Snake"""
 import time
 
-from src.classes.snake_game import SnakeGame
+from src.classes.snake.snake_game import SnakeGame
 from src.constants.values import GAME_SPEED
 
 

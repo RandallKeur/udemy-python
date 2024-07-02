@@ -1,9 +1,9 @@
 """Class for the entire snake game"""
 from turtle import Screen
 
-from src.classes.food import Food
-from src.classes.snake_scoreboard import SnakeScoreboard
-from src.classes.snake import Snake
+from src.classes.snake.food import Food
+from src.classes.snake.snake_scoreboard import SnakeScoreboard
+from src.classes.snake.snake import Snake
 from src.constants.values import SNAKE_SCREEN, SNAKE_SCREEN_SIZE, SNAKE_SPACING
 
 
