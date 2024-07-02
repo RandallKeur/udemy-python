@@ -1,12 +1,12 @@
 """ Day 22 of Coding Challenges for turtle crossing"""
 import time
 
-from src.classes.turtle_crossing.game import TurtleCrossing
+from src.classes.turtle_crossing.turtle_crossing_game import TurtleCrossingGame
 
 
 def turtle_crossing():
     """Turtle crossing game"""
-    turtle_crossing_game = TurtleCrossing()
+    turtle_crossing_game = TurtleCrossingGame()
     turtle_crossing_game.capture_keypress()
     while turtle_crossing_game.game_on():
         time.sleep(0.1)

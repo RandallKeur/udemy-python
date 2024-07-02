@@ -2,12 +2,12 @@
 from turtle import Screen
 
 from src.classes.turtle_crossing.player import Player
-from src.classes.turtle_crossing.scoreboard import TurtleCrossingScoreboard
+from src.classes.turtle_crossing.turtle_crossing_scoreboard import TurtleCrossingScoreboard
 from src.classes.turtle_crossing.car_manager import CarManager
 from src.constants.values import TURTLE_CROSSING_SCREEN_SIZE
 
 
-class TurtleCrossing:
+class TurtleCrossingGame:
     """Class to represent the turtle crossing game"""
 
     def __init__(self):
