@@ -29,9 +29,9 @@ class InvitationBuilder:
     def write_invitation(guest: str) -> None:
         """Write the invitation file for a specified guest"""
         with open(f"{INVITATION_TEMPLATE}", "r", encoding="utf-8") as template:
+            contents = template.read()
             with open(f"{INVITATION_OUTPUT_FILEPATH}/letter-for-{guest}.txt", "w", encoding="utf-8") as output_file:
-                for line in template:
-                    output_file.write(line.replace("[name]", guest))
+                output_file.write(contents.replace("[name]", guest))
 
     def write_invitations(self) -> None:
         """Write invitations for all guests"""
