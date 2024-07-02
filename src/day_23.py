@@ -1,4 +1,4 @@
-""" Day 22 of Coding Challenges for turtle crossing"""
+""" Day 23 of Coding Challenges for turtle crossing"""
 import time
 
 from src.classes.turtle_crossing.turtle_crossing_game import TurtleCrossingGame
