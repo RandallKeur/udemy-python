@@ -18,7 +18,7 @@ class StatesQuizGame():
 
     @staticmethod
     def setup_screen() -> Screen:
-        """Setup the screen for the states quiz game"""
+        """Set up the screen for the states quiz game"""
         screen = Screen()
         screen.setup(width=STATES_SCREEN_SIZE["x"], height=STATES_SCREEN_SIZE["y"])
         screen.title("U.S. States Game")
@@ -47,7 +47,7 @@ class StatesQuizGame():
 
     def game_on(self) -> bool:
         """Detects if the game is over and displays game over"""
-        if self.correct_answers == 50:
+        if len(self.data) == 0:
             return False
         return True
 
