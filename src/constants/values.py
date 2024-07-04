@@ -597,13 +597,15 @@ SCOREBOARD_SETTINGS = {
     }
 }
 OUTPUT_FILEPATH = "src/output_files/"
-HIGH_SCORE_FILE = OUTPUT_FILEPATH + "high_score.txt"
-INVITATION_TEMPLATE = "src/constants/letter_template.txt"
-GUESTS = "src/constants/invited_guests.txt"
+HIGH_SCORE_FILE = f"{OUTPUT_FILEPATH}high_score.txt"
+CONSTANTS_FILEPATH = "src/constants/"
+INVITATION_TEMPLATE = f"{CONSTANTS_FILEPATH}letter_template.txt"
+GUESTS = f"{CONSTANTS_FILEPATH}invited_guests.txt"
 INVITATION_OUTPUT_FILEPATH = OUTPUT_FILEPATH + "letters"
 STATES_SCREEN_SIZE = {
     "x": 750,
     "y": 525
 }
-STATES_IMAGE = "src/constants/blank_states_img.gif"
-STATES_FILE = "src/constants/50_states.csv"
+STATES_IMAGE = f"{CONSTANTS_FILEPATH}blank_states_img.gif"
+STATES_FILE = f"{CONSTANTS_FILEPATH}50_states.csv"
+NATO_FILE = f"{CONSTANTS_FILEPATH}nato_phonetic_alphabet.csv"
