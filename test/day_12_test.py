@@ -9,7 +9,7 @@ from src.constants.ascii_art import NUMBER_GUESS
 
 
 class Day12Test(unittest.TestCase):
-    """Test for Day 12 of Coding"""
+    """ Test for Day 12 of Coding"""
     def setUp(self):
         self.out = StringIO()
         sys.stdout = self.out
@@ -22,7 +22,7 @@ class Day12Test(unittest.TestCase):
         self.error = ""
 
     def test_number_guessing_art(self):
-        """Test the Number Guessing image"""
+        """ Test the Number Guessing image"""
         # given
         self.inputs["difficulty"] = "easy"
         with mock.patch("sys.stdin", new=StringIO(f"{self.inputs["difficulty"]}\n"
@@ -36,7 +36,7 @@ class Day12Test(unittest.TestCase):
             self.assertTrue(self.art in actual)
 
     def test_number_guessing_previously_guessed_number(self):
-        """Test the Number Guessing game with a previously guessed number"""
+        """ Test the Number Guessing game with a previously guessed number"""
         # given
         self.inputs["difficulty"] = "easy"
         self.inputs["number"] = 50
@@ -55,7 +55,7 @@ class Day12Test(unittest.TestCase):
             self.assertTrue(self.error in actual)
 
     def test_number_guessing_with_invalid_difficulty(self):
-        """Test the Number Guessing game with invalid difficulty selection"""
+        """ Test the Number Guessing game with invalid difficulty selection"""
         # given
         wrong_difficulty = "impossible"
         self.inputs["difficulty"] = "easy"

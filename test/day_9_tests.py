@@ -9,14 +9,14 @@ from src.constants.ascii_art import AUCTION, GAVEL
 
 
 class Day9Test(unittest.TestCase):
-    """Tests for Day 9 of the Coding Challenges"""
+    """ Tests for Day 9 of the Coding Challenges"""
     def setUp(self):
         self.out = StringIO()
         sys.stdout = self.out
         self.art = [AUCTION.strip(), GAVEL.strip()]
 
     def test_silent_auction_tie(self):
-        """Test the Silent Auction with a tie"""
+        """ Test the Silent Auction with a tie"""
         # given
         expected = "tie"
         with mock.patch("sys.stdin", new=StringIO("jack\n100\nyes\njill\n100\nno")):
@@ -31,7 +31,7 @@ class Day9Test(unittest.TestCase):
             self.assertTrue(expected in actual)
 
     def test_silent_auction_winner(self):
-        """Test the Silent Auction with a winner"""
+        """ Test the Silent Auction with a winner"""
         # given
         expected = "winner"
         with mock.patch("sys.stdin", new=StringIO("jack\n100\nyes\njill\n120\nno")):

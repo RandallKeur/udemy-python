@@ -9,7 +9,7 @@ from src.day_13 import run
 
 
 class Day13Test(unittest.TestCase):
-    """Test for Day 13 of Coding"""
+    """ Test for Day 13 of Coding"""
 
     def setUp(self):
         self.out = StringIO()
@@ -23,7 +23,7 @@ class Day13Test(unittest.TestCase):
         }
 
     def test_millennial_can_drive_multiple_pages(self):
-        """Test the Day 13 as a millennial who can drive and multiple pages"""
+        """ Test the Day 13 as a millennial who can drive and multiple pages"""
         # given
         self.inputs["year"] = "1990"
         self.inputs["age"] = "34"
@@ -47,7 +47,7 @@ class Day13Test(unittest.TestCase):
                 self.assertTrue(value in actual)
 
     def test_gen_z_cannot_drive_one_pages(self):
-        """Test the Day 13 as a Gen Z who cannot drive and one page"""
+        """ Test the Day 13 as a Gen Z who cannot drive and one page"""
         # given
         self.inputs["year"] = "2012"
         self.inputs["age"] = "12"
