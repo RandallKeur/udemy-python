@@ -1,4 +1,4 @@
-"""Day 12 of Coding Challenges for Number Guessing"""
+""" Day 12 of Coding Challenges for Number Guessing"""
 import random
 
 from src.constants.ascii_art import NUMBER_GUESS, CONGRATS
@@ -6,17 +6,17 @@ from src.constants.values import MIN, MAX, GUESSES
 
 
 def choose_random_number():
-    """Select a random number between a range"""
+    """ Select a random number between a range"""
     return random.randint(MIN, MAX)
 
 
 def print_remaining_guesses(remaining_guesses):
-    """Print the remaining guesses left"""
+    """ Print the remaining guesses left"""
     print(f"You have {remaining_guesses} attempts remaining to guess the number.")
 
 
 def collect_guesses(difficulty: str, number: int) -> int:
-    """Collect the guesses of numbers"""
+    """ Collect the guesses of numbers"""
     number_of_guesses_remaining = GUESSES[difficulty]
     new_guess = 0
     previously_guessed = {}
@@ -39,7 +39,7 @@ def collect_guesses(difficulty: str, number: int) -> int:
 
 
 def print_result(guess: int, number: int):
-    """Display the result of the number guessing game"""
+    """ Display the result of the number guessing game"""
     if guess == number:
         print(f"{CONGRATS}")
         print(f"You guessed the number {number} correctly!")
@@ -48,7 +48,7 @@ def print_result(guess: int, number: int):
 
 
 def number_guessing():
-    """Number guessing game"""
+    """ Number guessing game"""
     print(NUMBER_GUESS)
     difficulty = ""
     difficulty_exist = False

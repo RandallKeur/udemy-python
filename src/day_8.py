@@ -1,11 +1,11 @@
-"""Day 8 of Coding Challenges for Caesar Cipher"""
+""" Day 8 of Coding Challenges for Caesar Cipher"""
 import string
 
 from src.constants.ascii_art import CAESAR_CIPHER
 
 
 def shift(plaintext: str, value: int):
-    """Shifts each character in a word by a given value"""
+    """ Shifts each character in a word by a given value"""
     alphabet = string.ascii_letters
     value = value % len(alphabet)
     shifted_alphabet = alphabet[value:] + alphabet[:value]
@@ -14,7 +14,7 @@ def shift(plaintext: str, value: int):
 
 
 def caesar_cipher():
-    """Caesar cipher"""
+    """ Caesar cipher"""
     print(CAESAR_CIPHER)
     running = True
     while running:
