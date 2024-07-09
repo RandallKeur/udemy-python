@@ -7,7 +7,7 @@ IS_ON = True
 
 
 def make_drink(menu: Menu, coffee_maker: CoffeeMaker, money_machine: MoneyMachine, choice: str):
-    """Make a drink for a customer"""
+    """ Make a drink for a customer"""
     drink = menu.find_drink(choice)
     if drink is not None:
         if coffee_maker.is_resource_sufficient(drink) and money_machine.make_payment(drink.cost):
@@ -15,7 +15,7 @@ def make_drink(menu: Menu, coffee_maker: CoffeeMaker, money_machine: MoneyMachin
 
 
 def coffee_machine(menu: Menu, coffee_maker: CoffeeMaker, money_machine: MoneyMachine):
-    """Coffee machine for a customer to make a selection"""
+    """ Coffee machine for a customer to make a selection"""
     while IS_ON:
         options = menu.get_items()
         choice = input(f"What would you like?: ({options}): ")

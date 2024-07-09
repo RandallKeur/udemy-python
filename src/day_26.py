@@ -4,7 +4,7 @@ from src.classes.converter import Converter
 
 
 def conversion():
-    """Convert a given string to NATO spelling"""
+    """ Convert a given string to NATO spelling"""
     converter = Converter()
     is_on = True
     while is_on:

@@ -6,7 +6,7 @@ from src.constants.values import GAME_SPEED
 
 
 def play_round(snake_game: SnakeGame, ) -> None:
-    """Play a round of the snake game"""
+    """ Play a round of the snake game"""
     speed = snake_game.screen.textinput(title="Snake Difficulty",
                                         prompt=f"How difficult do you want? "
                                                f"{", ".join(GAME_SPEED.keys())}: ")
@@ -19,7 +19,7 @@ def play_round(snake_game: SnakeGame, ) -> None:
 
 
 def snake() -> None:
-    """Play a snake game"""
+    """ Play a snake game"""
     snake_game = SnakeGame()
     is_game_on = True
     while is_game_on:
