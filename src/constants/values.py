@@ -1,4 +1,4 @@
-"""Class including constant values"""
+""" Class including constant values"""
 
 # CALCULATOR GAME
 CALCULATOR_OPERATIONS = """

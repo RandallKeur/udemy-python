@@ -1,4 +1,4 @@
-"""ASCII art to be used throughout this project"""
+""" ASCII art to be used throughout this project"""
 CONGRATS = '''
                                  _       
                                 | |      

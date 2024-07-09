@@ -1,11 +1,11 @@
-"""Class to represent a snake in the snake game"""
+""" Class to represent a snake in the snake game"""
 from turtle import Turtle
 
 from src.constants.values import SNAKE_SPACING, UP, DOWN, LEFT, RIGHT
 
 
 class Snake:
-    """Class to represent a snake in the snake game"""
+    """ Class to represent a snake in the snake game"""
     def __init__(self):
         self.head = None
         self.segments = []
@@ -13,33 +13,33 @@ class Snake:
         self.create_snake()
 
     def create_snake(self):
-        """Creates the snake"""
+        """ Creates the snake"""
         for position in self.starting_positions:
             self.add_segment(position)
         self.head = self.segments[0]
 
     def up(self):
-        """Turn the snake up"""
+        """ Turn the snake up"""
         if self.head.heading() != DOWN:
             self.head.setheading(UP)
 
     def down(self):
-        """Turn the snake down"""
+        """ Turn the snake down"""
         if self.head.heading() != UP:
             self.head.setheading(DOWN)
 
     def left(self):
-        """Turn the snake left"""
+        """ Turn the snake left"""
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
 
     def right(self):
-        """Turn the snake right"""
+        """ Turn the snake right"""
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
 
     def move(self):
-        """Move the snake"""
+        """ Move the snake"""
         for seg_num in range(len(self.segments) - 1, 0, -1):
             new_x = self.segments[seg_num - 1].xcor()
             new_y = self.segments[seg_num - 1].ycor()
@@ -47,7 +47,7 @@ class Snake:
         self.segments[0].forward(SNAKE_SPACING)
 
     def add_segment(self, position):
-        """Add a segment to the snake"""
+        """ Add a segment to the snake"""
         new_segment = Turtle(shape="square")
         new_segment.color("white")
         new_segment.penup()
@@ -55,11 +55,11 @@ class Snake:
         self.segments.append(new_segment)
 
     def extend(self):
-        """Extend the snake"""
+        """ Extend the snake"""
         self.add_segment(self.segments[-1].position())
 
     def reset(self):
-        """Reset the snake to its initial position"""
+        """ Reset the snake to its initial position"""
         for seg in self.segments:
             seg.hideturtle()
         self.segments.clear()
