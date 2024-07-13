@@ -1,15 +1,8 @@
-""" Day 27 of Coding Challenges for GUI"""
-import tkinter
+""" Day 27 of Coding Challenges for converting distances"""
+from src.classes.distance_converter import DistanceConverter
 
 
 def play():
     """ Play the game """
-    window = tkinter.Tk()
-    window.title("GUI")
-    window.minsize(width=500, height=300)
-
-    my_label = tkinter.Label(text="Label", font=("Helvetica", 24, "bold"))
-
-
-    window.mainloop()
-
+    distance_converter = DistanceConverter()
+    distance_converter.window.mainloop()
