@@ -11,7 +11,7 @@ from src.day_17 import take_quiz
 
 
 class Day17Test(unittest.TestCase):
-    """Test for Day 17 of Coding"""
+    """ Test for Day 17 of Coding"""
 
     def setUp(self):
         self.question_bank = QuestionBank(QUESTION_BANK)
@@ -21,7 +21,7 @@ class Day17Test(unittest.TestCase):
         sys.stdout = self.out
 
     def test_quiz_with_n_questions_all_true(self):
-        """Test the coffee machine espresso with change"""
+        """ Test the coffee machine espresso with change"""
         # given
         self.quiz.select_n_questions(self.number_of_questions)
         expected = 'Your final score was: '
@@ -35,7 +35,7 @@ class Day17Test(unittest.TestCase):
             self.assertTrue(expected in actual)
 
     def test_quiz_with_n_questions_all_false(self):
-        """Test the coffee machine espresso with change"""
+        """ Test the coffee machine espresso with change"""
         # given
         self.quiz.select_n_questions(self.number_of_questions)
         expected = 'Your final score was: '
@@ -49,7 +49,7 @@ class Day17Test(unittest.TestCase):
             self.assertTrue(expected in actual)
 
     def test_quiz_with_n_questions_random_answers(self):
-        """Test the coffee machine espresso with change"""
+        """ Test the coffee machine espresso with change"""
         # given
         self.quiz.select_n_questions(self.number_of_questions)
         expected = 'Your final score was: '

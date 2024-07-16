@@ -6,17 +6,17 @@ from src.constants.values import CELEBRITIES
 
 
 def get_celebrity_info(celebrity: dict[str, str]) -> str:
-    """Get the name, description and country of a celebrity"""
+    """ Get the name, description and country of a celebrity"""
     return f"{celebrity["name"]}, a {celebrity["description"]} from {celebrity["country"]}."
 
 
 def get_next_celebrity(celebrities: list[dict[str, str | int]]) -> dict[str, str | int]:
-    """Get the next celebrity from the list"""
+    """ Get the next celebrity from the list"""
     return celebrities.pop()
 
 
 def collect_guess(celebrity_1: dict[str, str | int], celebrity_2: dict[str, str | int]) -> str:
-    """Collect the guess of which celebrity is more popular"""
+    """ Collect the guess of which celebrity is more popular"""
     print(f"Compare A: {get_celebrity_info(celebrity_1)}"
           f"{VS}"
           f"Against B: {get_celebrity_info(celebrity_2)}")
@@ -24,7 +24,7 @@ def collect_guess(celebrity_1: dict[str, str | int], celebrity_2: dict[str, str 
 
 
 def check_answer(guess, celebrity_1, celebrity_2):
-    """Check answer for which celebrity has more followers"""
+    """ Check answer for which celebrity has more followers"""
     if celebrity_1["follower_count"] > celebrity_2["follower_count"]:
         return guess == "A"
 
@@ -32,7 +32,7 @@ def check_answer(guess, celebrity_1, celebrity_2):
 
 
 def higher_lower():
-    """Higher or Lower"""
+    """ Higher or Lower"""
     print(HIGHER_LOWER)
     celebrities = CELEBRITIES
     random.shuffle(celebrities)

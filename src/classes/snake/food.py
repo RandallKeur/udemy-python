@@ -1,4 +1,4 @@
-"""Class to represent food in the snake game"""
+""" Class to represent food in the snake game"""
 from random import randint
 from turtle import Turtle
 
@@ -6,7 +6,7 @@ from src.constants.values import SNAKE_FOOD
 
 
 class Food(Turtle):
-    """Class to represent food in the snake game"""
+    """ Class to represent food in the snake game"""
 
     def __init__(self):
         super().__init__()
@@ -18,7 +18,7 @@ class Food(Turtle):
         self.move_to_new_location()
 
     def move_to_new_location(self) -> None:
-        """Randomly move the food to a new location"""
+        """ Randomly move the food to a new location"""
         random_x = randint(SNAKE_FOOD["x"]["min"], SNAKE_FOOD["x"]["max"])
         random_y = randint(SNAKE_FOOD["y"]["min"], SNAKE_FOOD["y"]["max"])
         self.goto(random_x, random_y)

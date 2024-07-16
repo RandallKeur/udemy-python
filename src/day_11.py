@@ -1,4 +1,4 @@
-"""Day 11 of Coding Challenges for Blackjack"""
+""" Day 11 of Coding Challenges for Blackjack"""
 import random
 
 from src.constants.ascii_art import BLACKJACK
@@ -6,17 +6,17 @@ from src.constants.values import BLACKJACK_CARDS, STAND, HIT, BLACKJACK_21
 
 
 def deal_card() -> str:
-    """Deal a random card for blackjack"""
+    """ Deal a random card for blackjack"""
     return random.choice(list(BLACKJACK_CARDS.keys()))
 
 
 def deal_hand() -> list[str]:
-    """Deal a hand for blackjack"""
+    """ Deal a hand for blackjack"""
     return [deal_card(), deal_card()]
 
 
 def get_score(hand: list[str]) -> int:
-    """Get current score for blackjack"""
+    """ Get current score for blackjack"""
     total = 0
     for card in hand:
         total += BLACKJACK_CARDS[card]
@@ -29,7 +29,7 @@ def get_score(hand: list[str]) -> int:
 
 
 def determine_winner(player_hand: list[str], dealer_hand: list[str]):
-    """Determine the winner of blackjack"""
+    """ Determine the winner of blackjack"""
     player_total = get_score(player_hand)
     dealer_total = get_score(dealer_hand)
     if player_total > BLACKJACK_21:
@@ -45,7 +45,7 @@ def determine_winner(player_hand: list[str], dealer_hand: list[str]):
 
 
 def dealer_hit_or_stand(dealer_hand: list[str]) -> list[str]:
-    """Blackjack dealer continues to take cards until at they are at 17"""
+    """ Blackjack dealer continues to take cards until at they are at 17"""
     while get_score(dealer_hand) < 17:
         new_card = deal_card()
         dealer_hand.append(new_card)
@@ -54,7 +54,7 @@ def dealer_hit_or_stand(dealer_hand: list[str]) -> list[str]:
 
 
 def player_hit_or_stand(player_hand: list[str]) -> list[str]:
-    """Enter path to ask the player hit or stand"""
+    """ Enter path to ask the player hit or stand"""
     bust = False
     hit = True
     while not bust and hit:
@@ -68,7 +68,7 @@ def player_hit_or_stand(player_hand: list[str]) -> list[str]:
 
 
 def blackjack():
-    """Blackjack dealer game"""
+    """ Blackjack dealer game"""
     deal_cards = True
     while deal_cards:
         print(BLACKJACK)

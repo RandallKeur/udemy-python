@@ -22,7 +22,7 @@ class Day8Test(unittest.TestCase):
         self.expected = ""
 
     def test_caesar_cipher_swim_shift_3(self):
-        """Test the Caesar Cipher with string and shift 3"""
+        """ Test the Caesar Cipher with string and shift 3"""
         # given
         self.inputs["encode_decode"] = "encode"
         self.inputs["word"] = "swim"
@@ -42,7 +42,7 @@ class Day8Test(unittest.TestCase):
             self.assertTrue(self.expected in actual)
 
     def test_caesar_cipher_spaces_symbols_shift_90(self):
-        """Test the Caesar Cipher with string with spaces, symbols, numbers and a shift of 90"""
+        """ Test the Caesar Cipher with string with spaces, symbols, numbers and a shift of 90"""
         # given
         self.inputs["encode_decode"] = "encode"
         self.inputs["word"] = "Testing_12345-!@#$% :)"

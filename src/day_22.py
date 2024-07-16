@@ -6,7 +6,7 @@ from src.classes.pong.pong_game import PongGame
 
 
 def pong() -> None:
-    """Play the pong game"""
+    """ Play the pong game"""
     pong_game = PongGame()
     speed = pong_game.screen.textinput(title="Snake Difficulty",
                                        prompt=f"How difficult do you want? "

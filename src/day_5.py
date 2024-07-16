@@ -4,17 +4,17 @@ import string
 
 
 def generate_random_letters(length: int):
-    """Generate random letters"""
+    """ Generate random letters"""
     return "".join(random.choice(string.ascii_letters) for _ in range(length))
 
 
 def generate_random_symbols(length: int):
-    """Generate random symbols"""
+    """ Generate random symbols"""
     return "".join(random.choice(string.punctuation) for _ in range(length))
 
 
 def generate_random_numbers(length: int):
-    """Generate random numbers"""
+    """ Generate random numbers"""
     return "".join(random.choice(string.digits) for _ in range(length))
 
 

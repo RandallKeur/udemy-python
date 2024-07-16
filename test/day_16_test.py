@@ -11,9 +11,9 @@ from src.day_16 import coffee_machine
 
 
 class Day16Test(unittest.TestCase):
-    """Test for Day 16 of Coding"""
+    """ Test for Day 16 of Coding"""
     def setUp(self):
-        # pylint: disable=R0801
+        # pylint: disable=duplicate-code
         self.menu = Menu()
         self.coffee_maker = CoffeeMaker()
         self.money_machine = MoneyMachine()
@@ -24,7 +24,7 @@ class Day16Test(unittest.TestCase):
         self.error = ""
 
     def test_coffee_machine_espresso_with_change(self):
-        """Test the coffee machine espresso with change"""
+        """ Test the coffee machine espresso with change"""
         # given
         self.drink = "espresso"
         self.change = "$2.14"
@@ -40,7 +40,7 @@ class Day16Test(unittest.TestCase):
             self.assertTrue(self.change in actual)
 
     def test_coffee_machine_espresso_not_enough_money(self):
-        """Test the coffee machine espresso with not enough money"""
+        """ Test the coffee machine espresso with not enough money"""
         # given
         self.drink = "espresso"
         self.error = "Sorry that\'s not enough money. Money refunded."
@@ -55,7 +55,7 @@ class Day16Test(unittest.TestCase):
             self.assertTrue(self.error in actual)
 
     def test_coffee_machine_latte_with_no_change(self):
-        """Test the coffee machine latte with no change"""
+        """ Test the coffee machine latte with no change"""
         # given
         self.drink = "latte"
         self.change = "$0.0"
@@ -71,7 +71,7 @@ class Day16Test(unittest.TestCase):
             self.assertTrue(self.change in actual)
 
     def test_coffee_machine_cappuccino_with_change(self):
-        """Test the coffee machine cappuccino with change"""
+        """ Test the coffee machine cappuccino with change"""
         # given
         self.drink = "cappuccino"
         self.change = "$0.64"
@@ -87,7 +87,7 @@ class Day16Test(unittest.TestCase):
             self.assertTrue(self.change in actual)
 
     def test_coffee_machine_report(self):
-        """Test the coffee machine report with no transactions"""
+        """ Test the coffee machine report with no transactions"""
         # given
         resources = self.coffee_maker.resources.items()
         with mock.patch("sys.stdin", new=StringIO("report\noff")):
@@ -102,7 +102,7 @@ class Day16Test(unittest.TestCase):
                 self.assertTrue(str(value) in actual)
 
     def test_coffee_machine_item_not_on_menu(self):
-        """Test the coffee machine with an item that is not on the meu"""
+        """ Test the coffee machine with an item that is not on the meu"""
         # given
         self.drink = "americano"
         self.error = "Sorry that item is not available."

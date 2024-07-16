@@ -4,7 +4,7 @@ from pandas import read_csv
 from src.constants.values import NATO_FILE
 
 
-class Converter:
+class NatoConverter:
     """Class to represent conversation between different formats"""
 
     def __init__(self):

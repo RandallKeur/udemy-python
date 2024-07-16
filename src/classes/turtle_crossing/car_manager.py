@@ -1,4 +1,4 @@
-"""Class to represent the car manager in the turtle crossing game"""
+""" Class to represent the car manager in the turtle crossing game"""
 from random import randint
 
 from src.constants.values import CAR_MOVE_DISTANCE
@@ -6,7 +6,7 @@ from src.classes.turtle_crossing.car import Car
 
 
 class CarManager:
-    """Class to represent the car manager in the turtle crossing game"""
+    """ Class to represent the car manager in the turtle crossing game"""
 
     def __init__(self):
         self.cars = []
@@ -16,7 +16,7 @@ class CarManager:
             }
 
     def add_car(self) -> None:
-        """Add a car to the list of cars"""
+        """ Add a car to the list of cars"""
         random_chance = randint(1, self.difficulty["probability"])
         if random_chance == 1:
             car = Car()
@@ -24,6 +24,6 @@ class CarManager:
             self.cars.append(car)
 
     def move_cars_forward(self) -> None:
-        """Move the cars forward a random amount"""
+        """ Move the cars forward a random amount"""
         for car in self.cars:
             car.backward(self.difficulty["distance"])

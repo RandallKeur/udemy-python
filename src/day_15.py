@@ -4,14 +4,14 @@ from src.constants.values import MENU, RESOURCES, COINS, UNITS_OF_MEASURE
 
 
 def print_report(resources: dict[str, int]):
-    """Print report for the Coffee Maker resources"""
+    """ Print report for the Coffee Maker resources"""
     for key, value in resources.items():
         uom = UNITS_OF_MEASURE[key]
         print(f"{key}: {value} ({uom})")
 
 
 def calculate_money(money: dict[str, int]) -> float:
-    """Calculate the total money inserted into the Coffee Maker"""
+    """ Calculate the total money inserted into the Coffee Maker"""
     total = 0
     for coin, quantity in money.items():
         total += quantity * COINS[coin]
@@ -19,7 +19,7 @@ def calculate_money(money: dict[str, int]) -> float:
 
 
 def collect_money() -> float:
-    """Collect the money for the Coffee Maker"""
+    """ Collect the money for the Coffee Maker"""
     print("Please insert coins.")
     money = {
         "quarters": int(input("How many quarters?: ")),
@@ -31,12 +31,12 @@ def collect_money() -> float:
 
 
 def get_ingredients(request: str) -> dict[str, int]:
-    """Get the ingredients from the Coffee Maker"""
+    """ Get the ingredients from the Coffee Maker"""
     return MENU[request]["ingredients"].items()
 
 
 def has_enough_resources(request: str, resources: dict[str, int]) -> bool:
-    """Check whether there are enough resources for the Coffee Maker"""
+    """ Check whether there are enough resources for the Coffee Maker"""
     ingredients = get_ingredients(request)
     for ingredient, quantity in ingredients:
         if quantity > resources.get(ingredient):
@@ -47,7 +47,7 @@ def has_enough_resources(request: str, resources: dict[str, int]) -> bool:
 
 
 def on_menu(request) -> bool:
-    """Check whether the requested item is on the menu"""
+    """ Check whether the requested item is on the menu"""
     item = MENU.get(request)
     if item is None:
         print(f"Sorry, {request} is not in the menu.")
@@ -55,12 +55,12 @@ def on_menu(request) -> bool:
 
 
 def get_cost(request: str) -> float:
-    """Get total cost of the requested item"""
+    """ Get total cost of the requested item"""
     return MENU[request]["cost"]
 
 
 def process_order(request: str, money: float, resources: dict[str, int]) -> dict[str, int]:
-    """Process the order for the requested item"""
+    """ Process the order for the requested item"""
     ingredients = get_ingredients(request)
     cost = get_cost(request)
     for ingredient, quantity in ingredients:
@@ -72,7 +72,7 @@ def process_order(request: str, money: float, resources: dict[str, int]) -> dict
 
 
 def has_enough_money(request: str, money: float) -> bool:
-    """Check if the money inserted is enough for the requested item"""
+    """ Check if the money inserted is enough for the requested item"""
     cost = get_cost(request)
     if money >= cost:
         return True
@@ -81,7 +81,7 @@ def has_enough_money(request: str, money: float) -> bool:
 
 
 def coffee_maker():
-    """Make a coffee for a customer"""
+    """ Make a coffee for a customer"""
     print(f"{COFFEE}")
     resources = RESOURCES
     stop = False

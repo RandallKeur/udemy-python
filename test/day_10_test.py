@@ -10,7 +10,7 @@ from src.constants.ascii_art import CALCULATOR
 
 
 class Day10Test(unittest.TestCase):
-    """Test for Day 10 of Coding"""
+    """ Test for Day 10 of Coding"""
     def setUp(self):
         self.out = StringIO()
         sys.stdout = self.out
@@ -18,7 +18,7 @@ class Day10Test(unittest.TestCase):
         self.operations = CALCULATOR_OPERATIONS.strip()
 
     def test_calculator_multiplication(self):
-        """Test the Calculator multiplication"""
+        """ Test the Calculator multiplication"""
         # given
         expected = "500"
         with mock.patch("sys.stdin", new=StringIO("100\n*\n5\nSTOP")):
@@ -33,7 +33,7 @@ class Day10Test(unittest.TestCase):
             self.assertTrue(expected in actual)
 
     def test_calculator_division(self):
-        """Test the Calculator division"""
+        """ Test the Calculator division"""
         # given
         expected = "20"
         with mock.patch("sys.stdin", new=StringIO("100\n/\n5\nSTOP")):
@@ -48,7 +48,7 @@ class Day10Test(unittest.TestCase):
             self.assertTrue(expected in actual)
 
     def test_calculator_subtraction(self):
-        """Test the Calculator subtraction"""
+        """ Test the Calculator subtraction"""
         # given
         expected = "95"
         with mock.patch("sys.stdin", new=StringIO("100\n-\n5\nSTOP")):
@@ -63,7 +63,7 @@ class Day10Test(unittest.TestCase):
             self.assertTrue(expected in actual)
 
     def test_calculator_addition(self):
-        """Test the Calculator addition"""
+        """ Test the Calculator addition"""
         # given
         expected = "105"
         with mock.patch("sys.stdin", new=StringIO("100\n+\n5\nSTOP")):

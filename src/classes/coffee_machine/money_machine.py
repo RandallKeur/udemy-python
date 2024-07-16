@@ -1,8 +1,8 @@
-"""Money machine that is leveraged for the coffee maker."""
+""" Money machine that is leveraged for the coffee maker."""
 
 
 class MoneyMachine:
-    """Models the money machine with coins"""
+    """ Models the money machine with coins"""
 
     CURRENCY = "$"
 
@@ -18,18 +18,18 @@ class MoneyMachine:
         self.money_received = 0
 
     def report(self):
-        """Prints the current profit"""
+        """ Prints the current profit"""
         print(f"Money: {self.CURRENCY}{self.profit}")
 
     def process_coins(self):
-        """Returns the total calculated from coins inserted."""
+        """ Returns the total calculated from coins inserted."""
         print("Please insert coins.")
         for coin, value in self.COIN_VALUES.items():
             self.money_received += int(input(f"How many {coin}?: ")) * value
         return self.money_received
 
     def make_payment(self, cost):
-        """Returns True when payment is accepted, or False if insufficient."""
+        """ Returns True when payment is accepted, or False if insufficient."""
         self.process_coins()
         if self.money_received >= cost:
             change = round(self.money_received - cost, 2)

@@ -46,7 +46,8 @@ ___
 | 23  | 🐢 🚗 Turtle Crossing          |
 | 24  | ✉️ Invitation Builder          |
 | 25  | 🌎 U.S. States Quiz            |
-| 26  | 🌐 NATO Converter              |
+| 26  | 🌐 NATO NatoConverter          |
+| 27  | 🏃‍ Distance Converter         |
 
 ## 🛠 Tools used in this project 
 

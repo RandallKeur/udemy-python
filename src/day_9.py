@@ -5,7 +5,7 @@ from src.constants.ascii_art import AUCTION, GAVEL
 
 
 def collect_bid(bids):
-    """Collect bids from all people"""
+    """ Collect bids from all people"""
     name = input("What is your name?: ")
     bid = int(input("What is your bid?: "))
     if bid in bids:
@@ -17,13 +17,13 @@ def collect_bid(bids):
 
 
 def print_winner(highest_bidders: list[str], bids: dict[int, list[str]]):
-    """Display the winner of the auction"""
+    """ Display the winner of the auction"""
     print(f"{GAVEL}"
           f"The winner is {highest_bidders[0]} with a bid of ${max(bids)}")
 
 
 def print_tie(highest_bidders: list[str], bids: dict[int, list[str]]):
-    """Display the tie of the auction"""
+    """ Display the tie of the auction"""
     last_bidder = highest_bidders[-1]
     second_last_bidder = highest_bidders[-2]
     result = ""
@@ -39,7 +39,7 @@ def print_tie(highest_bidders: list[str], bids: dict[int, list[str]]):
 
 
 def determine_winner(bids):
-    """Determine the winner of the auction"""
+    """ Determine the winner of the auction"""
     print(bids)
     highest_bidders = bids[max(bids)]
     print(highest_bidders)
@@ -50,7 +50,7 @@ def determine_winner(bids):
 
 
 def silent_auction():
-    """Simulate a silent auction """
+    """ Simulate a silent auction """
     print(f"{AUCTION}"
           "Welcome to the silent auction\n")
     bids = {}

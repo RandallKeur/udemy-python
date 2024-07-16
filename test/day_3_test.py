@@ -16,7 +16,7 @@ class Day3Test(unittest.TestCase):
         self.art = []
 
     def test_left_swim(self):
-        """Test the Alligator image"""
+        """ Test the Alligator image"""
         # given
         self.art.extend([ISLAND.strip(), ALLIGATOR.strip()])
         with mock.patch("sys.stdin", new=StringIO("left\nswim")):
@@ -30,7 +30,7 @@ class Day3Test(unittest.TestCase):
                 self.assertTrue(art in actual)
 
     def test_left_wait(self):
-        """Test the Boat image"""
+        """ Test the Boat image"""
         # given
         self.art.extend([ISLAND.strip(), BOAT.strip()])
         with mock.patch("sys.stdin", new=StringIO("left\nwait\nblue")):
@@ -44,7 +44,7 @@ class Day3Test(unittest.TestCase):
                 self.assertTrue(art in actual)
 
     def test_right_red(self):
-        """Test the Fire image"""
+        """ Test the Fire image"""
         # given
         self.art.extend([ISLAND.strip(), FIRE.strip()])
         with mock.patch("sys.stdin", new=StringIO("right\nred")):
@@ -58,7 +58,7 @@ class Day3Test(unittest.TestCase):
                 self.assertTrue(art in actual)
 
     def test_right_green(self):
-        """Test the Plant image"""
+        """ Test the Plant image"""
         # given
         self.art.extend([ISLAND.strip(), CARNIVOROUS_PLANTS.strip()])
         with mock.patch("sys.stdin", new=StringIO("right\ngreen")):
@@ -72,7 +72,7 @@ class Day3Test(unittest.TestCase):
                 self.assertTrue(art in actual)
 
     def test_right_blue(self):
-        """Test the Treasure image"""
+        """ Test the Treasure image"""
         # given
         self.art.extend([ISLAND.strip(), TREASURE.strip()])
         with mock.patch("sys.stdin", new=StringIO("right\nblue")):

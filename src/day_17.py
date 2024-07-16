@@ -3,7 +3,7 @@ from src.classes.quiz_generator import QuestionBank, Quiz
 
 
 def take_quiz(question_bank: QuestionBank):
-    """Takes a question bank and has the user start a quiz"""
+    """ Takes a question bank and has the user start a quiz"""
     quiz = Quiz(question_bank)
     number_of_questions = int(input("How many questions do you want on this quiz?: "))
     quiz.select_n_questions(number_of_questions)

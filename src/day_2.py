@@ -1,4 +1,4 @@
-"""Day 2 of Coding Challenges for Tip calculator"""
+""" Day 2 of Coding Challenges for Tip calculator"""
 
 
 def calculate_tip():

@@ -3,6 +3,6 @@ from src.classes.invitation_builder import InvitationBuilder
 
 
 def prepare_invitations():
-    """Prepares invitations for birthday party"""
+    """ Prepares invitations for birthday party"""
     invitation_builder = InvitationBuilder()
     invitation_builder.write_invitations()

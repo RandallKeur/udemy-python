@@ -8,7 +8,7 @@ from src.constants.values import TURTLE_COLORS, MIN_VALUES, Y_SPACING, MAX_VALUE
 
 
 def move_turtle(screen: Screen, turtle: SketchingTurtle) -> None:
-    """Listen to keys and move the turtle as specified by the user"""
+    """ Listen to keys and move the turtle as specified by the user"""
     screen.listen()
     screen.onkey(key="w", fun=turtle.move_forward)
     screen.onkey(key="s", fun=turtle.move_backward)
@@ -18,14 +18,14 @@ def move_turtle(screen: Screen, turtle: SketchingTurtle) -> None:
 
 
 def sketch(screen: Screen) -> None:
-    """Sketching using the turtle graphics"""
+    """ Sketching using the turtle graphics"""
     turtle = SketchingTurtle()
     turtle.shape("turtle")
     move_turtle(screen, turtle)
 
 
 def build_turtle(index: int) -> Turtle:
-    """Create a new turtle and return it"""
+    """ Create a new turtle and return it"""
     new_turtle = Turtle(shape="turtle")
     new_turtle.color(TURTLE_COLORS[index])
     new_turtle.penup()
@@ -33,14 +33,14 @@ def build_turtle(index: int) -> Turtle:
 
 
 def turtle_to_the_starting_gate(all_turtles: list[Turtle], index: int) -> None:
-    """Move the turtle to their starting position"""
+    """ Move the turtle to their starting position"""
     new_turtle = build_turtle(index)
     all_turtles.append(new_turtle)
     new_turtle.goto(x=MIN_VALUES["x"], y=MIN_VALUES["y"] + Y_SPACING * index)
 
 
 def setup_race() -> list[Turtle]:
-    """Set up the turtle race"""
+    """ Set up the turtle race"""
     racing_turtles = []
     for index in range(0, len(TURTLE_COLORS)):
         turtle_to_the_starting_gate(racing_turtles, index)
@@ -48,7 +48,7 @@ def setup_race() -> list[Turtle]:
 
 
 def run_race(racing_turtles: list[Turtle], is_race_on: bool) -> str:
-    """Run the race and return the winning color"""
+    """ Run the race and return the winning color"""
     winning_color = ""
     while is_race_on:
         for racer in racing_turtles:
@@ -60,7 +60,7 @@ def run_race(racing_turtles: list[Turtle], is_race_on: bool) -> str:
 
 
 def determine_winner(winning_color: str, bet: str) -> None:
-    """Determine the winner of the race"""
+    """ Determine the winner of the race"""
     if winning_color == bet:
         print(f"You won! The {winning_color} turtle won!")
     else:
@@ -68,7 +68,7 @@ def determine_winner(winning_color: str, bet: str) -> None:
 
 
 def race(screen: Screen) -> None:
-    """Racing turtles game"""
+    """ Racing turtles game"""
     is_race_on = False
     screen.setup(width=RACE_DIMENSIONS["x"], height=RACE_DIMENSIONS["y"])
     racing_turtles = setup_race()
@@ -81,7 +81,7 @@ def race(screen: Screen) -> None:
 
 
 def play() -> None:
-    """Play either etch-a-sketch or race"""
+    """ Play either etch-a-sketch or race"""
     screen = Screen()
     response = screen.textinput(title="Make your choice", prompt="Choose a game "
                                                                  "\'sketch\' or \'race\': ")

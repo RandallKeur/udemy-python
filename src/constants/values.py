@@ -1,4 +1,4 @@
-"""Class including constant values"""
+""" Class including constant values"""
 
 # CALCULATOR GAME
 CALCULATOR_OPERATIONS = """
@@ -609,3 +609,4 @@ STATES_SCREEN_SIZE = {
 STATES_IMAGE = f"{CONSTANTS_FILEPATH}blank_states_img.gif"
 STATES_FILE = f"{CONSTANTS_FILEPATH}50_states.csv"
 NATO_FILE = f"{CONSTANTS_FILEPATH}nato_phonetic_alphabet.csv"
+MILES_TO_KM = 1.609

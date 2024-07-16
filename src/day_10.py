@@ -1,16 +1,16 @@
-"""Day 10 of Coding Challenges for Calculator"""
+""" Day 10 of Coding Challenges for Calculator"""
 
 from src.constants.ascii_art import CALCULATOR
 from src.constants.values import CALCULATOR_OPERATIONS
 
 
 def collect_input():
-    """Collect input number from the user"""
+    """ Collect input number from the user"""
     return input("What\'s the next number?: ")
 
 
 def get_operation(number_1: float) -> float:
-    """Get calculator operation from input and return result"""
+    """ Get calculator operation from input and return result"""
     valid_op = False
     while not valid_op:
         operation = input(f"{CALCULATOR_OPERATIONS}"
@@ -32,7 +32,7 @@ def get_operation(number_1: float) -> float:
 
 
 def calculator():
-    """Calculator"""
+    """ Calculator"""
     print(f"{CALCULATOR}")
     continue_with_result = False
     running = True

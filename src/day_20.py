@@ -5,7 +5,7 @@ from src.classes.snake.snake_game import SnakeGame
 
 
 def snake() -> None:
-    """Play a snake game"""
+    """ Play a snake game"""
     snake_game = SnakeGame()
     snake_game.scoreboard.hideturtle()
     snake_game.food.hideturtle()
