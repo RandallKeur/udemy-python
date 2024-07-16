@@ -1,4 +1,5 @@
 """ Class to represent the Pomodoro timer"""
+from math import ceil
 from tkinter import Tk, Canvas, PhotoImage, Label, Button
 
 from src.constants.values import YELLOW, FONT_NAME, GREEN, CYCLE
@@ -22,52 +23,81 @@ class PomodoroTimer:
         self.reset_button = Button(text="Reset", command=self.reset_timer, highlightbackground=YELLOW)
         self.check_marks = Label(text="", font=(FONT_NAME, 35), bg=YELLOW, fg=GREEN)
         self.current_stage = 0
+        self.completed_steps = 0
         self.organize_grid()
+
+    def place_buttons(self):
+        """ Place the buttons"""
+        self.start_button.grid(row=2, column=0)
+        self.reset_button.grid(row=2, column=2)
 
     def organize_grid(self):
         """ Organize the grid layout of the screen"""
         self.text.grid(row=0, column=1)
         self.canvas.grid(row=1, column=1)
-        self.start_button.grid(row=2, column=0)
-        self.reset_button.grid(row=2, column=2)
+        self.place_buttons()
         self.check_marks.grid(row=3, column=1)
 
+    def format_timer(self):
+        """ Format the timer to the correct format"""
+        self.canvas.itemconfig(self.timer, text=self.format_time())
+        
     def format_time(self) -> str:
         """ Get a formatted time in 00:00 format"""
         minute, second = divmod(self.time_remaining, 60)
         return '{:01d}:{:02d}'.format(minute, second)
 
-    def complete_stage(self):
-        """ Complete the stage of the Pomodoro"""
+    def update_pomodoro_stage(self):
+        """ Update the stage of the pomodoro"""
+        self.text.config(text=CYCLE[self.current_stage]["text"])
+        self.time_remaining = CYCLE[self.current_stage]["time"]
+
+    def update_check_marks(self):
+        """ Update the check_marks label"""
+        self.check_marks.config(text="".join("✔" for i in range(ceil(self.completed_steps / 2))))
+
+    def determine_pomodoro_stage(self):
+        """ Determine the stage of the pomodoro"""
         if self.current_stage == len(CYCLE) - 1:
             self.current_stage = 0
         else:
             self.current_stage += 1
+            self.completed_steps += 1
 
-        self.check_marks.config(text="".join("✔" for i in range(int(self.current_stage / 2))))
-        self.text.config(text=CYCLE[self.current_stage]["text"])
-        self.time_remaining = CYCLE[self.current_stage]["time"]
-        self.canvas.itemconfig(self.timer, text=self.format_time())
+    def complete_stage(self):
+        """ Complete the stage of the Pomodoro"""
+        self.determine_pomodoro_stage()
+        self.update_check_marks()
+        self.update_pomodoro_stage()
+        self.format_timer()
 
     def count_down(self):
         """ Count down the timer by 1 second"""
-        self.canvas.itemconfig(self.timer, text=self.format_time())
+        self.format_timer()
         if self.time_remaining > 0:
             self.time_remaining -= 1
             self.window.after(1000, self.count_down)
         else:
+            self.place_buttons()
             self.complete_stage()
+
+    def hide_buttons(self):
+        """ Hide the buttons"""
+        self.start_button.grid_forget()
+        self.reset_button.grid_forget()
 
     def start_timer(self):
         """ Start the timer"""
-        self.text.config(text=CYCLE[self.current_stage]["text"])
-        self.time_remaining = CYCLE[self.current_stage]["time"]
+        self.hide_buttons()
+        self.update_pomodoro_stage()
         self.count_down()
 
     def reset_timer(self):
         """ Reset the timer"""
         self.time_remaining = 0
-        self.canvas.itemconfig(self.timer, text=self.format_time())
+        self.completed_steps = 0
+        self.current_stage = 0
+        self.format_timer()
         self.text.config(text="Timer")
         self.check_marks.config(text="")
 
