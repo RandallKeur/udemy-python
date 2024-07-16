@@ -6,8 +6,7 @@ from src.constants.ascii_art import ROCK, PAPER, SCISSORS
 
 
 class Choices:
-    # Disable too-few-public-methods error
-    # pylint: disable=R0903
+    # pylint: disable=too-few-public-methods
     """ Class to store constants for Rock, Paper, or Scissors"""
     rock = ROCK
     paper = PAPER

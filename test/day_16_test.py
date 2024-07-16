@@ -13,7 +13,7 @@ from src.day_16 import coffee_machine
 class Day16Test(unittest.TestCase):
     """ Test for Day 16 of Coding"""
     def setUp(self):
-        # pylint: disable=R0801
+        # pylint: disable=duplicate-code
         self.menu = Menu()
         self.coffee_maker = CoffeeMaker()
         self.money_machine = MoneyMachine()

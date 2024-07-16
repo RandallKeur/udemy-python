@@ -104,7 +104,7 @@ class Day15Test(unittest.TestCase):
                 self.assertTrue(str(value) in actual)
 
     def test_coffee_maker_item_not_on_menu(self):
-        # pylint: disable=R0801
+        # pylint: disable=duplicate-code
         """Test the Coffee Maker with an item that is not on the meu"""
         # given
         self.drink = "ice coffee"

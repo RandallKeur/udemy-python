@@ -3,8 +3,7 @@ import random
 
 
 class Question:
-    # Disable too-few-public-methods error
-    # pylint: disable=R0903
+    # pylint: disable=too-few-public-methods
     """Models each question"""
     def __init__(self, question, answer):
         self.question = question
@@ -12,8 +11,7 @@ class Question:
 
 
 class QuestionBank:
-    # Disable too-few-public-methods error
-    # pylint: disable=R0903
+    # pylint: disable=too-few-public-methods
     """Models the question banks"""
     def __init__(self, question_bank):
         self.questions = []

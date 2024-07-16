@@ -17,7 +17,7 @@ class Day11Test(unittest.TestCase):
         self.art = BLACKJACK.strip()
 
     def test_blackjack_stand(self):
-        # pylint: disable=R0801
+        # pylint: disable=duplicate-code
         """ Test the Blackjack stand"""
         # given
         expected = "Dealer shows"

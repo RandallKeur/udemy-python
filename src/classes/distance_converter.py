@@ -6,6 +6,7 @@ from src.constants.values import MILES_TO_KM
 
 class DistanceConverter:
     """Class to represent the distance converter"""
+    # pylint: disable=too-many-instance-attributes
 
     def __init__(self):
         self.window = Tk()
@@ -44,9 +45,8 @@ class DistanceConverter:
 
     def convert(self):
         """Convert the distance"""
-        print(self.from_radio_state.get(), self.to_radio_state.get())
         if self.from_radio_state.get() == self.to_radio_state.get():
-            self.result.config(f"{self.user_input.get()}")
+            self.result.config(text=f"{self.user_input.get()}")
         elif self.from_radio_state.get() == 1 and self.to_radio_state.get() == 2:
             self.miles_to_kilometers()
         elif self.from_radio_state.get() == 2 and self.to_radio_state.get() == 1:
@@ -55,11 +55,11 @@ class DistanceConverter:
     def kilometers_to_miles(self):
         """Convert kilometers to miles"""
         km = float(self.user_input.get())
-        miles = km / MILES_TO_KM
-        self.result.config(f"{miles}")
+        miles = round(km / MILES_TO_KM, 2)
+        self.result.config(text=f"{miles}")
 
     def miles_to_kilometers(self):
         """Converts miles to kilometers"""
         miles = float(self.user_input.get())
-        km = miles * MILES_TO_KM
-        self.result.config(f"{km}")
+        km = round(miles * MILES_TO_KM, 2)
+        self.result.config(text=f"{km}")
