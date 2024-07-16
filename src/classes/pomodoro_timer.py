@@ -1,7 +1,7 @@
 """ Class to represent the Pomodoro timer"""
 from tkinter import Tk, Canvas, PhotoImage, Label, Button
 
-from src.constants.values import YELLOW, FONT_NAME, GREEN
+from src.constants.values import YELLOW, FONT_NAME, GREEN, CYCLE
 
 
 class PomodoroTimer:
@@ -11,16 +11,16 @@ class PomodoroTimer:
         self.window = Tk()
         self.window.title("Pomodoro")
         self.window.config(padx=100, pady=50, bg=YELLOW)
-        self.text = Label(text="Timer", font=(FONT_NAME, 30, "bold"), bg=YELLOW, fg=GREEN)
+        self.text = Label(text="Timer", font=(FONT_NAME, 50), bg=YELLOW, fg=GREEN)
         self.canvas = Canvas(width=200, height=250, bg=YELLOW, highlightthickness=0)
         self.background = PhotoImage(file="src/constants/tomato.png")
         self.canvas.create_image(100, 125, image=self.background)
         self.time_remaining = 0
         self.timer = self.canvas.create_text(100, 145, text=self.format_time(), fill="white",
-                                             font=(FONT_NAME, 25, "bold"))
+                                             font=(FONT_NAME, 35, "bold"))
         self.start_button = Button(text="Start", command=self.start_timer, highlightbackground=YELLOW)
         self.reset_button = Button(text="Reset", command=self.reset_timer, highlightbackground=YELLOW)
-        self.check_marks = Label(text="", font=FONT_NAME, bg=YELLOW, fg=GREEN)
+        self.check_marks = Label(text="", font=(FONT_NAME, 35), bg=YELLOW, fg=GREEN)
         self.current_stage = 0
         self.organize_grid()
 
@@ -39,7 +39,15 @@ class PomodoroTimer:
 
     def complete_stage(self):
         """ Complete the stage of the Pomodoro"""
-        self.current_stage += 1
+        if self.current_stage == len(CYCLE) - 1:
+            self.current_stage = 0
+        else:
+            self.current_stage += 1
+
+        self.check_marks.config(text="".join("✔" for i in range(int(self.current_stage / 2))))
+        self.text.config(text=CYCLE[self.current_stage]["text"])
+        self.time_remaining = CYCLE[self.current_stage]["time"]
+        self.canvas.itemconfig(self.timer, text=self.format_time())
 
     def count_down(self):
         """ Count down the timer by 1 second"""
@@ -52,7 +60,8 @@ class PomodoroTimer:
 
     def start_timer(self):
         """ Start the timer"""
-        self.time_remaining = 5 * 60
+        self.text.config(text=CYCLE[self.current_stage]["text"])
+        self.time_remaining = CYCLE[self.current_stage]["time"]
         self.count_down()
 
     def reset_timer(self):

@@ -624,9 +624,25 @@ GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 WORK_MIN = 25
+WORK = "WORK"
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
-STATUS = [
-    WORK_MIN, SHORT_BREAK_MIN, WORK_MIN, SHORT_BREAK_MIN,
-    WORK_MIN, SHORT_BREAK_MIN, WORK_MIN, LONG_BREAK_MIN
+BREAK = "BREAK"
+CYCLE = [
+    {"text": WORK,
+     "time": WORK_MIN},
+    {"text": BREAK,
+     "time": SHORT_BREAK_MIN},
+    {"text": WORK,
+     "time": WORK_MIN},
+    {"text": BREAK,
+     "time": SHORT_BREAK_MIN},
+    {"text": WORK,
+     "time": WORK_MIN},
+    {"text": BREAK,
+     "time": SHORT_BREAK_MIN},
+    {"text": WORK,
+     "time": WORK_MIN},
+    {"text": BREAK,
+     "time": LONG_BREAK_MIN}
 ]
