@@ -63,3 +63,7 @@ class DistanceConverter:
         miles = float(self.user_input.get())
         km = round(miles * MILES_TO_KM, 2)
         self.result.config(text=f"{km}")
+
+    def start(self):
+        """ Start the Tkinter main loop """
+        self.window.mainloop()
