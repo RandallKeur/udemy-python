@@ -7,6 +7,7 @@ from src.constants.values import YELLOW, FONT_NAME, GREEN, CYCLE
 
 class PomodoroTimer:
     """ Class to represent the Pomodoro timer"""
+    # pylint: disable=too-many-instance-attributes
 
     def __init__(self):
         self.window = Tk()
@@ -19,8 +20,10 @@ class PomodoroTimer:
         self.time_remaining = 0
         self.timer = self.canvas.create_text(100, 145, text=self.format_time(), fill="white",
                                              font=(FONT_NAME, 35, "bold"))
-        self.start_button = Button(text="Start", command=self.start_timer, highlightbackground=YELLOW)
-        self.reset_button = Button(text="Reset", command=self.reset_timer, highlightbackground=YELLOW)
+        self.start_button = Button(text="Start", command=self.start_timer,
+                                   highlightbackground=YELLOW)
+        self.reset_button = Button(text="Reset", command=self.reset_timer,
+                                   highlightbackground=YELLOW)
         self.check_marks = Label(text="", font=(FONT_NAME, 35), bg=YELLOW, fg=GREEN)
         self.current_stage = 0
         self.completed_steps = 0
@@ -41,11 +44,11 @@ class PomodoroTimer:
     def format_timer(self):
         """ Format the timer to the correct format"""
         self.canvas.itemconfig(self.timer, text=self.format_time())
-        
+
     def format_time(self) -> str:
         """ Get a formatted time in 00:00 format"""
         minute, second = divmod(self.time_remaining, 60)
-        return '{:01d}:{:02d}'.format(minute, second)
+        return f"{minute:01d}:{second:02d}"
 
     def update_pomodoro_stage(self):
         """ Update the stage of the pomodoro"""
