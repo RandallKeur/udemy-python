@@ -618,6 +618,10 @@ NATO_FILE = f"{CONSTANTS_FILEPATH}nato_phonetic_alphabet.csv"
 MILES_TO_KM = 1.609
 
 # POMODORO TIMER
+CANVAS_SIZE = {
+    "width": 200,
+    "height": 250
+}
 PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"

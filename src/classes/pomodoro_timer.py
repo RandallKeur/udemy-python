@@ -2,7 +2,7 @@
 from math import ceil
 from tkinter import Tk, Canvas, PhotoImage, Label, Button
 
-from src.constants.values import YELLOW, FONT_NAME, GREEN, CYCLE
+from src.constants.values import YELLOW, FONT_NAME, GREEN, CYCLE, CANVAS_SIZE
 
 
 class PomodoroTimer:
@@ -11,15 +11,14 @@ class PomodoroTimer:
 
     def __init__(self):
         self.window = Tk()
-        self.window.title("Pomodoro")
-        self.window.config(padx=100, pady=50, bg=YELLOW)
+        self.configure_window()
         self.text = Label(text="Timer", font=(FONT_NAME, 50), bg=YELLOW, fg=GREEN)
-        self.canvas = Canvas(width=200, height=250, bg=YELLOW, highlightthickness=0)
+        self.canvas = Canvas(width=CANVAS_SIZE["width"], height=CANVAS_SIZE["height"],
+                             bg=YELLOW, highlightthickness=0)
         self.background = PhotoImage(file="src/constants/tomato.png")
-        self.canvas.create_image(100, 125, image=self.background)
+        self.set_background()
         self.time_remaining = 0
-        self.timer = self.canvas.create_text(100, 145, text=self.format_time(), fill="white",
-                                             font=(FONT_NAME, 35, "bold"))
+        self.timer = self.create_timer()
         self.start_button = Button(text="Start", command=self.start_timer,
                                    highlightbackground=YELLOW)
         self.reset_button = Button(text="Reset", command=self.reset_timer,
@@ -28,6 +27,23 @@ class PomodoroTimer:
         self.current_stage = 0
         self.completed_steps = 0
         self.organize_grid()
+
+    def configure_window(self):
+        """ Configure the window"""
+        self.window.title("Pomodoro")
+        self.window.config(padx=100, pady=50, bg=YELLOW)
+
+    def set_background(self):
+        """ Set the background of the canvas"""
+        self.canvas.create_image(CANVAS_SIZE["width"] / 2,
+                                 CANVAS_SIZE["height"] / 2, image=self.background)
+
+    def create_timer(self):
+        """ Create the timer"""
+        return self.canvas.create_text(CANVAS_SIZE["width"] / 2,
+                                       CANVAS_SIZE["height"] / 2 + 20,
+                                       text=self.format_time(), fill="white",
+                                       font=(FONT_NAME, 35, "bold"))
 
     def place_buttons(self):
         """ Place the buttons"""
