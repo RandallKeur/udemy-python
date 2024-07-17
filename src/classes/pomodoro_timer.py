@@ -2,7 +2,8 @@
 from math import ceil
 from tkinter import Tk, Canvas, PhotoImage, Label, Button
 
-from src.constants.values import YELLOW, FONT_NAME, GREEN, CYCLE, CANVAS_SIZE
+from src.constants.fonts import COURIER
+from src.constants.values import YELLOW, GREEN, CYCLE, POMODORO_CANVAS, CONSTANTS_FILEPATH
 
 
 class PomodoroTimer:
@@ -12,10 +13,10 @@ class PomodoroTimer:
     def __init__(self):
         self.window = Tk()
         self.configure_window()
-        self.text = Label(text="Timer", font=(FONT_NAME, 50), bg=YELLOW, fg=GREEN)
-        self.canvas = Canvas(width=CANVAS_SIZE["width"], height=CANVAS_SIZE["height"],
+        self.text = Label(text="Timer", font=(COURIER, 50), bg=YELLOW, fg=GREEN)
+        self.canvas = Canvas(width=POMODORO_CANVAS["width"], height=POMODORO_CANVAS["height"],
                              bg=YELLOW, highlightthickness=0)
-        self.background = PhotoImage(file="src/constants/tomato.png")
+        self.background = PhotoImage(file=f"{CONSTANTS_FILEPATH}tomato.png")
         self.set_background()
         self.time_remaining = 0
         self.timer = self.create_timer()
@@ -23,7 +24,7 @@ class PomodoroTimer:
                                    highlightbackground=YELLOW)
         self.reset_button = Button(text="Reset", command=self.reset_timer,
                                    highlightbackground=YELLOW)
-        self.check_marks = Label(text="", font=(FONT_NAME, 35), bg=YELLOW, fg=GREEN)
+        self.check_marks = Label(text="", font=(COURIER, 35), bg=YELLOW, fg=GREEN)
         self.current_stage = 0
         self.completed_steps = 0
         self.organize_grid()
@@ -35,15 +36,15 @@ class PomodoroTimer:
 
     def set_background(self):
         """ Set the background of the canvas"""
-        self.canvas.create_image(CANVAS_SIZE["width"] / 2,
-                                 CANVAS_SIZE["height"] / 2, image=self.background)
+        self.canvas.create_image(POMODORO_CANVAS["width"] / 2,
+                                 POMODORO_CANVAS["height"] / 2, image=self.background)
 
     def create_timer(self):
         """ Create the timer"""
-        return self.canvas.create_text(CANVAS_SIZE["width"] / 2,
-                                       CANVAS_SIZE["height"] / 2 + 20,
+        return self.canvas.create_text(POMODORO_CANVAS["width"] / 2,
+                                       POMODORO_CANVAS["height"] / 2 + 20,
                                        text=self.format_time(), fill="white",
-                                       font=(FONT_NAME, 35, "bold"))
+                                       font=(COURIER, 35, "bold"))
 
     def place_buttons(self):
         """ Place the buttons"""

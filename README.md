@@ -48,7 +48,8 @@ ___
 | 25  | 🌎 U.S. States Quiz            |
 | 26  | 🌐 NATO NatoConverter          |
 | 27  | 🏃‍ Distance Converter         |
-| 29  | 🍅 Pomodoro Timer              |
+| 28  | 🍅 Pomodoro Timer              |
+| 29  | 🔐 Password Manager            |
 
 ## 🛠 Tools used in this project 
 

@@ -1,4 +1,5 @@
 """ Class including constant values"""
+from src.constants.fonts import ARIAL, COURIER
 
 # CALCULATOR GAME
 CALCULATOR_OPERATIONS = """
@@ -582,8 +583,8 @@ SCOREBOARD_SETTINGS = {
     "alignment": "center",
     "font": {
         "family": {
-            "arial": "Arial",
-            "courier": "Courier"
+            "arial": ARIAL,
+            "courier": COURIER
         },
         "weight": "normal",
         "size": {
@@ -618,7 +619,7 @@ NATO_FILE = f"{CONSTANTS_FILEPATH}nato_phonetic_alphabet.csv"
 MILES_TO_KM = 1.609
 
 # POMODORO TIMER
-CANVAS_SIZE = {
+POMODORO_CANVAS = {
     "width": 200,
     "height": 250
 }
@@ -626,7 +627,6 @@ PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
-FONT_NAME = "Courier"
 WORK_MIN = 25
 WORK = "WORK"
 SHORT_BREAK_MIN = 5
@@ -650,3 +650,10 @@ CYCLE = [
     {"text": BREAK,
      "time": LONG_BREAK_MIN}
 ]
+
+# PASSWORD MANAGER
+PASSWORD_CANVAS = {
+    "width": 200,
+    "height": 200
+}
+PASSWORD_FILE = f"{OUTPUT_FILEPATH}passwords.txt"
