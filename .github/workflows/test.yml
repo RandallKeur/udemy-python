@@ -18,10 +18,7 @@ jobs:
         python-version: [ "3.12" ]
 
     steps:
-      - name: Setup Python and Install Dependencies
-        uses: ./.github/workflows/setup-python-and-install-deps.yml
-        with:
-          python-version: ${{ matrix.python-version }}
+      - uses: ./.github/workflows/setup-python-and-install-deps.yml
       - name: Install additional test dependencies
         run: |
           pip install build pytest

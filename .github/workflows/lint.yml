@@ -10,15 +10,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        python-version: [ "3.12" ]
-
     steps:
-      - name: Setup Python and Install Dependencies
-        uses: ./.github/workflows/setup-python-and-install-deps.yml
-        with:
-          python-version: ${{ matrix.python-version }}
+      - uses: ./.github/workflows/setup-python-and-install-deps.yml
       - name: Install additional lint dependencies
         run: |
           pip install pylint
