@@ -69,11 +69,12 @@ class PomodoroTimer:
     def update_pomodoro_stage(self):
         """ Update the stage of the pomodoro"""
         self.text.config(text=CYCLE[self.current_stage]["text"])
-        self.time_remaining = CYCLE[self.current_stage]["time"]
+        self.time_remaining = CYCLE[self.current_stage]["time"] * 60
 
     def update_check_marks(self):
         """ Update the check_marks label"""
-        self.check_marks.config(text="".join("✔" for i in range(ceil(self.completed_steps / 2))))
+        pomodoros = ceil(self.completed_steps / 2)
+        self.check_marks.config(text="".join("✔" for i in range(pomodoros)))
 
     def determine_pomodoro_stage(self):
         """ Determine the stage of the pomodoro"""
