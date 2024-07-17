@@ -656,4 +656,4 @@ PASSWORD_CANVAS = {
     "width": 200,
     "height": 200
 }
-PASSWORD_FILE = f"{OUTPUT_FILEPATH}data.txt"
+PASSWORD_FILE = f"{OUTPUT_FILEPATH}passwords.txt"

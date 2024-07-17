@@ -25,7 +25,7 @@ class PasswordManager:
         self.text_fields = [self.website_text, self.email_text, self.password_text]
         self.password_generator = PasswordGenerator()
         self.generate_password_button = Button(text="Generate Password",
-                                               command=self.password_generator.generate_password(),
+                                               command=self.generate_password,
                                                highlightbackground="white")
         self.add_button = Button(width=35, text="Add",
                                  command=self.collect_text_field_values,
@@ -54,6 +54,15 @@ class PasswordManager:
         self.password_text.grid(row=3, column=1)
         self.generate_password_button.grid(row=3, column=2)
         self.add_button.grid(row=4, column=1, columnspan=2)
+
+    def clear_password(self):
+        """ Clear the password text field value"""
+        self.password_text.delete(0, END)
+
+    def generate_password(self):
+        """ Generate a password from the website"""
+        self.clear_password()
+        self.password_text.insert(0, self.password_generator.generate_password())
 
     def reset_text_fields(self):
         """ Reset the text fields of the UI"""
