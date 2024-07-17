@@ -2,7 +2,7 @@
 from math import ceil
 from tkinter import Tk, Canvas, PhotoImage, Label, Button
 
-from src.constants.values import YELLOW, FONT_NAME, GREEN, CYCLE, CANVAS_SIZE
+from src.constants.values import YELLOW, FONT_NAME, GREEN, CYCLE, POMODORO_CANVAS
 
 
 class PomodoroTimer:
@@ -13,7 +13,7 @@ class PomodoroTimer:
         self.window = Tk()
         self.configure_window()
         self.text = Label(text="Timer", font=(FONT_NAME, 50), bg=YELLOW, fg=GREEN)
-        self.canvas = Canvas(width=CANVAS_SIZE["width"], height=CANVAS_SIZE["height"],
+        self.canvas = Canvas(width=POMODORO_CANVAS["width"], height=POMODORO_CANVAS["height"],
                              bg=YELLOW, highlightthickness=0)
         self.background = PhotoImage(file="src/constants/tomato.png")
         self.set_background()
@@ -35,13 +35,13 @@ class PomodoroTimer:
 
     def set_background(self):
         """ Set the background of the canvas"""
-        self.canvas.create_image(CANVAS_SIZE["width"] / 2,
-                                 CANVAS_SIZE["height"] / 2, image=self.background)
+        self.canvas.create_image(POMODORO_CANVAS["width"] / 2,
+                                 POMODORO_CANVAS["height"] / 2, image=self.background)
 
     def create_timer(self):
         """ Create the timer"""
-        return self.canvas.create_text(CANVAS_SIZE["width"] / 2,
-                                       CANVAS_SIZE["height"] / 2 + 20,
+        return self.canvas.create_text(POMODORO_CANVAS["width"] / 2,
+                                       POMODORO_CANVAS["height"] / 2 + 20,
                                        text=self.format_time(), fill="white",
                                        font=(FONT_NAME, 35, "bold"))
 

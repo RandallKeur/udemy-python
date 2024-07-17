@@ -618,7 +618,7 @@ NATO_FILE = f"{CONSTANTS_FILEPATH}nato_phonetic_alphabet.csv"
 MILES_TO_KM = 1.609
 
 # POMODORO TIMER
-CANVAS_SIZE = {
+POMODORO_CANVAS = {
     "width": 200,
     "height": 250
 }
@@ -650,3 +650,9 @@ CYCLE = [
     {"text": BREAK,
      "time": LONG_BREAK_MIN}
 ]
+
+# PASSWORD MANAGER
+PASSWORD_CANVAS = {
+    "width": 200,
+    "height": 200
+}
