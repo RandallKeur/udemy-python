@@ -1,4 +1,5 @@
 """ Class including constant values"""
+from src.constants.fonts import ARIAL, COURIER
 
 # CALCULATOR GAME
 CALCULATOR_OPERATIONS = """
@@ -582,8 +583,8 @@ SCOREBOARD_SETTINGS = {
     "alignment": "center",
     "font": {
         "family": {
-            "arial": "Arial",
-            "courier": "Courier"
+            "arial": ARIAL,
+            "courier": COURIER
         },
         "weight": "normal",
         "size": {
@@ -626,7 +627,6 @@ PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
-FONT_NAME = "Courier"
 WORK_MIN = 25
 WORK = "WORK"
 SHORT_BREAK_MIN = 5
@@ -656,3 +656,4 @@ PASSWORD_CANVAS = {
     "width": 200,
     "height": 200
 }
+PASSWORD_FILE = f"{OUTPUT_FILEPATH}data.txt"
