@@ -11,19 +11,26 @@ permissions:
 
 jobs:
   test:
-    uses: ./.github/workflows/setup-python-and-install-deps.yml
-    with:
-      python-version: "3.12"
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [ "3.12" ]
+
     steps:
-    - name: Install additional test dependencies
-      run: |
-        pip install build pytest
-    - name: Test
-      run: |
-        pytest --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml
-    - name: Upload test results
-      uses: actions/upload-artifact@v4
-      with:
-        name: pytest-results-${{ matrix.python-version }}
-        path: junit/test-results-${{ matrix.python-version }}.xml
-      if: ${{ always() }}
+      - name: Setup Python and Install Dependencies
+        uses: ./.github/workflows/setup-python-and-install-deps.yml
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install additional test dependencies
+        run: |
+          pip install build pytest
+      - name: Test
+        run: |
+          pytest --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-results-${{ matrix.python-version }}
+          path: junit/test-results-${{ matrix.python-version }}.xml
+        if: ${{ always() }}
