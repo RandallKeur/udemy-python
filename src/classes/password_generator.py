@@ -16,7 +16,9 @@ class PasswordGenerator:
 
     def generate_password(self):
         """ Method to generate a random password"""
-        self.password = self.generate_random_letters() + self.generate_random_symbols() + self.generate_random_numbers()
+        self.password = (self.generate_random_letters() +
+                         self.generate_random_symbols() +
+                         self.generate_random_numbers())
         self.password = sample(self.password, len(self.password))
         return "".join(self.password)
 

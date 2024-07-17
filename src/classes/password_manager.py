@@ -8,6 +8,7 @@ from src.constants.values import PASSWORD_CANVAS, COURIER, PASSWORD_FILE
 
 class PasswordManager:
     """ Class to represent a password manager"""
+    # pylint: disable=too-many-instance-attributes
 
     def __init__(self):
         self.window = Tk()
