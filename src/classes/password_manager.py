@@ -1,9 +1,16 @@
 """ Class to represent a password manager"""
 from tkinter import Tk, Canvas, PhotoImage, Label, Entry, Button, END, messagebox
 
+import pyperclip
+
 from src.classes.file_manager import FileManager
 from src.classes.password_generator import PasswordGenerator
 from src.constants.values import PASSWORD_CANVAS, COURIER, PASSWORD_FILE
+
+
+def copy_to_clipboard(password):
+    """ Copy the password text field to the clipboard"""
+    pyperclip.copy(password)
 
 
 class PasswordManager:
@@ -63,7 +70,9 @@ class PasswordManager:
     def generate_password(self):
         """ Generate a password from the website"""
         self.clear_password()
-        self.password_text.insert(0, self.password_generator.generate_password())
+        password = self.password_generator.generate_password()
+        copy_to_clipboard(password)
+        self.password_text.insert(0, password)
 
     def reset_text_fields(self):
         """ Reset the text fields of the UI"""
