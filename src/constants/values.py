@@ -446,21 +446,18 @@ MENU = {
         "cost": 3.0,
     }
 }
-
 RESOURCES = {
     "water": 500,
     "milk": 350,
     "coffee": 132,
     "money": 0
 }
-
 UNITS_OF_MEASURE = {
     "water": "ml",
     "milk": "ml",
     "coffee": "ml",
     "money": "$"
 }
-
 COINS = {
     "quarters": 0.25,
     "dimes": 0.10,
@@ -468,28 +465,25 @@ COINS = {
     "pennies": 0.01
 }
 
+# TURTLE RACE
 DEFAULT_TURTLE_DISTANCE = 50
-
 TURTLE_COLORS = ["red", "orange", "yellow", "green", "blue", "purple", "black"]
-
 TURTLE_SIZE = 40
-
 RACE_DIMENSIONS = {
     "x": 500,
     "y": 400
 }
-
 MAX_VALUES = {
     "x": RACE_DIMENSIONS["x"] / 2 - TURTLE_SIZE / 2,
     "y": RACE_DIMENSIONS["y"] / 2 - 50
 }
-
 MIN_VALUES = {
     "x": - MAX_VALUES["x"],
     "y": - MAX_VALUES["y"]
 }
-
 Y_SPACING = (MAX_VALUES["y"] - MIN_VALUES["y"]) / (len(TURTLE_COLORS) - 1)
+
+# SNAKE GAME
 SNAKE_SPACING = 20
 RIGHT = 0
 UP = 90
@@ -525,6 +519,8 @@ GAME_SPEED = {
     "medium": 0.10,
     "hard": 0.05
 }
+
+# PONG GAME
 PONG_SCREEN_SIZE = {
     "x": 800,
     "y": 600
@@ -550,6 +546,8 @@ PONG_OFFSETS = {
 }
 PONG_PADDLE_MOVEMENT = 20
 PONG_BALL_MOVEMENT = 10
+
+# TURTLE CROSSING
 TURTLE_CROSSING_SCREEN_SIZE = 600
 TURTLE_CROSSING_SCREEN = {
     "x": {
@@ -598,15 +596,57 @@ SCOREBOARD_SETTINGS = {
 }
 OUTPUT_FILEPATH = "src/output_files/"
 HIGH_SCORE_FILE = f"{OUTPUT_FILEPATH}high_score.txt"
+
+# INVITATION BUILDER
 CONSTANTS_FILEPATH = "src/constants/"
 INVITATION_TEMPLATE = f"{CONSTANTS_FILEPATH}letter_template.txt"
 GUESTS = f"{CONSTANTS_FILEPATH}invited_guests.txt"
 INVITATION_OUTPUT_FILEPATH = OUTPUT_FILEPATH + "letters"
+
+# STATES QUIZ
 STATES_SCREEN_SIZE = {
     "x": 750,
     "y": 525
 }
 STATES_IMAGE = f"{CONSTANTS_FILEPATH}blank_states_img.gif"
 STATES_FILE = f"{CONSTANTS_FILEPATH}50_states.csv"
+
+# NATO CONVERTER
 NATO_FILE = f"{CONSTANTS_FILEPATH}nato_phonetic_alphabet.csv"
+
+# DISTANCE CONVERTER
 MILES_TO_KM = 1.609
+
+# POMODORO TIMER
+CANVAS_SIZE = {
+    "width": 200,
+    "height": 250
+}
+PINK = "#e2979c"
+RED = "#e7305b"
+GREEN = "#9bdeac"
+YELLOW = "#f7f5dd"
+FONT_NAME = "Courier"
+WORK_MIN = 25
+WORK = "WORK"
+SHORT_BREAK_MIN = 5
+LONG_BREAK_MIN = 20
+BREAK = "BREAK"
+CYCLE = [
+    {"text": WORK,
+     "time": WORK_MIN},
+    {"text": BREAK,
+     "time": SHORT_BREAK_MIN},
+    {"text": WORK,
+     "time": WORK_MIN},
+    {"text": BREAK,
+     "time": SHORT_BREAK_MIN},
+    {"text": WORK,
+     "time": WORK_MIN},
+    {"text": BREAK,
+     "time": SHORT_BREAK_MIN},
+    {"text": WORK,
+     "time": WORK_MIN},
+    {"text": BREAK,
+     "time": LONG_BREAK_MIN}
+]

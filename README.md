@@ -48,6 +48,7 @@ ___
 | 25  | 🌎 U.S. States Quiz            |
 | 26  | 🌐 NATO NatoConverter          |
 | 27  | 🏃‍ Distance Converter         |
+| 29  | 🍅 Pomodoro Timer              |
 
 ## 🛠 Tools used in this project 
 
@@ -58,6 +59,7 @@ ___
 - ### 📦 [Python packages][py-pi]
 - ### ? [Trivia Database][trivia-db]
 - ### 🐢 [Turtle graphics][turtle-graphics]
+- ### 🧑‍💻 [Tkinter][tkinter]
 
 [udemy-course]: https://www.udemy.com/course/100-days-of-code/?couponCode=GENAISALE24
 [pycharm]: https://www.jetbrains.com/guide/python/tutorials/getting-started-pycharm/installation-and-setup/
@@ -69,3 +71,4 @@ ___
 [py-pi]: https://pypi.org/
 [trivia-db]: https://opentdb.com/
 [turtle-graphics]: https://docs.python.org/3/library/turtle.html
+[tkinter]: https://docs.python.org/3/library/tkinter.html#
