@@ -9,8 +9,6 @@ on:
 jobs:
   setup:
     uses: ./.github/workflows/setup-python-and-install-deps.yml
-    with:
-      python-version: ${{ matrix.python-version }}
 
   lint:
     runs-on: ubuntu-latest
