@@ -7,11 +7,11 @@ on:
     branches: [ "main" ]
 
 jobs:
-  setup:
+  setup-python-and-install-dependencies:
     uses: ./.github/workflows/setup-python-and-install-deps.yml
 
   lint:
-    needs: setup
+    needs: setup-python-and-install-dependencies
     runs-on: ubuntu-latest
 
     strategy:
