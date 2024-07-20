@@ -7,6 +7,11 @@ on:
     branches: [ "main" ]
 
 jobs:
+  setup:
+    uses: ./.github/workflows/setup-python-and-install-deps.yml
+    with:
+      python-version: ${{ matrix.python-version }}
+
   lint:
     runs-on: ubuntu-latest
 
@@ -16,10 +21,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Setup and Install Dependencies
-        uses: ./.github/workflows/setup-python-and-install-deps.yml
-        with:
-          python-version: ${{ matrix.python-version }}
       - name: Install additional lint dependencies
         run: |
           pip install pylint
