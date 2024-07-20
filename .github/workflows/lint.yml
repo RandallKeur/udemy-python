@@ -11,6 +11,7 @@ jobs:
     uses: ./.github/workflows/setup-python-and-install-deps.yml
 
   lint:
+    needs: setup
     runs-on: ubuntu-latest
 
     strategy:
