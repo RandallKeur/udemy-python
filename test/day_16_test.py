@@ -4,9 +4,9 @@ import unittest
 from io import StringIO
 from unittest import mock
 
-from src.classes.coffee_machine.coffee_maker import CoffeeMaker
-from src.classes.coffee_machine.menu import Menu
-from src.classes.coffee_machine.money_machine import MoneyMachine
+from src.classes.coffee_shop.coffee_maker import CoffeeMaker
+from src.classes.coffee_shop.menu import Menu
+from src.classes.coffee_shop.coin_converter import CoinConverter
 from src.day_16 import coffee_machine
 
 
@@ -16,7 +16,7 @@ class Day16Test(unittest.TestCase):
         # pylint: disable=duplicate-code
         self.menu = Menu()
         self.coffee_maker = CoffeeMaker()
-        self.money_machine = MoneyMachine()
+        self.money_machine = CoinConverter()
         self.out = StringIO()
         sys.stdout = self.out
         self.drink = ""

@@ -1,12 +1,12 @@
 """ Day 16 of Coding Challenges for coffee machine using OOP"""
-from src.classes.coffee_machine.menu import Menu
-from src.classes.coffee_machine.coffee_maker import CoffeeMaker
-from src.classes.coffee_machine.money_machine import MoneyMachine
+from src.classes.coffee_shop.menu import Menu
+from src.classes.coffee_shop.coffee_maker import CoffeeMaker
+from src.classes.coffee_shop.coin_converter import CoinConverter
 
 IS_ON = True
 
 
-def make_drink(menu: Menu, coffee_maker: CoffeeMaker, money_machine: MoneyMachine, choice: str):
+def make_drink(menu: Menu, coffee_maker: CoffeeMaker, money_machine: CoinConverter, choice: str):
     """ Make a drink for a customer"""
     drink = menu.find_drink(choice)
     if drink is not None:
@@ -14,7 +14,7 @@ def make_drink(menu: Menu, coffee_maker: CoffeeMaker, money_machine: MoneyMachin
             coffee_maker.make_coffee(drink)
 
 
-def coffee_machine(menu: Menu, coffee_maker: CoffeeMaker, money_machine: MoneyMachine):
+def coffee_machine(menu: Menu, coffee_maker: CoffeeMaker, money_machine: CoinConverter):
     """ Coffee machine for a customer to make a selection"""
     while IS_ON:
         options = menu.get_items()

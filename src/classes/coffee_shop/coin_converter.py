@@ -1,8 +1,8 @@
 """ Money machine that is leveraged for the coffee maker."""
 
 
-class MoneyMachine:
-    """ Models the money machine with coins"""
+class CoinConverter:
+    """ Models the money converter with coins"""
 
     CURRENCY = "$"
 
