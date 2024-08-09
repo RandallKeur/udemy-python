@@ -12,14 +12,15 @@ class CoffeeShop:
         self.coin_converter = CoinConverter()
         self.open = True
 
-    def process_order(self, order: str):
+    def process_order(self, order: str) -> None:
         """ Process the order from the customer"""
         drink = self.menu.find_drink(order)
         if drink is not None:
-            if self.coffee_maker.is_resource_sufficient(drink) and self.coin_converter.make_payment(drink.cost):
+            if (self.coffee_maker.is_resource_sufficient(drink) and
+                    self.coin_converter.make_payment(drink.cost)):
                 self.coffee_maker.make_coffee(drink)
 
-    def take_orders(self):
+    def take_orders(self) -> None:
         """ Takes order from the customer"""
         while self.open:
             options = self.menu.get_items()
