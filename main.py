@@ -1,21 +1,16 @@
 """ This main method runs the 100 days of coding challenges with interactive feedback"""
+from src.classes.coffee_shop.coffee_shop import CoffeeShop
 from src.classes.distance_converter import DistanceConverter
 from src.classes.invitation_builder import InvitationBuilder
 from src.classes.password_manager import PasswordManager
 from src.classes.pomodoro_timer import PomodoroTimer
 from src.constants.values import QUESTION_BANK
 from src.classes.quiz_generator import QuestionBank
-from src.classes.coffee_shop.coffee_maker import CoffeeMaker
-from src.classes.coffee_shop.menu import Menu
-from src.classes.coffee_shop.coin_converter import CoinConverter
 from src.constants.ascii_art import GOODBYE
 from src import (day_1, day_2, day_3, day_4, day_5, day_7, day_8, day_9,
-                 day_10, day_11, day_12, day_13, day_14, day_15, day_16, day_17,
-                 day_18, day_19, day_20, day_21, day_22, day_23, day_25, day_26)
+                 day_10, day_11, day_12, day_13, day_14, day_15, day_17, day_18,
+                day_19, day_20, day_21, day_22, day_23, day_25, day_26)
 
-coffee_maker = CoffeeMaker()
-money_machine = CoinConverter()
-menu = Menu()
 question_bank = QuestionBank(QUESTION_BANK)
 
 
@@ -73,7 +68,8 @@ def switchboard(day):
             case "15":
                 day_15.coffee_maker()
             case "16":
-                day_16.coffee_machine(menu, coffee_maker, money_machine)
+                coffe_shop = CoffeeShop()
+                coffe_shop.take_orders()
             case "17":
                 day_17.take_quiz(question_bank)
             case "18":

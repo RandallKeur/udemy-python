@@ -29,6 +29,11 @@ class CoffeeShop:
                 self.coffee_maker.report()
                 self.coin_converter.report()
             elif order == "off":
-                self.open = False
+                self.close()
             else:
                 self.process_order(order)
+
+    def close(self) -> None:
+        """ Closes the coffee shop"""
+        print("\nCoffee shop is closed, come see us tomorrow!\n")
+        self.open = False
